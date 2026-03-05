@@ -1,0 +1,78 @@
+{
+"FIRST_NAMES": 
+    [
+            "anderson",
+            "andre",
+            "antonio",
+            "bruno",
+            "carlos",
+            "daniel",
+            "douglas",
+            "eduardo",
+            "felipe",
+            "fernando",
+            "gabriel",
+            "gustavo",
+            "henrique",
+            "joao",
+            "jose",
+            "lucas",
+            "luiz",
+            "marcos",
+            "matheus",
+            "miguel",
+            "rafael",
+            "rodrigo",
+            "thiago",
+            "vinicius",
+            "ana",
+            "beatriz",
+            "camila",
+            "carla",
+            "fernanda",
+            "gabriela",
+            "isabela",
+            "juliana",
+            "larissa",
+            "leticia",
+            "mariana",
+            "patricia",
+            "raquel",
+            "renata",
+            "sofia",
+            "vanessa"
+        ],
+
+"LAST_NAMES": 
+    [
+    "silva","santos","oliveira","pereira","costa",
+    "rodrigues","almeida","nascimento","lima","araujo",
+    "fernandes","carvalho","gomes","martins","rocha",
+    "ribeiro","alves","barbosa","freitas","teixeira",
+    "moreira","correia","monteiro","cardoso","vieira",
+
+    "dias","souza","melo","pires","batista",
+    "duarte","campos","rezende","moura","cunha",
+    "azevedo","fonseca","machado","coelho","brito",
+    "tavares","ramos","andrade","mendes","farias",
+    "cavalcante","pires","viana","leite","henrique",
+    "siqueira","marques","paiva","bastos","porto",
+    "aguiar","figueiredo","guimaraes","neves","camargo",
+    "nogueira","pires","barros","castro","peixoto",
+    "rodrigues","morais","sales","medeiros","bezerra",
+    "freire","serrano","valente","xavier","ventura",
+    "torres","pinto","assis","rezende","queiroz",
+    "rodrigues","magalhaes","dantas","trindade","arruda"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "noitesombra","cybertigre","datacarioca",
+    "neonamazon","pixelbandido","cryptojaguar",
+    "urbanfavela","stormrio","byteflame",
+    "gridbrasil","digitalpantera",
+    "neonsaopaulo","cryptocerrado","stormpantanal",
+    "pixelbahia","datacapoeira","shadowbrasil",
+    "byteiguazu","midnightcarnaval"
+  ]
+}

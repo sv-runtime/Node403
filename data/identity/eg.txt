@@ -1,0 +1,44 @@
+{
+"FIRST_NAMES": 
+   [
+    "ahmed","mohamed","fatma","nour","hassan","salma",
+    "youssef","omar","ali","mostafa","mahmoud","karim",
+    "tarek","wael","ramy","khaled","amr","ibrahim",
+    "abdullah","sami","aya","amira","hana","layla",
+    "menna","mariam","yasmin","farah","dina","rana",
+    "reem","salma","nadia","huda","sahar"
+  ],
+
+"LAST_NAMES": 
+    [
+    "hassan","ibrahim","mohamed","ali","mahfouz",
+    "abdelrahman","abdelaziz","abdelhamid","abdelkader","abdelnour","abdelrahim","abdelwahab","abdalla","abdallah","abdo",
+    "abouelnaga","adel","ahmed","akram","alashry","almasry","alsharif","amin","ashraf","attia",
+    "ayoub","aziz","badawi","badr","bahaa","bakr","barakat","basel","basim","bassiouny",
+    "bedir","bishoy","boules","boutros","dawoud","doss","elbaz","elgamal","elgendy","elhamy",
+    "elkady","elkhatib","elkholy","elmasry","elnaggar","elnahas","elsharawy","elshazly","eltayeb","emad",
+    "essam","fahmy","farag","fathi","fawzy","fayez","fouad","gaber","gad","galal",
+    "gamal","ghali","ghazaly","gohar","habib","hafez","hakim","halim","hamdy","hamed",
+    "hamza","hanfy","harb","heikal","helmy","henein","hosny","hussein","ismail","kamel",
+    "karam","khaled","khalil","khattab","lotfy","magdy","mahdy","mansour","mikhail","mina",
+    "mostafa","mourad","moussa","naggar","nasr","nassar","nour","omar","ramadan","reda",
+    "rizk","saber","sabry","saeed","salah","saleh","samir","shawky","shehata","sobhy",
+    "talaat","tamer","tawfik","wael","wagdy","wahba","yahia","yasser","youssef","zaki"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonnile","cryptopharaoh","stormcairo","pixelpyramid","urbanluxor",
+  "neongiza","cryptosphinx","stormalexandria","pixelphilae",
+  "urbanegypt","datakhepri","shadowdesert","bytecairo",
+  "midnightdelta","gridnile",
+  "cairo_404","nile.byte","pharaoh_x","giza.exe","delta_night",
+  "desert88","alex_shadow","khepri.dev","grid20","luxor_x","pyramid99",
+
+  "laylalkahira","rohnil","qalbmisr",
+  "nournil","sahralqahira","shamsaswan",
+  "bahriskandariya","qalbalnahr","misrjadid",
+  "laylalex","ruhalahr","misrya",
+  "nilelqalb","sahraldelta","qahiralayl"
+]
+}

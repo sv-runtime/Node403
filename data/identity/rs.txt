@@ -1,0 +1,77 @@
+{
+"FIRST_NAMES": 
+    [
+  "aleksandar","andrej","andrija","bogdan","bojan","branislav",
+  "dejan","dusan","filip","goran","igor","ivan",
+  "jovan","lazar","luka","marko","milan","milica",
+  "milos","nemanja","nikola","ognjen","petar","radovan",
+  "slobodan","stefan","uros","veljko","vladimir","zoran",
+
+  "ana","andjela","biljana","bojana","danijela","dragana",
+  "emilija","ivana","jelena","katarina","kristina","marija",
+  "milena","milica","natasa","nevena","nikolina","sanja",
+  "sofija","tamara","teodora","vanja","zivana","zorana"
+],
+
+"LAST_NAMES": 
+    [
+    "petrovic","jovanovic","nikolic","markovic","dimitrijevic","stojanovic","milosevic","ilic","kovacevic","djordjevic",
+    "stefanovic","vukovic","radovanovic","lazarevic","popovic","pavlovic","rankovic","zivkovic","milinkovic","bojic",
+    "simic","tosic","ristic","tomic","kostic","savovic","trifunovic","vukadinovic","ivanovic","krstic",
+
+    "andjelkovic","antic","arsenijevic","babic","bakic","banovic","barac","bjelic","bogicevic","bozic",
+    "brankovic","bukvic","canic","cirkovic","colic","cosic","cukic","curcic","cvetkovic","cvijanovic",
+    "damjanovic","danic","dasic","dejanovic","delic","despotovic","dimic","dobric","dragic","draskovic",
+    "drecun","dudic","djukic","eric","filipovic","galic","gasic","gavrilovic","glisic","goranovic",
+    "grbic","grujic","hadzic","hajdukovic","hristov","ignjatovic","jakovljevic","jeremic","jerkovic","jokic",
+    "jovic","jovancic","jovicic","kacar","kecman","knezevic","kobasic","kojic","kolakovic","konstantinovic",
+    "kraguljac","krunic","laban","lekic","ljajic","ljubicic","lukic","malesevic","mandic","maric",
+    "markovic","martinovic","matovic","mijailovic","miladinovic","milic","milosavljevic","mirkovic","mitic","mladenovic",
+    "nastic","nikcevic","novakovic","obradovic","ognjanovic","paunovic","peric","petkovic","popov","prodanovic",
+    "putnik","radic","radicic","radisic","radojevic","radonjic","radulovic","raicevic","rakic","rasic",
+    "remic","rodic","rogic","rudic","savicevic","selakovic","simovic","slavkovic","spasic","stankovic",
+    "subotic","tanaskovic","tasic","tepic","trbojevic","trkulja","veljkovic","vladisavljevic","vranic","vucinic",
+    "zdravkovic","zoric","zubic","zujovic","zunic"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neonbelgrade","datadanube","pixelnovisad","cryptoserbia",
+  "stormbalkan","urbanvojvodina","shadowkalemegdan",
+  "bytezemun","gridnis","midnighttisa",
+  "cybertsar","nocturnesava","neonnovi",
+  "cryptokosovo","stormsubotica",
+  "pixelkragujevac","datasmederevo","shadowtara",
+
+  "balkancore","belgradenight","danubeflare",
+  "savanexus","vojvodinastorm","nisbyte",
+  "kalemegdanpulse","novisadwave","serbiashadow",
+  "tisarivercode","balkanvector","dinaricgrid",
+  "zlatiborghost","kopaonikstorm","fruskagorabyte",
+
+  "београдноћ","сенкасаве","дунавталас",
+  "балкансенка","ноћсрбија","ватрабалкана",
+  "светлодунава","сенканиша","војводинашторм",
+  "калемегданкод","србијафлер","ноћнабелграду",
+
+  "tsarbyte","nemanjicforge","dusanshadow",
+  "ravengrid","orthodoxpulse","balkanforge",
+  "danubematrix","serbiavortex","belgradecipher",
+  "vojvodinacore","nisstorm","zlatiborsignal",
+  "kopaonikvector","fruskaflare","suboticabyte",
+
+  "српскикод","балканфантом","сенказлатибор",
+  "ноћнибалкан","дунавматрица","ватрасрбија",
+  "косовосенка","крагујевацгрид","новисадпулс",
+
+  "urbanbalkan","shadowdinaric","cybervojvoda",
+  "dusanengine","tsarvortex","serbiapulse",
+  "balkannight","orthodoxghost","kalemegdanshadow",
+  "danubeengine","novisadmatrix","nisforge",
+  "zlatiborwave","kopaonikcipher","balkanflare",
+
+  "ravensava","dinaricstorm","vojvodinabyte",
+  "belgradeunderground","serbianexus","nocturnedunav",
+  "balkanshade","tsarsignal","serbiagrid"
+]
+}

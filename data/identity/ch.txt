@@ -1,0 +1,69 @@
+{
+"FIRST_NAMES": 
+    [
+    "luca","noah","lea","anna","marc","sarah",
+    "julian","ben","fabian","tim","jan","lukas",
+    "michael","nico","pascal","samuel","sandro",
+    "florian","daniel","raphael","amelie","lara",
+    "nina","laura","selina","alina","giulia",
+    "elena","chiara","matteo","andrea","lorenzo","simone"
+  ],
+
+"LAST_NAMES": 
+    [
+    "muller","meier","schmid","keller","weber",
+    "meyer","huber","schneider","fischer","brunner","baumann","gerber","steiner","frei","zuber",
+    "graf","schwarz","roth","hauser","berger","studer","schuler","zimmermann","kunz","walter",
+    "widmer","marti","schwab","egli","brun","jung","hess","stutz","stocker","imhof",
+    "koch","gasser","amrein","albrecht","baur","becker","bieri","blank","bohler","bopp",
+    "boss","braun","buhler","burri","christen","eberle","ehrbar","erni","fankhauser","felber",
+    "galli","gautschi","giger","glauser","graber","grimm","haag","hartmann","heer","hefti",
+    "heini","hertig","huberli","hunger","iser","jaggi","jost","kappeler","kellerhals","klein",
+    "knecht","kohler","kraus","kuster","lanz","lehmann","leu","loch","locher","lutz",
+    "maag","maier","maurer","moser","mullerhuber","naef","neuhaus","niederer","nydegger","ott",
+    "peter","pfister","reich","reinhard","ritter","rohrer","ryser","schaller","scheidegger","schlegel",
+    "schmidli","schneider","schori","schuler","schurter","schweizer","seiler","siegrist","siegenthaler","spicher",
+    "stadelmann","staub","stettler","stoll","strasser","straub","thommen","vogt","vonarx","wenger",
+    "werder","wildi","wyss","zeller","zumbuhl","zurbrugg","zurich","zurcher"
+  ],
+
+    "WEIRD_NAMES":
+[
+  "neonzurich","datageneva","pixelbasel","cryptobern",
+  "stormalps","urbanlugano","shadowmatterhorn",
+  "bytehelvetia","gridswiss","midnightlucerne",
+  "cyberinterlaken","nocturnezermatt",
+  "neonlausanne","cryptoticino","stormstgallen",
+  "pixeljungfrau","datamontreux","shadowalpstein",
+
+  "helvetiacore","zurichnuit","alpineflare",
+  "bernbyte","genevagrid","lucernestorm",
+  "baselvector","matterhornpulse","jungfraucode",
+  "alpshadow","swissmatrix","ticinowave",
+
+  "alpennacht","schneesturm","gletschergeist",
+  "helvetiablaze","edelweisscore","bergcipher",
+  "schattenalp","lichtamsee","frostengine",
+  "schweizbyte","alpenmatrix","neongrischun",
+
+  "montblanccode","lacgenevepulse","luganosignal",
+  "bernunderground","alpineghost","zurichcipher",
+  "swissprecision","chronocode","watchmatrix",
+  "bankbyte","vaultvector","helveticstorm",
+
+  "frosthelvetia","alpenglowx","matterhornmatrix",
+  "jungfrauvector","glacierpulse","alpinevortex",
+  "swissshadow","zermattflare","interlakengrid",
+  "genevacyber","lausanneengine","baselcore",
+
+  "alpengeist","neonmatterhorn","cryptoswiss",
+  "alpforge","helvetianight","schweizstorm",
+  "zurichpulse","bernshadow","lucernevibe",
+  "gletscherbyte","alpinecipher","swissphantom",
+
+  "montreuxwave","ticinoflare","grischunghost",
+  "valaisstorm","engadinmatrix","swissforge",
+  "helvetianexus","alpineflarex","frostswiss",
+  "snowvector","bergvortex","alpinebyte"
+]
+}

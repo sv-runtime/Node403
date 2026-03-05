@@ -1,0 +1,69 @@
+{
+"FIRST_NAMES": 
+    [
+    "alexander","andreas","anton","carl","daniel","emil","erik","filip",
+    "fredrik","gustav","henrik","johan","jonas","karl","linus",
+    "ludvig","magnus","markus","martin","oskar","per","rasmus",
+    "viktor","wilhelm","anna","elin","emma","frida","hanna",
+    "ida","johanna","karin","lina","linnea","maja","matilda",
+    "sara","sofia","stina",
+
+    "albin","arne","axel","bjorn","christoffer","claes",
+    "dan","einar","felix","hampus","isak","jakob",
+    "jesper","joakim","krister","leo","mikael",
+    "niklas","olof","pontus","robin","sebastian",
+    "simon","teodor","tobias","ulf","viggo",
+
+    "agnes","alva","amanda","astrid","clara","ebba",
+    "elsa","eva","felicia","greta","helena","ingrid",
+    "kajsa","karolina","lovisa","malin","moa",
+    "nora","rebecca","signe","tilda","vilma"
+  ],
+
+"LAST_NAMES": 
+    [
+    "andersson","johansson","karlsson","nilsson","eriksson","larsson",
+    "olsson","persson","svensson","gustafsson","pettersson",
+    "jonsson","hansson","berg","lindberg","lundberg",
+    "nyberg","holm","strom","sandberg","lund",
+    "ekstrom","bengtsson","wallin","gren","soderberg",
+    "hedlund","bergstrom",
+
+    "ahlberg","ahlgren","ahlstrom","akerlund","akesson","albertsson","alm","almgren","almqvist","alms",
+    "andren","arvidsson","ask","back","backman","backstrom","berggren","bergman","berglund","bergqvist",
+    "bergstedt","berntsson","bjork","bjorklund","bjorkman","bjorkqvist","blom","blomberg","blomqvist","blomstrom",
+    "bodin","boman","borg","borgstrom","brand","brandt","broberg","brodin","brostrom","carlsen",
+    "cederberg","cedergren","cederholm","cederstrom","claesson","dahl","dahlberg","dahlgren","dahlstrom","danielsson",
+    "davidsson","ek","eklund","ekman","ekstrom","eliasson","engberg","engdahl","engman","engstrom",
+    "erlandsson","fagerberg","falk","falkenberg","falkman","fors","forsberg","forsgren","forslund","forsman",
+    "fransson","fredriksson","gunnarsson","gustavsson","hagberg","hagstrom","hall","hallberg","hallgren","hallman",
+    "hedberg","hedman","hedstrom","hellberg","hellman","hellstrom","henriksson","hermansson","holmberg","holmgren",
+    "holmqvist","holstrom","isaksson","jakobsson","jansson","jonasson","jorgensen","karlberg","karlsson","karlstrom",
+    "kristiansson","lander","landerholm","landergren","landerqvist","landerstrom","lind","lindahl","lindblad","lindgren",
+    "lindholm","lindqvist","lindstrom","lund","lundahl","lundgren","lundin","lundqvist","lundstrom","malm",
+    "malmberg","malmgren","malmqvist","malmstrom","mattsson","molander","nordin","norberg","nordgren","nordlund",
+    "nordman","nordqvist","nordstrom","nygren","nylund","nyqvist","nystrom","olander","olofsson","olsson",
+    "ostberg","ostlund","ostman","ostqvist","ostrom","palsson","petterson","qvist","roos","rydberg",
+    "rydgren","rydholm","rydqvist","rydstrom","sand","sandahl","sandgren","sandqvist","sandstrom","sjogren",
+    "sjolund","sjostrom","skog","skoglund","skold","skoldberg","skoldman","skoldqvist","skoldstrom","stromberg",
+    "stromgren","stromqvist","stromstedt","stromwall","sund","sundberg","sundgren","sundin","sundqvist","sundstrom",
+    "thomasson","wall","wallberg","wallgren","wallin","wallman","wallqvist","wallstrom","wik","wikberg",
+    "wikgren","wikman","wikqvist","wikstrom","ylva","zackrisson"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "neonviking","datasnow","pixelstockholm",
+    "cryptonordic","stormaurora","urbanfjord",
+    "shadowlulea","byteboreal","gridscandia",
+    "neonmalmo","midnightlapland",
+    "norrsken","nordvind",
+    "stockholmsnatt","skogsro",
+    "fjallvind","lapplandsljus",
+    "havsbla","sodermalmnatt",
+    "goteborgsvind","uppsalanatt",
+    "malmohimmel","nattensken",
+    "arctichimmel","skandinavisk",
+    "nordljusvibe","borealvind"
+  ]
+}

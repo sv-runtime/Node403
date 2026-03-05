@@ -1,0 +1,53 @@
+{
+"FIRST_NAMES": 
+   [
+    "liam","conor","sean","cian","jack","aoife","saoirse","niamh","claire","erin",
+    "patrick","declan","ronan","darragh","eoin","finn","kevin","padraig",
+    "cathal","brendan","colin","dylan","shane","tiernan",
+    "aisling","caoimhe","ciara","clodagh","deirdre","eimear",
+    "fiona","grainne","maeve","orla","roisin","sinead"
+  ],
+
+"LAST_NAMES": 
+    [
+    "murphy","kelly","walsh","byrne","ryan","obrien","mccarthy","doyle",
+
+    "lynch","murray","quinn","moore","mcgrath","oconnor","reilly","dalton","dunn","mcguire",
+    "kennedy","fitzgerald","brady","flynn","healy","hayes","malone","farrell","sullivan","mcmahon",
+    "mcdermott","mccann","barry","burke","dempsey","connolly","donovan","mccormack","sheehan","kavanagh",
+    "keenan","larkin","power","molloy","sheehy","mcgann","mccabe","mcclean","mccall","mcgee",
+    "mchugh","mcintyre","mcneill","mcguinness","mcgowan","mcmahon","mcguirk","mcnamara","mcnally","mcginty",
+    "mcquaid","mcshane","mcsweeney","mcvey","mcwalter","mcwilliams","ocallaghan","ocarroll","oconnell","ocrowley",
+    "odonnell","odwyer","ogorman","ohanlon","ohalloran","okane","okane","okeefe","oshea","osullivan",
+    "reddy","regan","roche","rooney","rowe","scanlon","shannon","smith","tierney","whelan",
+    "whitney","hogan","corcoran","casey","foley","greene","nolan","walton","armstrong","cunningham",
+    "brannigan","boyle","carroll","clarke","craig","daly","doran","duffy","egan","ennis",
+    "finnegan","flood","gallagher","garvey","gibbons","gill","grady","griffin","hanley","harding",
+    "harrington","hart","hickey","higgins","holland","hughes","joyce","keating","kelleher","kerr",
+    "lavery","lawlor","lowry","mackey","maher","martin","mcbride","mccloskey","mcloughlin","mcmanus",
+    "morrissey","mulcahy","muldoon","neville","phelan","robinson","russell","shaughnessy","slattery","smyth",
+    "tobin","walters","waters","white","williams","woods","young","abbott","allison","brennan",
+    "carr","cassidy","cavanagh","conroy","cooney","costello","cregan","cross","dickson","doherty",
+    "dunphy","fahy","flanagan","fleming","gannon","gibson","gilmore","gordon","hamilton","harrison",
+    "kavan","kelly","kenny","lawrence","lee","long","lynch","mcadam","mcavoy","mcdermott",
+    "mcguigan","mcguinness","mcintosh","mcintosh","mckay","mcmahon","mcneill","mcveigh","mooney","moran",
+    "mulligan","nash","obrien","oconnor","oflaherty","ogara","oregan","owens","quigley","roberts",
+    "savage","sexton","sheppard","stack","sweeney","walsh","ward"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonshamrock","stormdublin","cryptocelt","pixelgael","gridemerald",
+  "neoncork","cryptoeire","stormgalway","pixelirishcode",
+  "urbanlimerick","datashannon","shadowclover","bytedublin",
+  "midnightatlantic","gridireland",
+  "dublin_404","shamrock.byte","eire_x","cork.exe","galway_night",
+  "emerald88","gael.dev","clover_shadow","grid353","irish_x","stormie99",
+
+  "oichedubhlinn","croigael","oicheeire",
+  "solaseire","gaothnaheireann","dubhlinnabu",
+  "eireannach","solasgael","croicelt",
+  "gaothatlantic","oichecorcaigh","eirego",
+  "croilaoch","gaelcroi","oichegalway"
+]
+}

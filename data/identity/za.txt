@@ -1,0 +1,70 @@
+{
+"FIRST_NAMES": 
+    [
+    "sipho","thabo","michael","nomsa","ayanda","lerato",
+    "themba","nkosi","sibusiso","mlungisi","tshepo","vuyo",
+    "bongani","lindani","khaya","mandla","musa","simphiwe",
+    "zanele","noluthando","thandeka","busisiwe","nosipho",
+    "lindiwe","anelle","boitumelo","refilwe","kagiso",
+    "keabetswe","ayabonga","mlungelwa","karabo","lesedi"
+  ],
+
+"LAST_NAMES": 
+    [
+    "nkosi","dlamini","mokoena","naidoo","vandermerwe",
+    "vanwyk","botha","duplessis","pretorius","venter","smit","jacobs","coetzee","kruger","malan",
+    "nel","debeer","vanzyl","vanderberg","vanderwesthuizen","vanderwalt","debruyn","vanrooyen","vermeulen","swart",
+    "mthembu","zulu","khumalo","ndlovu","mabaso","masuku","hlatshwayo","ngcobo","nxumalo","gama",
+    "mkhize","dube","mahlangu","moletsane","ramaphosa","sekgobela","ramatla","mashaba","mogale","sekhoane",
+    "makhanya","shabalala","mbatha","sithole","madlala","mtshali","zondo","buthelezi","cele","hadebe",
+    "nkomo","mpofu","nyathi","sibanda","moyo","chirwa","ngwenya","banda","tembo","mwale",
+    "maseko","molefe","sebele","selolo","selemela","seodi","tshabalala","tshabalala","maponya","maphosa",
+    "masekela","phiri","moloi","modise","morake","morolong","mogotsi","kgosi","kgatlana","kganyago",
+    "pienaar","meyer","engelbrecht","labuschagne","vanzyl","lombard","duplessis","fourie","grobler","visser",
+    "vanas","vanniekerk","vanvuuren","vanstaden","vanderlinde","vanderhuizen","vandenberg","vanderkolk","vanderheyden","vanderhorst",
+    "naicker","pillay","reddy","govender","raman","ramanathan","subramanian","naicker","padayachee","singh",
+    "khan","patel","islam","ahmed","abdullah","yusuf","hassan","ismail","cassiem","solomon",
+    "brown","williams","johnson","thomas","clarke","roberts","adams","james","davidson","ferreira",
+    "matlala","baloyi","mongale","mampane","modjadji","mohlala","moloto","mokgadi","mogashoa","mokwena",
+    "motsamai","motsepe","motloung","motshabi","motsweni","motshekga","motsoko","ngubane","ngema","ngobeni",
+    "ngobese","ngubeni","ngubeni","ngubeni","ngubeni","ngubeni","ngubeni","ngubeni","ngubeni","ngubeni"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neoncape","stormjoburg","cryptosafari","pixelubuntu","gridafrika",
+  "neondurban","cryptozulu","stormkaroo","pixelpretoria",
+  "urbansoweto","dataxhosa","shadowtable","bytekalahari",
+  "midnightsavanna","gridrainbow",
+  "joburg_za","cape.byte","ubuntu404","mzansi_x","durban_ghost",
+  "safari88","xhosa.dev","karoo_night","rainbow.exe","za_shadow","grid27",
+  "mzansipulse","capetownflow","joburgvibes",
+  "durbanwave","zuluconnect","xhosapride",
+  "pretoriabyte","kalaharilight","sowetocode",
+  "rainbownation","savannasky","afrikagrid",
+  "karoolife","mzansi404","capeshadow",
+  "mzansivibes","lekkerza","howzitbru",
+  "ubuntuubuntu","ekhaya","ekhayaonline",
+  "umzansi","umzanziroots","mzansilife",
+  "braaiday","braaivibes","biltongbru",
+  "boeretrots","boereplaas","plaaswind",
+  "veldhart","karoodroom","karookind",
+  "gautengkind","gautenglewe","durbanwarm",
+  "kznlewe","kwazuluroots","zulumoya",
+  "xhosainto","xhosamoya","mzanziwena",
+  "joburgkind","sowetolewe","tshwanelewe",
+  "pretoriatrots","stellenboschwyn",
+  "capewind","tafelberg","tafelbergkind",
+  "robbenisland","limpopolewe","mpumalangas",
+  "freestateplaas","northerncapeveld",
+  "drakensbergwind","umalanga","umhlabawethu",
+  "amadoda","amakhosi","inkanyiso",
+  "umoyawasekasi","kasilife","ekasinight",
+  "mzansiforever","ubuntuethu","sizokhuluma",
+  "ngiyakuthanda","siyaphila","sisonke",
+  "kalaharison","veldlewe","capetrots",
+  "durbanmoya","joburghart","mzansipride",
+  "goli","golilife","ekasipride",
+  "shapashapa","sharpesharp","yeboza"
+]
+}

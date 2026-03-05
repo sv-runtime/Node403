@@ -1,0 +1,51 @@
+{
+"FIRST_NAMES": 
+    [
+    "chinedu","oluwaseun","emeka","ada","chioma","zainab",
+    "oluwatobi","ifeanyi","chukwuemeka","kunle","tunde",
+    "segun","femi","ayo","temitope","abdul","usman",
+    "suleiman","ibrahim","yakubu","amara","chinenye",
+    "ngozi","kemi","bisola","bola","funke","halima",
+    "maryam","amina","zainab","esther","joy","precious"
+  ],
+
+"LAST_NAMES": 
+    [
+    "okafor","adebayo","balogun","nwosu","yusuf",
+    "okonkwo","chukwu","chukwuemeka","ugwu","eze","nnamdi","okoye","okeke","ezeani","ike",
+    "anigbogu","onwudiwe","obinna","onyema","onyekachi","nwachukwu","ugochukwu","nwaneri","okoro","nwachinemere",
+    "ogbonna","ogu","ogunleye","ogundele","ogundipe","ogunbiyi","ogunlana","ogun","ogunniran","ogunwale",
+    "oladipo","oladele","olalekan","olaleye","oladokun","olawale","olaitan","oladimeji","olatunji","oladiran",
+    "ajayi","akinwale","akinola","akindele","akinsanya","akintola","akinyemi","akpan","akpabio","akpata",
+    "bello","ibrahim","musa","abubakar","sule","garba","adamu","usman","lawal","sani",
+    "umar","kano","mahmud","abdullahi","haruna","bature","shehu","danladi","kabir","yaro",
+    "danjuma","nuhu","tukur","bashir","zanna","idris","ahmed","isah","hassan","mustapha",
+    "tunde","femi","segun","olusegun","ayo","temitope","olanrewaju","oluwaseun","oluwafemi","oluwatobi",
+    "chinedu","chima","chioma","amarachi","chinenye","ifeanyi","kalu","kene","nkechi","ugonna",
+    "odili","onuoha","orji","uzo","uzoma","uzoho","onyia","onuoha","onwuka","onwuegbuzie",
+    "daniel","emmanuel","esther","grace","victor","felix","samuel","bright","gideon","friday",
+    "monday","sunday","peace","joy","hope","precious","divine","glory","mercy","charity"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonlagos","cryptoyoruba","stormnaija","pixelabuja","urbanorisha",
+  "neonkano","cryptohausa","stormdelta","pixellagoscode",
+  "urbanibadan","datanaija","shadowbenin","byteyoruba",
+  "midnightniger","gridafropulse",
+  "naija_99","lagos.byte","yoruba404","abuja_x","delta_night",
+  "ng_shadow","hausa.dev","benin.exe","storm234","orisha_ghost","gridng",
+  "naijapulse","lagosvibes","abujaflow",
+  "yorubaconnect","hausawave","ibadancode",
+  "nigerlight","deltaflow","naijagrid",
+  "afropulse_ng","lagoslife","kadunabyte",
+  "beninvibes","naijabyte","234connect",
+
+  "lagosale","abujahaske","ibadaninu",
+  "yorubaduro","hausarano","naijaruhu",
+  "kanosauti","beninzuciya","nigerhaske",
+  "ijawinu","naijakudi","lagosinu",
+  "arewaonline","oduduwalive","hausaduniya",
+  "lagosoyinbo","naijalink","ibadansauti"
+]
+}

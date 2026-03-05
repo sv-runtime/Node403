@@ -1,0 +1,26 @@
+{
+  "FIRST_NAMES":
+  [
+    "andrei","alexandru","ion","vasile","mihai","nicolae","valeriu","sergiu","dorin","victor",
+    "constantin","petru","adrian","daniel","gabriel","vlad","cristian","eugen","dumitru","valentin",
+
+    "ana","maria","elena","irina","alina","cristina","diana","andreea","nicoleta","valeria",
+    "veronica","ioana","gabriela","ecaterina","tatiana","mariana","angelica","stela","rodica","liliana"
+  ],
+
+  "LAST_NAMES":
+  [
+    "rusu","munteanu","cobzaru","luca","ciobanu","popa","rotaru","cojocaru","moraru","cazan",
+    "bucur","gheorghiu","sîrbu","sârbu","bîrlădeanu","bîzgu","tudor","dobrovolschi","bogdan","damian",
+    "țurcanu","tîrdea","tîrîță","căpățînă","brînzan","dînga","grosu","anton","botezatu","călugăru"
+  ],
+
+  "WEIRD_NAMES":
+  [
+    "neonchisinau","codemoldova","prutflux","nistrusync","carpathianbyte",
+    "steppecipher","orheivector","sorocapulse","baltiNode","daciacore",
+    "chisinaughost","prutmatrix","nistruvortex","codriengine","moldaviasignal",
+    "neonprut","nistrucode","carpathianstorm","daciashift","chisinauoverride",
+    "prutquantum","nistruforge","codriblitz","moldovadrift","steppeprotocol"
+  ]
+}

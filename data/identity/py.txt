@@ -1,0 +1,29 @@
+{
+  "FIRST_NAMES":
+  [
+    "juan","josé","luis","carlos","miguel","ánge","alejandro","daniel","fernando","ricardo",
+    "eduardo","manuel","antonio","jesús","francisco","roberto","david","javier","sergio","diego",
+    "andrés","raul","oscar","adrián","jorge","alberto","emilio","marco","esteban","hector",
+    "rafael","hernán","marcos","felipe","mauricio","cristian","guillermo","alejo","adrián","ignacio",
+
+    "maria","ana","sofia","valeria","camila","fernanda","isabella","mariana","ximena","renata",
+    "lucía","paulina","daniela","gabriela","andrea","elena","karla","alejandra","carla","patricia",
+    "rosa","laura","veronica","silvia","monica","adriana","natalia","sandra","irene","bea"
+  ],
+
+  "LAST_NAMES":
+  [
+    "gonzález","rodríguez","pérez","gómez","fernández","martínez","sánchez","herrera","vásquez","gallardo",
+    "rios","sosa","martin","fernando","cuevas","balbuena","rivas","gauto","lezcano","franco",
+    "carrillo","barrios","villalba","giménez","pinto","ramirez","acosta","arias","avila","medina"
+  ],
+
+  "WEIRD_NAMES":
+  [
+    "neonasunción","paraguayflux","guaranicode","paranasync","chacobyte",
+    "tropicoguaraní","ñandúmatrix","sudamericastorm","paranávortex","asuncioncore",
+    "guaraníforge","pantanalpulse","granchacoscene","paraghost","neonparana",
+    "asuncionoverride","guaranishift","neonparaguay","pycodewave","riverplane",
+    "chacovector","asudecode","tropicsync","paranawave","plazaforge"
+  ]
+}

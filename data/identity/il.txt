@@ -1,0 +1,41 @@
+{
+"FIRST_NAMES": 
+    [
+    "david","noam","lior","yael","tamar","daniel",
+    "yosef","avi","itzhak","moshe","ronen","shai",
+    "ori","amit","eitan","gilad","nadav","ariel",
+    "omer","alon","maor","yonatan","yair","bar",
+    "michal","shira","avital","noa","adi","maya",
+    "hila","ronit","yaara","liat","naama","batya"
+  ],
+
+"LAST_NAMES": 
+    [
+    "cohen","levi","mizrahi","peretz","goldberg",
+    "abramov","abraham","adler","amir","ariel","ashkenazi","avrahami","bar","barak","baron",
+    "benami","benari","benjamin","bensimon","berman","biton","boaz","carmi","dahan","danino",
+    "david","davidson","dekel","doron","eisenberg","elbaz","elias","eliyahu","erez","fridman",
+    "gabay","gal","geller","golan","goren","gross","halpern","harel","hazan","herzog",
+    "hillel","horowitz","jacobi","kagan","kaplan","karp","katz","kaufman","kedar","klein",
+    "levine","levinson","malka","maman","marom","melamed","mizrachi","moshe","navon","neuman",
+    "ohayon","oren","perel","pinto","rabin","rabinovich","raz","rotem","rubin","samuel",
+    "sason","shahar","shalev","shamir","shapira","sharon","shemesh","sherman","solomon","stein",
+    "stern","tamar","tavor","toledano","turgeman","weiss","yadin","yair","yosef","zohar"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neontelaviv","cryptozion","stormnegev","pixeljerusalem","urbanisrael",
+  "neonhaifa","cryptokibbutz","stormgalilee","pixeldeadsea",
+  "urbanisra","datashalom","shadowzion","bytenegev",
+  "midnightlevant","gridisrael",
+  "telaviv_404","zion.byte","negev_x","haifa.exe","jerusalem_night",
+  "shalom88","galilee.dev","deadsea_shadow","grid972","isra_x","kibbutz99",
+
+  "laylatelaviv","ruhyisrael","orushalayim",
+  "negevruach","yamgalil","levyerushalayim",
+  "ruachnegev","orhalev","laylagalil",
+  "israelyom","haifalayla","ruachlev",
+  "orhazafon","levmedina","galilyam"
+]
+}

@@ -1,0 +1,431 @@
+{
+"FLAG_THEMES": {
+    "nl": {
+      "primary": "#AE1C28",
+      "secondary": "#FFFFFF",
+      "tertiary": "#21468B",
+      "accent": "#FF7900",
+      "error": "#FF7900"
+    },
+    "be": {
+      "primary": "#000000",
+      "secondary": "#FDDA24",
+      "tertiary": "#EF3340",
+      "accent": "#FDDA24",
+      "error": "#EF3340"
+    },
+    "us": {
+      "primary": "#FFFFFF",
+      "secondary": "#B22234",
+      "tertiary": "#3C3B6E",
+      "accent": "#FFFFFF",
+      "error": "#B22234"
+    },
+    "fr": {
+      "primary": "#0055A4",
+      "secondary": "#FFFFFF",
+      "tertiary": "#EF4135",
+      "accent": "#EF4135",
+      "error": "#0055A4"
+    },
+    "de": {
+      "primary": "#000000",
+      "secondary": "#DD0000",
+      "tertiary": "#FFCE00",
+      "accent": "#FFCE00",
+      "error": "#DD0000"
+    },
+    "dk": {
+      "primary": "#C60C30",
+      "secondary": "#FFFFFF",
+      "tertiary": "#C60C30",
+      "accent": "#FFFFFF",
+      "error": "#C60C30"
+    },
+    "it": {
+      "primary": "#009246",
+      "secondary": "#FFFFFF",
+      "tertiary": "#CD212A",
+      "accent": "#009246",
+      "error": "#CD212A"
+    },
+    "es": {
+      "primary": "#AA151B",
+      "secondary": "#F1BF00",
+      "tertiary": "#AA151B",
+      "accent": "#F1BF00",
+      "error": "#AA151B"
+    },
+    "br": {
+      "primary": "#009C3B",
+      "secondary": "#FFDF00",
+      "tertiary": "#002776",
+      "accent": "#FFDF00",
+      "error": "#009C3B"
+    },
+    "tr": {
+      "primary": "#E30A17",
+      "secondary": "#FFFFFF",
+      "tertiary": "#E30A17",
+      "accent": "#FFFFFF",
+      "error": "#E30A17"
+    },
+    "ru": {
+      "primary": "#FFFFFF",
+      "secondary": "#0039A6",
+      "tertiary": "#D52B1E",
+      "accent": "#0039A6",
+      "error": "#D52B1E"
+    },
+    "cn": {
+      "primary": "#DE2910",
+      "secondary": "#FFDE00",
+      "tertiary": "#DE2910",
+      "accent": "#FFDE00",
+      "error": "#DE2910"
+    },
+    "jp": {
+      "primary": "#FFFFFF",
+      "secondary": "#BC002D",
+      "tertiary": "#FFFFFF",
+      "accent": "#BC002D",
+      "error": "#BC002D"
+    },
+    "kr": {
+      "primary": "#FFFFFF",
+      "secondary": "#003478",
+      "tertiary": "#C60C30",
+      "accent": "#003478",
+      "error": "#C60C30"
+    },
+    "jm": {
+      "primary": "#009B3A",
+      "secondary": "#FED100",
+      "tertiary": "#000000",
+      "accent": "#FED100",
+      "error": "#009B3A"
+    },
+    "pl": {
+      "primary": "#FFFFFF",
+      "secondary": "#DC143C",
+      "tertiary": "#FFFFFF",
+      "accent": "#DC143C",
+      "error": "#DC143C"
+    },
+    "pt": {
+      "primary": "#006600",
+      "secondary": "#FF0000",
+      "tertiary": "#FFCC00",
+      "accent": "#FFCC00",
+      "error": "#FF0000"
+    },
+    "ro": {
+      "primary": "#002B7F",
+      "secondary": "#FCD116",
+      "tertiary": "#CE1126",
+      "accent": "#FCD116",
+      "error": "#CE1126"
+    },
+    "se": {
+      "primary": "#005293",
+      "secondary": "#FECB00",
+      "tertiary": "#005293",
+      "accent": "#FECB00",
+      "error": "#005293"
+    },
+    "ua": {
+      "primary": "#0057B7",
+      "secondary": "#FFD700",
+      "tertiary": "#0057B7",
+      "accent": "#FFD700",
+      "error": "#0057B7"
+    },
+    "in": {
+      "primary": "#FF9933",
+      "secondary": "#FFFFFF",
+      "tertiary": "#138808",
+      "accent": "#000080",
+      "error": "#FF9933"
+    },
+    "gr": {
+      "primary": "#0D5EAF",
+      "secondary": "#FFFFFF",
+      "tertiary": "#0D5EAF",
+      "accent": "#0D5EAF",
+      "error": "#0D5EAF"
+    },
+    "gh": {
+      "primary": "#CE1126",
+      "secondary": "#FCD116",
+      "tertiary": "#006B3F",
+      "accent": "#000000",
+      "error": "#CE1126"
+    },
+    "ca": {
+      "primary": "#D80621",
+      "secondary": "#FFFFFF",
+      "tertiary": "#D80621",
+      "accent": "#D80621",
+      "error": "#D80621"
+    },
+    "za": {
+      "primary": "#007749",
+      "secondary": "#000000",
+      "tertiary": "#DE3831",
+      "accent": "#FFB612",
+      "error": "#DE3831"
+    },
+    "ng": {
+      "primary": "#008753",
+      "secondary": "#FFFFFF",
+      "tertiary": "#008753",
+      "accent": "#008753",
+      "error": "#008753"
+    },
+    "th": {
+      "primary": "#A51931",
+      "secondary": "#FFFFFF",
+      "tertiary": "#2D2A4A",
+      "accent": "#2D2A4A",
+      "error": "#A51931"
+    },
+    "no": {
+      "primary": "#BA0C2F",
+      "secondary": "#FFFFFF",
+      "tertiary": "#00205B",
+      "accent": "#00205B",
+      "error": "#BA0C2F"
+    },
+    "fi": {
+      "primary": "#003580",
+      "secondary": "#FFFFFF",
+      "tertiary": "#003580",
+      "accent": "#003580",
+      "error": "#003580"
+    },
+    "ch": {
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF",
+      "tertiary": "#FF0000",
+      "accent": "#FFFFFF",
+      "error": "#FF0000"
+    },
+    "eg": {
+      "primary": "#CE1126",
+      "secondary": "#FFFFFF",
+      "tertiary": "#000000",
+      "accent": "#000000",
+      "error": "#CE1126"
+    },
+    "il": {
+      "primary": "#0038B8",
+      "secondary": "#FFFFFF",
+      "tertiary": "#0038B8",
+      "accent": "#0038B8",
+      "error": "#0038B8"
+    },
+    "ie": {
+      "primary": "#169B62",
+      "secondary": "#FFFFFF",
+      "tertiary": "#FF883E",
+      "accent": "#FF883E",
+      "error": "#169B62"
+    },
+    "hu": {
+      "primary": "#CD2A3E",
+      "secondary": "#FFFFFF",
+      "tertiary": "#436F4D",
+      "accent": "#436F4D",
+      "error": "#CD2A3E"
+    },
+    "bg": {
+      "primary": "#FFFFFF",
+      "secondary": "#00966E",
+      "tertiary": "#D62612",
+      "accent": "#00966E",
+      "error": "#D62612"
+    },
+    "lt": {
+      "primary": "#FDB913",
+      "secondary": "#006A44",
+      "tertiary": "#C1272D",
+      "accent": "#FDB913",
+      "error": "#C1272D"
+    },
+    "lv": {
+      "primary": "#9E3039",
+      "secondary": "#FFFFFF",
+      "tertiary": "#9E3039",
+      "accent": "#9E3039",
+      "error": "#9E3039"
+    },
+    "ee": {
+      "primary": "#0072CE",
+      "secondary": "#000000",
+      "tertiary": "#FFFFFF",
+      "accent": "#0072CE",
+      "error": "#000000"
+    },
+    "at": {
+      "primary": "#ED2939",
+      "secondary": "#FFFFFF",
+      "tertiary": "#ED2939",
+      "accent": "#ED2939",
+      "error": "#ED2939"
+    },
+    "co": {
+      "primary": "#FCD116",
+      "secondary": "#003893",
+      "tertiary": "#CE1126",
+      "accent": "#FCD116",
+      "error": "#CE1126"
+    },
+    "ve": {
+      "primary": "#FCD116",
+      "secondary": "#003893",
+      "tertiary": "#CE1126",
+      "accent": "#003893",
+      "error": "#CE1126"
+    },
+    "ke": {
+      "primary": "#000000",
+      "secondary": "#BB0000",
+      "tertiary": "#006600",
+      "accent": "#000000",
+      "error": "#BB0000"
+    },
+    "ma": {
+      "primary": "#C1272D",
+      "secondary": "#006233",
+      "tertiary": "#C1272D",
+      "accent": "#006233",
+      "error": "#C1272D"
+    },
+    "pk": {
+      "primary": "#01411C",
+      "secondary": "#FFFFFF",
+      "tertiary": "#01411C",
+      "accent": "#FFFFFF",
+      "error": "#01411C"
+    },
+    "rs": {
+      "primary": "#C6363C",
+      "secondary": "#0C4076",
+      "tertiary": "#FFFFFF",
+      "accent": "#0C4076",
+      "error": "#C6363C"
+    },
+    "sm": {
+      "primary": "#FFFFFF",
+      "secondary": "#5eb6e4",
+      "tertiary": "#FFFFFF",
+      "accent": "#5eb6e4",
+      "error": "#5eb6e4"
+    },
+    "id": {
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF",
+      "tertiary": "#FF0000",
+      "accent": "#FFFFFF",
+      "error": "#FF0000"
+    }, 
+"sr": {
+  "primary": "#377E3F",
+  "secondary": "#FFFFFF",
+  "tertiary": "#B40A2D",
+  "accent": "#ECC81D",
+  "error": "#B40A2D"
+}, 
+"uk": {
+  "primary": "#012169",
+  "secondary": "#FFFFFF",
+  "tertiary": "#C8102E",
+  "accent": "#C8102E",
+  "error": "#C8102E"
+}, 
+"au": {
+  "primary": "#012169",     
+  "secondary": "#FFFFFF",    
+  "tertiary": "#C8102E",     
+  "accent": "#C8102E",
+  "error": "#C8102E"
+}, 
+"nz": {
+  "primary": "#00247D",     
+  "secondary": "#FFFFFF",
+  "tertiary": "#CC142B",     
+  "accent": "#CC142B",
+  "error": "#CC142B"
+}, 
+"sa": {
+  "primary": "#006C35",
+  "secondary": "#FFFFFF",
+  "tertiary": "#006C35",
+  "accent": "#FFFFFF",
+  "error": "#006C35"
+}, 
+"mx": {
+  "primary": "#006847",
+  "secondary": "#FFFFFF",
+  "tertiary": "#CE1126",
+  "accent": "#CE1126",
+  "error": "#CE1126"
+}, 
+"do": {
+  "primary": "#002D62",
+  "secondary": "#FFFFFF",
+  "tertiary": "#F4F4F4",
+  "accent": "#CE1126",
+  "error": "#CE1126"
+}, 
+"dm": {
+  "primary": "#006B3F",     
+  "secondary": "#FCD116",   
+  "tertiary": "#FFFFFF",    
+  "accent": "#5E2A84",      
+  "error": "#000000"        
+}, 
+"kz": {
+  "primary": "#00A3DD",   
+  "secondary": "#F4C300",  
+  "tertiary": "#FFFFFF",   
+  "accent": "#F4C300",      
+  "error": "#00A3DD"        
+}, 
+"li": {
+  "primary": "#002F6C",     
+  "secondary": "#CE1126",
+  "tertiary": "#FFFFFF",  
+  "accent": "#F4C300",     
+  "error": "#CE1126"      
+}, 
+"md": {
+  "primary": "#0033A0",
+  "secondary": "#FFD100",
+  "tertiary": "#DA291C",
+  "accent": "#FFD100",
+  "error": "#DA291C"
+}, 
+"py": {
+  "primary": "#D52B1E",    
+  "secondary": "#FFFFFF",  
+  "tertiary": "#0038A8", 
+  "accent": "#FFD100",    
+  "error": "#D52B1E"       
+}, 
+"cz": {
+  "primary": "#11457E",
+  "secondary": "#FFFFFF",
+  "tertiary": "#D7141A",
+  "accent": "#D7141A",
+  "error": "#11457E"
+}, 
+"sk": {
+  "primary": "#0B4EA2",
+  "secondary": "#FFFFFF",
+  "tertiary": "#EE1C25",
+  "accent": "#EE1C25",
+  "error": "#0B4EA2"
+}
+}
+}

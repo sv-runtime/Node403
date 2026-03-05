@@ -1,0 +1,49 @@
+{
+"FIRST_NAMES": 
+    [
+    "ivan","georgi","dimitar","nikolay","stefan","maria","elena","desislava","petya","yana",
+    "angel","atanas","boris","daniel","krasimir","lubomir",
+    "martin","miroslav","plamen","radoslav","valentin","vladimir",
+    "bozhidar","emil","hristo",
+    "antonia","borislava","gabriela","kalina","kristina","milena",
+    "natalia","radostina","teodora","vanya","vesela","zornitsa"
+  ],
+
+"LAST_NAMES": 
+    [
+    "ivanov","georgiev","petrov","dimitrov","nikolov","stoyanov",
+
+    "angelov","atanasov","borisov","vassilev","velikov","vladimirov","yordanov","zhelev","zlatanov","zlatev",
+    "krastev","kristov","kristov","kolev","kostov","marinov","mihaylov","milev","minchev","mirchev",
+    "pavlov","popov","radev","radkov","radulov","raykov","rusev","simeonov","slavov","spasov",
+    "stefanov","stoimenov","todorov","trifonov","tsvetkov","tsonev","vasilev","velchev","venkov","zhivkov",
+    "zhivkov","zlatev","zhechev","abadjiev","antonov","arsov","balev","banov","barakov","belchev",
+    "benchev","bichev","bogdanov","bonev","bozhilov","bratanov","bratov","budinov","buhov","chakirov",
+    "chavdarov","chepelarev","chervenkov","chobanov","chopev","damyanov","daskalov","dimitriev","dinev","dobrev",
+    "donchev","dragiev","evgeniev","filipov","ganev","goranov","hajdov","hinkov","hristov","iliev",
+    "ilievski","karadzhov","karavelov","karamfilov","karlov","katsarov","kavaldzhiev","kirilov","kolev","kolov",
+    "kondov","kostadinov","kralev","krumov","kunev","kunev","lazarov","madenov","malinov","markov",
+    "mavrodiev","miladinov","milev","milkov","minchev","mitov","momchilov","mutafov","nakov","nedev",
+    "neikov","nikiforov","orlinov","panayotov","parvanov","penchev","petkov","petrov","poppetrov","radanov",
+    "radin","radulov","rashev","raychev","ribarov","rodev","rusev","sabov","sashov","sevov",
+    "simeonov","sinapov","slavchev","spirov","stanev","stefanov","stoichkov","stoikov","stoimenov","stratiev",
+    "tanev","todorov","tonev","trayanov","tsvetanov","tsvetkov","tsvetomirov","valchev","vangelov","vitanov",
+    "yanev","zahariev","zdravkov","zhivkov","zlatkov"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonsofia","cryptobalkan","stormvarna","pixelthrace","gridbulgaria",
+  "neonplovdiv","cryptodunav","stormburgas","pixelbalkan",
+  "urbanbulgar","datathrace","shadowrose","bytesofia",
+  "midnightbalkan","gridbg",
+  "sofia_404","balkan.byte","varna_x","plovdiv.exe","thrace_night",
+  "bg_shadow","dunav.dev","grid359","stormbg99","rose_x","pixelbulgar",
+
+  "sofiavecher","balkanduh","dunavsvetlo",
+  "plovdivnosht","rodopizvuk","varnavetar",
+  "bulgarskosarce","trakiyskaluna","sofiapuls",
+  "balkanvecher","dunavnosht","rozovdah",
+  "plovdivsvetlo","varnapuls","rodopivetar"
+]
+}

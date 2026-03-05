@@ -1,0 +1,67 @@
+{
+"FIRST_NAMES": 
+    [
+    "mart","kristjan","jaan","ragnar","tarmo","liis","marie","kadi","anneli","liina",
+    "ander","henri","kaarel","mikk","priit","rauno",
+    "siim","taavi","urmas","veiko","vill","erki",
+    "annika","eliise","helen","kerli","liisa","merili",
+    "reet","sirli","triin","mariliis","kristi","agne"
+  ],
+
+"LAST_NAMES": 
+    [
+    "tamm","saar","kask","ilves","lepik",
+    "mets","paju","koppel","soom","raud","kivi","kallas","laur","tammela",
+    "rees","toom","tammepuu","reiman","kuusk","pold","sepp","talu","uibo",
+    "vahi","vaher","vahtra","voogla","veer","jaakson","jarv","jarvsoo",
+    "jorens","kaasik","kadarik","kald","kangur","karu","keel","kivi","koger",
+    "koit","koppel","korjus","kruus","kukk","kurvits","laane","leemet",
+    "liiv","luik","maa","mae","maiste","metsla","metsalu","mikk","muru",
+    "nael","nolvak","nurm","oja","oks","palu","pank","parn","parnpuu",
+    "parve","paul","pihel","piir","pihl","poldmaa","pork","priilinn",
+    "rand","raudsepp","reiljan","roos","roosipuu","roost","ruus","salm",
+    "sander","sarapuu","seeman","sild","silva","soosaar","soo","suvi",
+    "teder","tikas","toots","toomla","torn","truus","tsirk","uustal",
+    "valk","vask","viks","vill","vokk","volk","vorst","zirk"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neontallinn","datatartu","pixelnarva","cryptoeesti",
+  "stormsaaremaa","urbanparnu","shadowlaane",
+  "bytehiiumaa","gridestonia","midnighttallinn",
+  "cyberjarv","nocturnebaltic","neonviljandi",
+  "cryptosoomaa","stormida",
+  "pixelparnu","dataviru","shadowalutaguse",
+
+  "balticcore","tallinnnight","frostflare",
+  "jarvpulse","tartugrid","narvastorm",
+  "laaneengine","soomaacode","eestibyte",
+  "saaremaashadow","baltmatrix","tallinnwave",
+
+  "metsavari","kylmvind","pohjatuul",
+  "raudflare","huntshadow","taevatorm",
+  "soovalgus","jarvghost","eestiengine",
+  "baltforge","tallinnghost",
+
+  "raudbyte","jarvmatrix","saaremaapulse",
+  "tartuwave","narvaengine","eestivector",
+  "balticghost","viruvortex","laaneflare",
+  "hiiumaacode","parnupulse","tallinnunderground",
+
+  "eestisignal","baltshadow","metsacipher",
+  "frostmatrix","huntengine","balticflare",
+  "taevamatrix","tallinnvector","tartughost",
+  "narvaforge","saaremaacore","laanevibe",
+
+  "eestilight","tallinnhaze","baltstorm",
+  "jarvnight","taevavortex","froststorm",
+  "tallinnphantom","balticnexus","tartucipher",
+  "narvashadow",
+
+  "pohjanexus","kylmengine","metsastorm",
+  "soovector","raudspark","tallinnpulse",
+  "jarvforge","hiiumaaghost","borealeesti",
+  "neonjarv","cryptomets","stormkivi"
+]
+}

@@ -1,0 +1,42 @@
+{
+"FIRST_NAMES": 
+    [
+    "alessandro","andrea","marco","matteo","luca","lorenzo","giovanni","francesco",
+    "sofia","giulia","chiara","martina","elena","valentina","laura","alessia",
+
+    "antonio","carlo","daniele","davide","emanuele","federico",
+    "gabriele","giacomo","leonardo","manuel","massimo",
+    "nicola","paolo","riccardo","roberto","salvatore",
+    "simone","stefano","tommaso","vincenzo",
+
+    "alessandra","anna","beatrice","camilla","caterina",
+    "cristina","daniela","elisa","federica","francesca",
+    "gaia","ilaria","lucia","maria","noemi",
+    "paola","serena","silvia","teresa","veronica"
+  ],
+
+"LAST_NAMES": 
+    [
+    "rossi","bianchi","ferrari","esposito","romano","colombo","ricci","marino",
+    "greco","bruno","gallo","conti","deluca","mancini","lombardi","moretti",
+
+    "barbieri","fontana","santoro","mariani","rinaldi","caruso","ferrara","martini","leone","longo",
+    "gentile","martino","vitale","serra","messina","parisi","bellini","pellegrini","palumbo","farina",
+    "riva","monti","grassi","testa","fabbri","fiore","amato","silvestri","bernardi","caputo",
+    "donati","marchetti","marini","vitali","ferretti","gatti","orlando","negri","pellegrino","ferro",
+    "mazza","carbone","ruggiero","ferraro","sala","grimaldi","leoni","sarti","guerra","pagani",
+    "mantovani","basile","nardi","corsi","coppola","costantini","giordani","valentini","piras","moro",
+    "bianco","castelli","molinari","zanetti","giannini","catalano","pugliese","venturi","mazzoni","parodi",
+    "battaglia","graziani","cavalli","mancuso","zanini","poli","marzano","gori","berti","fazio",
+    "nobile","serafini","pagano","giuliano","cirillo","delfino","damiani","giacobbe","lucchesi","conte",
+    "palermo","cannavaro","bologna","lanza","nicolini","forte","romani","zaccaria","mazzini","petrone",
+    "battisti","valle","zito","longhi","parente","bellomo","mazzeo","pastore","leonardi","carfora",
+    "maddaloni","fiorini","giusti","marra","spadaro","guerrieri","cavallo","palma"
+  ],
+
+"WEIRD_NAMES":
+    [
+      "titanostorm","neonmonte","gridtitana","byteguaita","shadowcesta","pixelmontale",
+      "sanmarino404","titanwave","repubblicabyte","midnighttitana","cryptotitano","urbansanmarino"
+    ]
+}

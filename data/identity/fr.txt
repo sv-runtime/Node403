@@ -1,0 +1,103 @@
+{
+"FIRST_NAMES": 
+    [
+  "antoine","benoit","camille","charles","david",
+  "emilie","francois","gabriel","julien","laurent",
+  "luc","marie","nicolas","paul","pierre",
+  "sophie","thomas","victor","zoe",
+
+  "adrien","alain","alexandre","arnaud","arthur",
+  "baptiste","bernard","cedric","christophe","clement",
+  "damien","daniel","denis","dominique","edouard",
+  "eric","etienne","fabien","florian","frederic",
+  "gerard","guillaume","henri","hugo","jacques",
+  "jean","jerome","kevin","leo","loic",
+  "louis","lucas","mathieu","maxime","michel",
+  "olivier","pascal","philippe","quentin","raphael",
+  "sebastien","sebastien","stephane","theo","vincent",
+  "yann","yves",
+
+  "adele","amelie","anais","audrey","aurelie",
+  "beatrice","caroline","celine","charlotte","chloe",
+  "claire","coralie","delphine","elise","estelle",
+  "eva","florence","helene","isabelle","jade",
+  "jeanne","julie","laetitia","lea","lena",
+  "louise","lucie","manon","marion","melanie",
+  "nathalie","oceane","pauline","romane","salome",
+  "sandrine","sarah","valerie","veronique","victoria"
+],
+
+"LAST_NAMES": 
+    [
+    "dupont","durand","moreau","laurent","lefevre",
+    "martin","bernard","dubois","thomas","robert",
+    "richard","petit","garcia","roux","vincent",
+    "michel","leroy","riviere","dufour","girard",
+    "andre","mercier","blanc","guerin","boyer",
+    "garnier","chevalier","francois","legrand","gauthier",
+    "pierre","rousseau","vincent","muller","henry",
+    "renard","leclerc","marchand","duval","noel",
+    "meunier","brun","lemaire","colin","perrin",
+    "masson","schmitt","roy","louis","moulin",
+    "faure","boucher","lecomte","martinez","rodriguez",
+    "fernandez","guillaume","lambert","bonnet","francois",
+    "martel","gerard","perrot","rolland","barbier",
+    "monnier","chevalier","prevost","bourgeois","carpentier",
+    "lemoine","dupuy","leclercq","picard","roger",
+    "collet","lacroix","brunet","gaillard","leger",
+    "giraud","lebrun","raymond","aubert","marie",
+    "blanchard","jacquet","ollivier","poulain","vallee",
+    "morin","dumas","lejeune","baudry","fleury",
+    "clement","renaud","berthelot","maillard","philippe",
+    "jacques","renaud","lefebvre","charles","fournier"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neonparis","databastille","pixellyon","cryptogaulois","stormprovence",
+  "urbanriviera","shadowseine","byteversailles","gridmarseille",
+  "midnightlouvre","cybernapoleon","nocturnemontmartre",
+  "neonmarais","cryptogaulle","stormnormandie",
+  "pixelbordeaux","datamontmartre","shadowcorsica",
+
+  "hexagonecore","parisnuit","rivierasoleil","normandiestorm",
+  "bastilleombre","marseillenight","seinewave",
+  "lyonshadow","gauloisflare","corsicacode",
+  "republiquegrid","louvrebyte","provencevent",
+  "montmartrewave","franceombre","sudnexus",
+
+  "nuitparisienne","loupsauvage","ventdusud",
+  "amefrancaise","coeurdelion","ombreurbaine",
+  "soleilprovence","citoyenparis","espritgaulois",
+  "marseillaisnocturne","ventdelaseine",
+  "flammedesud","cielnormand","rivagedazur",
+  "montagnedesalpes","amecorsaire",
+  "voixdelhexagone","sudprofond",
+  "pariscentre","coeurdelarepublique",
+  "ombrebastille","vivrefrance",
+
+  "lumiereurbaine","noirhexagone","seinenocturne",
+  "parisphantom","ombrealpine","cyberversailles",
+  "datamarseille","pixelrennes","stormtoulouse",
+  "neonnantes","cryptolille","shadowalsace",
+  "bytebourgogne","gridavignon","midnightcorsaire",
+  "rivieranexus","gauloisshadow","hexflare",
+  "tricolorepulse","bordeauxcipher","lyonnexus",
+  "maraisphantom","sorbonnestorm","latinquarterbyte",
+  "eiffelnight","montblanccode","provencehaze",
+  "corsicaflare","parisrebelle","bastillepulse",
+  "ventdeloire","loireghost","normandiebyte",
+  "strasbourgsignal","nicewave","cotedazurstorm",
+  "urbanhexagone","francenocturne","gauloisvector",
+  "espritrebelle","ombretricolore","datadegaulle",
+  "napoleoncipher","citoyennexus","marseillaispulse",
+  "nuitrebelle","bleublancstorm","rougevector",
+  "parisunderground","noirprovence","soleilnoir",
+  "montmartreshade","versaillecore","hexshadow",
+  "republiquenoire","alpesdigital","pyreneesbyte",
+  "ventatlantique","bretagneghost","rennesstorm",
+  "bourgognepulse","alsaceflare","francevector",
+  "ombreimperiale","empirebyte","revolutiongrid",
+  "libertecipher","egaliteengine","fraterniteflux"
+]
+}

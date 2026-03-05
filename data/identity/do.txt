@@ -1,0 +1,35 @@
+{
+  "FIRST_NAMES":
+  [
+    "juan","josé","luis","carlos","miguel","ángel","alejandro","daniel","fernando","ricardo",
+    "eduardo","manuel","antonio","jesús","francisco","roberto","david","javier","sergio","diego",
+    "andrés","raúl","óscar","adrián","jorge","alberto","emilio","marco","esteban","héctor",
+    "rafael","ramón","wilson","víctor","orlando","pedro","enrique","ismael","samuel","leonardo",
+
+    "maría","ana","sofía","valeria","camila","fernanda","isabella","mariana","ximena","renata",
+    "lucía","paulina","daniela","gabriela","andrea","elena","karla","alejandra","carla","patricia",
+    "rosa","laura","verónica","silvia","mónica","adriana","natalia","sandra","irene","yolanda",
+    "carolina","estefanía","melissa","claribel","yadira","aracelis","nayeli","yamile","dalisa","noelia"
+  ],
+
+  "LAST_NAMES":
+  [
+    "rodríguez","martínez","garcía","pérez","gonzález","ramírez","sánchez","cruz","flores","gómez",
+    "reyes","torres","díaz","castillo","jiménez","morales","herrera","medina","rivera","ortiz",
+    "vásquez","almonte","de jesús","rosario","pichardo","peralta","taveras","valdez","abreu","cuevas",
+    "báez","montilla","espinal","frías","mateo","de la cruz","fermín","soriano","lora","tejada",
+    "polanco","ventura","mármol","aquino","encarnación","santana","familia","ogando","severino","guzmán"
+  ],
+
+  "WEIRD_NAMES":
+  [
+    "neónsanto","códecáribe","islaquántum","trópicoByte","merenguemátrix",
+    "bachatáflux","queyasínc","cibaoengine","caribeñonode","atardecercífer",
+    "palmaséñal","malecónghost","datacáribe","tormentaqueyana","pixelantillas",
+    "azulcaríbe","coralvéctor","solmátrixdo","santodomingoX","isladériva",
+    "caríbevórtex","trópicocode","cocobyte","marengine","queyaforge",
+    "neóncaribe","palmaluz","islacore","bachatáshadow","merenguepulse",
+    "cibaobyte","antillassync","solflareDO","coralghost","trópiconode",
+    "caribeflux","queyacífer","malecónpulse","datatrópico","islastorm"
+  ]
+}

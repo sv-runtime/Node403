@@ -1,0 +1,55 @@
+{
+"FIRST_NAMES": 
+    [
+    "juan","santiago","andres","sebastian","mateo","valentina","camila","isabella","mariana","sofia",
+    "alejandro","carlos","daniel","diego","felipe","gabriel",
+    "juanpablo","kevin","luis","manuel","nicolas","oscar",
+    "samuel","tomas","david","andrea","daniela","laura",
+    "luisa","manuela","paula","valeria","ximena","karla"
+  ],
+
+"LAST_NAMES": 
+    [
+    "rodriguez","gomez","martinez","lopez","garcia",
+    "hernandez","perez","sanchez","ramirez","torres","flores","rivera",
+    "morales","jimenez","castro","ortiz","vargas","castillo","ruiz",
+    "romero","suarez","mendoza","gutierrez","arias","cardenas",
+    "valencia","salazar","rojas","aguilar","pena","velez","herrera",
+    "marin","silva","reyes","parra","navarro","rios","guzman",
+    "trujillo","avila","montoya","mejia","restrepo","pardo",
+    "cortes","serrano","ospina","zamora","molina","acosta",
+    "calderon","cabrera","escobar","franco","alvarez","bautista",
+    "benitez","bernal","camacho","campo","cano","carvajal",
+    "correa","delgado","duarte","espinosa","fajardo","figueroa",
+    "fonseca","gallego","gil","granados","guerrero","jaramillo",
+    "leon","maldonado","montero","montes","moreno","munoz",
+    "nieto","nunez","patiÃ±o","quintero","ramiro","rendon",
+    "salas","santana","solano","tamayo","toro","uribe",
+    "vallejo","velasco","vera","villalba","zapata"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neonandes","datacartagena","pixelbogota",
+  "cryptocaribe","stormmedellin","urbancali",
+  "shadowguajira","byteamazonas","gridcolombia",
+  "neonbarranquilla","midnightmagdalena",
+  "cafesombra","andescipher",
+  "bogotanocturna","selvaroja",
+  "paramoviento","pacificoluz",
+  "caribeblue","paisaengine",
+  "cumbianight","vallenatostorm",
+  "cartagenahaze","nocheandina",
+  "arcoirisurbano","selvacyber",
+  "neonsantamarta","borealtropical",
+
+  "cryptocordillera","pixelpalenque","datatropico",
+  "stormquetzal","byteorquidea","shadowcondor",
+  "digitalarepa","neonguaviare","urbanchoco",
+  "magdalenabyte","andesghost",
+  "cafedigital","cumbiacode",
+  "cryptollanero","pixelantioquia",
+  "stormvalle","neonmeta",
+  "oroinca","selvafantasma"
+]
+}

@@ -1,0 +1,39 @@
+{
+"FIRST_NAMES": 
+[
+"oliver","jack","noah","leo","william","henry","charlie","theo","george","arthur",
+"liam","elijah","james","samuel","hudson","isaac","max","connor","blake","ryan",
+"ethan","caleb","xavier","mitchell","luca","harry","ben","jayden","alex","cameron",
+
+"amelia","olivia","isla","ava","charlotte","mia","ella","harper","ruby","sophie",
+"grace","emily","willow","freya","eva","hannah","lucy","zoe","millie","arabella",
+"chloe","matilda","lily","scarlett","ellie","madison","layla","savannah","georgia","poppy",
+
+"aria","manaia","tama","wiremu","ane","maia","rangi","ariana","kaia","rawiri",
+"tane","marama","hana","mikaere","ari","nikau","moana","ataahua","kai","tegan"
+],
+
+"LAST_NAMES": 
+   [
+"smith","wilson","brown","taylor","anderson","thompson","clark","walker","young","king",
+"wright","hall","allen","scott","green","adams","campbell","bell","cooper","bailey",
+"collins","edwards","morris","rogers","cook","reed","hughes","price","kennedy","roberts",
+"murphy","kelly","ryan","o'connor","fisher","marshall","foster","gray","patterson","griffiths",
+
+"ngata","te ao","whitiora","rangihuna","kaahu","matenga","williams","kahu","manuera",
+"tawhiri","parata","waaka","tukaki","kaihau","mahana","piripi","rahiri","rangi",
+"te kahu","whaitiri"
+],
+
+"WEIRD_NAMES":
+[
+"kiwicode","neonauckland","wellingtonflux","southislandcore","northnode",
+"hobbitmatrix","southernalpsbyte","pacificdrift","kiwivector","aotearoasync",
+"coralforge","volcanoshadow","fjordnet","milfordpulse","rangicore",
+"kauricode","pacificghost","southerncrossnz","kiwioverride","islandcipher",
+"wellingtonnode","aucklandshift","alpineengine","kiwistream","oceaniasync",
+"mountcookmatrix","taranakivector","aotearoalink","southernpulse","kiwinight",
+"pacificcore","islandforge","kiwivortex","rangishadow","hobbitflux",
+"alpineghostnz","volcanobyte","kiwiprotocol","southernengine","islanddrift"
+]
+}

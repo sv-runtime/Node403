@@ -1,0 +1,62 @@
+{
+"FIRST_NAMES": 
+    [
+    "brian","daniel","kevin","samuel","patrick","faith","grace","joy","mercy","esther",
+    "james","john","peter","george","michael","dennis",
+    "emmanuel","eric","francis","joseph","kennedy","moses",
+    "philip","samson","stephen","victor",
+    "agnes","ann","caroline","edith","hannah","janet",
+    "lilian","mary","monica","ruth","susan","veronica"
+  ],
+
+"LAST_NAMES": 
+    [
+    "odhiambo","mutua","kamau","njuguna","mwangi",
+    "otieno","okoth","ochieng","onyango","owino","akoth","achola","adongo","agena","agutu",
+    "ajwang","ambani","arasa","atieno","awino","barasa","biko","chebet","chege","cheruiyot",
+    "chirchir","chumba","gichuru","gikonyo","githinji","githae","githuka","githongo","githua","githure",
+    "kabiru","kagwe","kahindi","kamotho","kanini","karanja","kariuki","kibet","kigen","kipchoge",
+    "kipketer","kipkorir","kiplangat","kiplimo","kiprono","kiptum","kiptoo","kiragu","kirimi","kirui",
+    "kioko","kitheka","koech","korir","kosgei","kungu","kwambai","maingi","makori","makori",
+    "mambo","mbogo","mburu","mbugua","mbuthia","michira","mohamed","muiruri","muli","murage",
+    "murithi","musa","musyoka","mwanzia","mwende","mweresa","mwesigwa","mwigwi","mwinzi","mwithiga",
+    "nabwire","naliaka","namusoke","ndegwa","ndolo","ndungu","njoroge","nyaga","nyambura","nyangau",
+    "nyongesa","nyoro","odede","ogola","okello","omar","osoro","otieno","owiti","wambua",
+    "wanjiku","wangari","wanyoike","wanyonyi","warui","wasike","waweru","wesonga","wokabi","yego"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neonnairobi","datamombasa","pixelkisumu","cryptokenya",
+  "stormriftvalley","urbaneldoret","shadowsavanna",
+  "bytekilimanjaro","gridnairobicity","midnightmara",
+  "cybersimba","nocturnevictoria","neonlamu",
+  "cryptotsavo","stormnakuru",
+  "pixelnaivasha","datagarissa","shadowturkana",
+
+  "savannacore","nairobynight","equatorflare",
+  "marapulse","mombasagrid","kisumustorm",
+  "riftengine","victoriacode","kenyabyte",
+  "simbaecho","safarishadow","acaciavector",
+
+  "mwangaengine","upepovortex","juastorm",
+  "simbaflare","nyotabyte","maraquest",
+  "uhurucore","tropcipher","savannablaze",
+  "acaciaghost","karibupulse","safarimatrix",
+
+  "riftcipher","victoriaghost","lamuwave",
+  "nakurupulse","nairobioverride","tropicalmatrix",
+  "tsavostorm","turkanaflare","eldoretcipher",
+  "garissavector","mombasashadow","coastvibe",
+
+  "equatorvortex","simbanexus","savannacyber",
+  "uhurustorm","karibuflare","nyotasignal",
+  "victoriacode","nakurughost","tropforge",
+  "nairobiphantom","riftpulse","acaciacore",
+
+  "neonsavanna","datakenya","pixelmara",
+  "stormnairobix","urbansafari","shadowmombasa",
+  "byterift","griduhurux","tropicalghost",
+  "kenyaflare","safarimatrix","simbaengine"
+]
+}

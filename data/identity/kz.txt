@@ -1,0 +1,28 @@
+{
+  "FIRST_NAMES":
+  [
+    "алихан","нұрсұлтан","ернар","даурен","темірлан","арман","ислам","мұрат","айдар","ербол",
+    "бекзат","жанболат","руслан","асқар","самат","серік","тимур","диас","марат","олас",
+
+    "айгерім","динара","айжан","мадина","томирис","айсұлу","жансая","назерке","дана","алия",
+    "жанар","камилла","меруерт","айдана","салтанат","раушан","айша","гүлмира","жұлдыз","индира"
+  ],
+
+  "LAST_NAMES":
+  [
+    "нұрсұлтанов","әлиев","ахметов","жұмабаев","қасымов","сапарбаев","мұхамедов","бекенов",
+    "исабеков","сәдуақасов","ерғалиев","жақыпов","омаров","қалиев","мырзахметов",
+    "алиев","ахметов","кузнецов","иванов","смирнов","петров","сергеев","волков",
+    "исмаилов","абдрахманов","турсынов","сейітов","нұрпейісов","жақсылықов"
+  ],
+
+  "WEIRD_NAMES":
+  [
+    "neonalmaty","steppeflux","turansync","altaiquantum","baikonode",
+    "astanacipher","goldeneagleX","nomadmatrix","steppevortex","tengriforge",
+    "khanbyte","turquoisegrid","silkroadcore","caspianpulse","nomadengine",
+    "neonastana","steppecode","eagleoverride","turanshadow","kazakhstorm",
+    "nomadghost","turquoiseflux","altaiwave","steppebyte","turanvector",
+    "baikonurshift","almatyoverride","silkroadnode","goldensteppe","eaglecipher"
+  ]
+}

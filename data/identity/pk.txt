@@ -1,0 +1,60 @@
+{
+    "FIRST_NAMES":
+[
+  "محمد","علی","احمد","عمر","حمزہ","بلال","حسن","حسین","عبداللہ","زین",
+  "فیصل","یاسر","سلمان","عادل","کامران","فہد","نعمان","ارسلان","عثمان","طارق",
+  "رضوان","دانش","شہزاد","وقاص","سعید","محمود","آصف","ساجد","نوید","شاہد",
+  "راشد","جواد","یوسف","ایاز","شعیب","امیر","فراز","حارث","ندیم","تیمور",
+
+  "فاطمہ","عائشہ","مریم","زینب","حنا","نور","آمنہ","علیزہ","عائشہ","ثنا",
+  "سارہ","ماہ نور","اقراء","عروج","کائنات","انعم","سدرہ","عائشہ","رابعہ","حمیرا",
+  "عالیہ","نادیہ","مہرین","عفرا","شازیہ","عائشہ","ارم","صبا","حرا","نائمہ",
+  "نوشین","عالیہ","رومیسہ","مومنہ","فائزہ","انوشہ","ثریا","عطیہ","ماریہ","روبینہ"
+],
+
+    "LAST_NAMES":
+[
+  "خان","چوہدری","شیخ","سید","ملک","راجپوت","بھٹی","رانا","قریشی","انصاری",
+  "عباسی","فاروقی","صدیقی","عثمانی","حسینی","رضوی","نقوی","کاظمی","بخاری","جعفری",
+  "مغل","اعوان","گجر","بلوچ","پٹھان","یوسفزئی","درانی","لودھی","خٹک","مروت",
+  "سواتی","تنولی","کاکڑ","بنگش","تریں","شاہ","سولنگی","میمن","جتوئی","ملاح",
+  "جٹ","چانڈیو","مہر","کوری","سومرو","لاڑک","ڈاہری","لغاری","بروہی","جمالی",
+  "چیمہ","گوندل","ورک","سندھو","گِل","باجوہ","گجرات","بھنگو","پرویز","نواز",
+  "اکبر","حیدر","حبیب","اشرف","امین","کریمی","الوی","بٹ","ڈار","لون",
+  "میر","صالح","طارڑ","سیال","کھوکھر","کلس","بھنڈر","اوکاڑہ","مسرور","زمان"
+],
+
+"WEIRD_NAMES":
+[
+  "neonkarachi","datalahore","pixelislamabad","cryptopakistan",
+  "stormpeshawar","urbanquetta","shadowindus",
+  "bytehimalaya","gridpak","midnightkarachi",
+  "cyberpunjab","nocturnesindh","neonkashmir",
+  "cryptokhyber","stormbalochistan",
+  "pixelmultan","datagwadar","shadowhunza",
+
+  "induscore","karachinight","lahoreflare",
+  "himalayapulse","punjabgrid","sindhstorm",
+  "khyberengine","hunzacode","pakbyte",
+  "desertthar","crescentshadow","greennexus",
+
+  "لالطوفان","راتکراچی","سایہلاہور",
+  "برقپنجاب","ہمالیہسایہ","وادیہنزہ",
+  "طوفانکراچی","سبزنور","دریائےسندھ",
+  "چاندپاکستان","شاہینفلیر",
+
+  "shaheenstorm","crescentcipher","greenghost",
+  "pakphantom","lahorepulse","karachivector",
+  "islamabadforge","khybervortex","sindhflare",
+  "punjabshadow","gwadarwave","hunzacyber",
+
+  "desertvortex","indusmatrix","shaheensignal",
+  "crescentcore","pakistanx","neonindus",
+  "cryptolal","stormpak","urbanlahori",
+  "karachiunderground","himalayanexus","pakcipher",
+
+  "lahoreengine","khyberghost","sindhbyte",
+  "punjabforge","gwadarstorm","hunzashadow",
+  "crescentmatrix","shaheencode","pakpulse"
+]
+}

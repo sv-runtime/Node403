@@ -1,0 +1,82 @@
+{
+"FIRST_NAMES": 
+    [
+  "alexandros","andreas","christos","dimitris","georgios",
+  "giannis","kostas","manolis","nikos","panagiotis",
+  "stavros","thanasis","vasilis","zois","anastasia",
+  "angeliki","eleni","irini","katerina","maria",
+  "nikoletta","sofia","theodora","vicky",
+
+  "achilleas","adonis","aggelos","anastasios","argyris",
+  "aris","athanasios","charalampos","constantinos","cyriakos",
+  "efthymios","eleftherios","evangelos","filippos","grigoris",
+  "haralambos","ioannis","kyriakos","leonidas","michalis",
+  "minas","odysseas","orestis","petros","spyridon",
+  "takis","themistoklis","vasileios","xenofon","yiannis","zacharias",
+
+  "agapi","alexandra","anthoula","chara","despina",
+  "efrosini","eirini","elektra","evangelia","fotini",
+  "georgia","ioanna","irene","kalliope","konstantina",
+  "kyriaki","lambrini","margarita","marilena","nikoleta",
+  "ourania","paraskevi","rina","stavroula","vasiliki",
+  "xenia","zoi"
+],
+
+"LAST_NAMES": 
+    [
+    "papadopoulos","nikolaou","georgiou","papadakis","dimitriou",
+    "papadimitriou","ioannou","christodoulou","panagiotopoulos",
+    "vassiliou","konstantinou","athanasiou","katsaros",
+    "stefanidis","pappas","manolis","kouris","angelopoulos",
+    "spyropoulos","karagiannis","makris","tsakalos",
+    "liakos","papageorgiou","theodorou","zervos",
+
+    "alexiou","andreadis","argyropoulos","christou","economou",
+    "evangelou","georgiadis","giannopoulos","hatzis","hatzopoulos",
+    "ioannidis","karalis","karamanlis","karras","katsavounidis",
+    "katsikas","katsoulis","koliopoulos","koutroubis","kyriazis",
+    "lampropoulos","lazaridis","leontiou","mavridis","mavros",
+    "mitropoulos","nikolopoulos","oikonomou","papathanasiou",
+    "papakonstantinou","papandreou","papas","petropoulos",
+    "stathopoulos","stavridis","tsikouras","tsitsipas",
+    "vasiliadis","voulgaris","zacharopoulos"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neonathens","datathessaloniki","pixelsparta","cryptoolympus",
+  "stormaegean","urbancrete","shadowparthenon","bytehellas",
+  "gridmykonos","midnightdelphi","cyberachilles","nocturneathina",
+  "neonsantorini","cryptozeus","stormrhodes",
+  "pixelolympia","datakorinthos","shadowcrete",
+
+  "aegeanwave","hellascore","olympusflare","spartastorm",
+  "parthenonpulse","athensnuit","mythicgrid",
+  "thessalonikishadow","zeusvector","cretacode",
+  "hellenicbyte","olympusengine","aegeannexus",
+  "mykonosghost","hellasstorm","athenianpulse",
+
+  "νυχτααθηνα","σκιαολυμπος","κυματααιγαιο",
+  "θεοςδικτυο","αστρααστικο","σκιασπαρτη",
+  "φωςκρητη","ανεμοςαιγαιο","σκιαπαρθενωνας",
+  "μυθοςψηφιακος","ολυμποςνυχτα","αιγαιοstorm",
+  "κυβερνοθεος","σκιεςελλαδα","φλογαολυμπου",
+
+  "achillescipher","zeusprotocol","hadesghost",
+  "poseidonbyte","athenaflare","hermesengine",
+  "aresvector","artemisgrid","apollonexus",
+  "dionysusstorm","spartancode","aegeanshadow",
+  "hellasphantom","cretecipher","olympussignal",
+
+  "παρθενωναςbyte","σπαρτηgrid","θεσσαλονικηpulse",
+  "αθηναflux","ολυμπιαghost","αιγαιοwave",
+  "σκιαθεος","μυθοςvector","κυματαdigital",
+  "αστραhellas","ανεμοςbyte","φωςstorm",
+
+  "hellenicflare","aegeancyber","athensmatrix",
+  "olympusmatrix","spartaforge","mythforge",
+  "hellasengine","athenashadow","aegeanpulse",
+  "cretevortex","olympusvibe","zeusflare",
+  "poseidonstorm","hadesmatrix","achillesgrid"
+]
+}

@@ -1,0 +1,29 @@
+{
+  "FIRST_NAMES":
+  [
+    "lukas","felix","maximilian","jonas","david","alexander","benjamin","christoph",
+    "dominik","florian","jakob","leon","manuel","moritz","philipp","sebastian",
+    "thomas","valentin","viktor","noah","samuel","matthias","michael","stefan",
+
+    "anna","lena","julia","sophie","laura","amelie","carina","eva","hannah",
+    "isabella","katharina","leonie","magdalena","maria","paulina","sarah",
+    "theresa","clara","nina","vanessa","elena","alina","miriam","lisa"
+  ],
+
+  "LAST_NAMES":
+  [
+    "büchel","frommelt","marxer","beck","wohlwend","hasler","walser","meier",
+    "ritter","oser","gassner","lampert","kindle","vogt","quaderer",
+    "hilti","frick","jörger","schädler","risch","konrad","bühler",
+    "kaufmann","geiger","keller","ritter","schmid","walch","thöny"
+  ],
+
+  "WEIRD_NAMES":
+  [
+    "neonvaduz","alpineflux","rheinbyte","fürstcipher","bergmatrix",
+    "lichtenforge","vaduzcore","alpenvortex","rhinepulse","microstateX",
+    "schlossgrid","fürstengine","alpenoverride","rheinquantum","lichtenwave",
+    "vaduzghost","bergcipher","alpinecode","lichtenstorm","microbyte",
+    "rheinvector","alpenglow","neonlichten","fürstshift","vaduznode"
+  ]
+}

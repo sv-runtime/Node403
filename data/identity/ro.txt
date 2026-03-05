@@ -1,0 +1,62 @@
+{
+"FIRST_NAMES": 
+    [
+      "alexandru","andrei","bogdan","claudiu","cristian",
+      "daniel","dragos","florin","gabriel","ion",
+      "mihai","ovidiu","paul","radu","stefan",
+      "valentin","vasile","victor","adrian","calin",
+      "ciprian","costin","darius","emil","horia",
+      "iulian","laurentiu","liviu","marian","marius",
+      "nicolae","rares","serban","sorin","tudor",
+      "viorel","vlad","alex","alin","cosmin",
+
+      "adriana","alexandra","anca","andreea","bianca",
+      "camelia","cristina","diana","elena","florina",
+      "gabriela","georgiana","ioana","irina","laura",
+      "madalina","maria","mihaela","nicoleta","oana",
+      "paula","ramona","simona","teodora","valentina",
+      "veronica","andreea","aurora","corina","denisa",
+      "ileana","lavinia","lorena","monica","sabina",
+      "sorana","stefania","roxana","raluca","viorica"
+    ],
+
+"LAST_NAMES": 
+    [
+    "popescu","ionescu","popa","stan","dumitrescu","georgescu",
+    "pop","stancu","marin","voicu","dinu","morar",
+    "ilie","andrei","stoica","mihai","radu","tudor",
+    "moldovan","vlad","constantin","badea","serban",
+    "manole","dragomir","sandulescu","nea","costache",
+
+    "adam","albu","alexandru","anghel","arion","baciu","barbu","bistriceanu","boerescu","bogdan",
+    "boian","bratu","bucur","busuioc","butnaru","calin","calinescu","campian","cantemir","capraru",
+    "caragea","cazacu","ciobanu","ciobotea","ciocan","cioran","cirstea","clapa","cocan","coman",
+    "copil","costea","creanga","crisan","cristea","cristescu","dancu","danescu","danila","dobre",
+    "dobrin","dogaru","dorobantu","dragan","draghici","duda","dumitru","enea","filip","florescu",
+    "frunza","gheorghe","gheorghiu","ghinea","ghita","gliga","goga","golescu","grigorescu","groza",
+    "horia","ionescu","ionita","ionescu","ivan","jitaru","lazar","lazarescu","lupu","marinescu",
+    "marcu","marius","matei","mateescu","maxim","mihalache","mihnea","mitrea","mocanu","moise",
+    "morar","morar","muntean","munteanu","nastase","neagu","nicolae","nicu","oltean","oprea",
+    "paun","petrescu","petre","petrache","petrisor","popovici","popov","popoviciu","prunaru","radulescu",
+    "raducanu","raicu","rares","rizea","roman","rotaru","rosu","sandru","sava","simion",
+    "soare","stoian","stroe","suciu","surd","tanasie","tanase","toader","toma","tomescu",
+    "topa","turcu","ungureanu","valean","vasilescu","vasiliu","velicu","verdes","voinea","zamfir",
+    "zarnescu","zavoi","zincu","zorila","zota"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "neoncarpathian","datadracula","pixelbucharest",
+    "stormtransyl","cryptowolfro","urbanvalahia",
+    "shadowdanube","bytecarol","gridromania",
+    "neonvalachia","midnightcarpath",
+
+    "noaptecarpati","lupuliber","umbradunare",
+    "focbucuresti","romaniadus","carpatinord",
+    "transilvaniavie","valahiasud","stejarroman",
+    "dacianochte","brasovnoapte","clujvibe",
+    "codrucarpatin","sangevalah","munteniavibe",
+    "dunarealbastra","timisoaranight",
+    "carpatiumbra","romaniavie"
+  ]
+}

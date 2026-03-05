@@ -1,0 +1,78 @@
+{
+"FIRST_NAMES":
+[
+  "afonso","alexandre","andre","antonio","bernardo","bruno","carlos",
+  "diogo","duarte","eduardo","felipe","fernando","francisco",
+  "goncalo","henrique","joao","jorge","jose","leandro",
+  "lourenco","luis","manuel","miguel","nuno","paulo",
+  "pedro","rafael","ricardo","rodrigo","rui","salvador",
+  "simao","tiago","tomás","vasco","vitor",
+
+  "adelina","alexandra","ana","beatriz","carla","catarina",
+  "claudia","daniela","diana","filipa","ines","joana",
+  "juliana","laura","leonor","luisa","margarida",
+  "mariana","marta","matilde","patricia","raquel",
+  "rita","sofia","teresa","vanessa","veronica",
+
+  "albano","angelo","artur","brás","celso","cristiano",
+  "domingos","elisio","estevao","fabio","gaspar",
+  "heitor","ivo","jaime","lucas","mateus",
+  "nelson","orlando","renato","sergio","teodoro",
+
+  "amelia","andrea","bianca","bruna","carolina","celeste",
+  "constanca","elisabete","eunice","fatima","gabriela",
+  "helena","isabel","lara","lucia","magda",
+  "monica","natalia","noelia","paula","silvia"
+],
+
+"LAST_NAMES": 
+    [
+    "silva","santos","ferreira","pereira","oliveira","costa","rodrigues",
+    "martins","jesus","sousa","fernandes","goncalves","gomes",
+    "lopes","marques","alves","almeida","ribeiro","carvalho",
+    "teixeira","moreira","correia","reis","araujo","fonseca",
+    "antunes","mendes","barbosa","cardoso","monteiro",
+    "rocha","pires","figueiredo","freitas","neves","melo",
+    "machado","cunha","vieira","coelho",
+
+    "dias","azevedo","batista","tavares","andrade","campos","duarte","viana","brito","castro",
+    "henriques","soares","valente","leal","esteves","nunes","ramos","pinto","faria","simoes",
+    "serra","carmo","matos","rodrigo","miranda","ventura","maia","bento","pereirinha","aguiar",
+    "paiva","madeira","couto","cortez","pacheco","loureiro","baptista","valenca","carneiro","barros",
+    "carrilho","castelo","cavaleiro","correia","cruz","dantas","estevao","falcon","figueira","garcia",
+    "guerreiro","lima","mota","neto","noronha","oliveirinha","ourique","paes","peixoto","porto",
+    "quintana","quintela","resende","rodrigues","salazar","salgado","sampaio","santana","saraiva","seabra",
+    "silveira","teles","torres","trindade","varanda","vasconcelos","veiga","vidal","xavier","albuquerque",
+    "amaro","amorim","ancelmo","andre","anjos","ara","arantes","arruda","assuncao","avila",
+    "balbino","barata","barreiro","bastos","belchior","bernardo","branco","braga","brandao","cabral",
+    "caldeira","camacho","camarinha","canhoto","capela","cardim","carreira","casimiro","castanheira","catarino",
+    "cedro","cerqueira","chaves","concelos","corona","costeira","cotrim","diniz","domingos","dourado",
+    "esteiro","estevao","evangelista","feitosa","feliciano","ferraz","ferro","fidalgo","filho","flores",
+    "fonte","forte","franco","furtado","galvao","gandra","garrido","godinho","goulart","graca",
+    "guedes","henrique","jacinto","jardim","jardins","jorge","lacerda","lago","lapa","limao",
+    "lourenco","lucena","macedo","machado","magalhaes","malheiro","manso","marinho","martel","matias",
+    "medeiros","melro","menezes","mesquita","moniz","morais","moreira","morgado","moura","mourao",
+    "navarro","nogueira","olive","oliveira","paes","palma","parente","pascoal","pedrosa","pena",
+    "perdigao","peres","perreira","pinheiro","pombal","prata","quaresma","quintanilha","rato","rebelo",
+    "regis","relvas","resende","ribeirinho","ribeirinho","ribeirinho","ribeiro","riscado","rolim","rosado",
+    "salvador","santos","sequeira","silvano","souto","teodoro","tome","trigo","vale","vaz",
+    "vilar","vilela","vinagre","vitorino","vivas","almeida","barbosa","costa","dias","oliveira"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "neonlisboa","datatag","pixelporto",
+    "cryptofado","stormatlantic","urbanlusitan",
+    "shadowazul","bytealgarve","gridportugal",
+    "neonmadeira","midnightlusitania",
+
+    "noitelisboa","ventodoatlantico",
+    "sombraportuguesa","almadoporto",
+    "maralgarve","solmadeira",
+    "lisboaviva","portoazul",
+    "alentejovento","fadonoturno",
+    "coraolusitano","bragavibe",
+    "aveironorte","coimbranoite",
+    "atlanticosul","portugalvivo"
+  ]
+}

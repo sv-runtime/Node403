@@ -1,0 +1,63 @@
+{
+"FIRST_NAMES": 
+    [
+    "lukas","matas","dominykas","jonas","rokas","ieva","greta","aule","gabija","monika",
+    "dovydas","edvinas","gintaras","justas","karolis","mantas",
+    "nerijus","paulius","tomas","vytautas","arunas","ramunas",
+    "agne","aiste","ausra","dainora","indre","jurga",
+    "kristina","laura","rasa","ruta","simona","vilte"
+  ],
+
+"LAST_NAMES": 
+    [
+    "kazlauskas","petrauskas","jankauskas","stankevicius","zemaaitis",
+
+    "jonaitis","paulauskas","vaitkus","balciunas","bagdonas","baranauskas","barkauskas","bernotas","butkus","cibulskis",
+    "dambrauskas","danilevicius","davainis","gelazis","grigonis","gudaitis","jakubauskas","jaras","jocius","jonynas",
+    "kalinauskas","kaminskas","karalius","karosas","kazakevicius","kavaliauskas","kestutis","kibildis","kleiza","kondratas",
+    "kulikauskas","kurmis","lapinskas","lazauskas","leonavicius","matulevicius","mikalauskas","milasius","mockus","navickas",
+    "paliulis","petrulis","petronis","pranckevicius","pukys","ramanauskas","razauskas","sabaliauskas","sakalauskas","samsonas",
+    "simkus","skardzius","slusnys","stankus","streikus","sudzius","sukys","sveikas","tamulis","tamulaitis",
+    "tamoÅ¡iunas","tamulionis","trumpa","vaitkevicius","valanciunas","valinskas","varkala","vasiliauskas","vilkas","vilkaitis",
+    "vilkaitis","vilutis","vincas","virbickas","vycius","zaborskis","zabulis","zaleckas","zarskus","zimkus",
+    "adomaitis","brazaitis","ciurlionis","gasiunas","gineika","griÅ¡kevicius","jasauskas","kairys","kasparavicius","kazimieras",
+    "kunigelis","maciulis","maceika","misiunas","moceika","narbutas","naujalis","palubinskas","paulius","pilkauskas",
+    "sadauskas","sajus","sankauskas","savenko","sevÄikas","sileika","stanke","stumbrys","tutkus","vaitiekunas",
+    "zadeika","zavickas","zemaitaitis","zemaicius","zinkevicius"
+  ],
+
+    "WEIRD_NAMES":
+[
+  "neonvilnius","datakaunas","pixelklaipeda","cryptobalt",
+  "stormnemunas","urbanaukstaitija","shadowtrakai",
+  "bytegediminas","gridlithuania","midnightneris",
+  "cybervilkas","nocturnebaltic","neonpalanga",
+  "cryptosamogitia","stormdzukija",
+  "pixelzemaitija","datapanevezys","shadowkryziu",
+
+  "balticcore","vilniusnight","amberflare",
+  "nemunaspulse","kaunasgrid","klaipedastorm",
+  "gediminasvector","trakaicode","aukstaitijabyte",
+  "samogitiashadow","baltmatrix","neriswave",
+
+  "vilniussenka","baltugnys","nemunasvortex",
+  "auksinisamber","vilkasshadow","perkunostorm",
+  "laumecipher","baltnight","dvaroghost",
+  "lietuvaengine","baltforge","nerisghost",
+
+  "perkunobyte","gediminastower","ambercipher",
+  "kaunaspulse","klaipedawave","vilniuscore",
+  "balticghost","samogitianstorm","aukstaitijaflare",
+  "dzukijacode","trakaipulse","vilniusunderground",
+
+  "lietuvasignal","baltnexus","nemunascipher",
+  "ambermatrix","vilkasengine","balticflare",
+  "perkunomatrix","vilniusvector","kaunasghost",
+  "klaipedaforge","samogitiacore","aukstaitijavibe",
+
+  "lietuvalight","vilniushaze","baltshadow",
+  "nemunasnight","perkunovortex","amberstorm",
+  "gediminasforge","baltnightx","vilniusphantom",
+  "kaunascipher","klaipedashadow"
+]
+}

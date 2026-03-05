@@ -1,0 +1,27 @@
+{
+  "FIRST_NAMES":
+  [
+    "liam","noah","elijah","isaiah","daniel","malachi","jonathan","samuel","micah","joshua",
+    "jeremiah","darius","andre","christopher","marcus","kevin","ryan","devon","tyrell","aaron",
+
+    "amaya","kiara","aaliyah","naomi","gabrielle","ashley","danielle","michaela","sarah","rebecca",
+    "chantelle","alicia","kayla","monique","tiana","shanice","trinity","destiny","melissa","jade"
+  ],
+
+  "LAST_NAMES":
+  [
+    "joseph","williams","charles","john","thomas","auguste","didier","baptiste","gregoire","laville",
+    "languedoc","pierre","george","james","lawrence","richards","douglas","stephenson","fontaine","durand",
+    "sebastien","valmond","francis","edwards","roberts","blanc","anthony","gregory","jules","alexander"
+  ],
+
+  "WEIRD_NAMES":
+  [
+    "neonroseau","caribeflux","islandcipher","sisseroucore","tropicalbyte",
+    "rainforestnode","mornevector","volcanoghost","datadominica","caribstorm",
+    "emeraldmatrix","kalinagoforge","junglepulse","atlanticsync","natureengine",
+    "roseauoverride","islequantum","caribbeanode","neontropics","islandrift",
+    "emeraldcipher","rainbyte","morningcaribe","volcanovortex","sisserouflux",
+    "junglenode","atlanticpulse","kalinagocode","stormroseau","islandmatrix"
+  ]
+}

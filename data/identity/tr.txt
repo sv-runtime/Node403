@@ -1,0 +1,79 @@
+{
+"FIRST_NAMES": 
+    [
+            "ahmet","mehmet","mustafa","ali","hakan","murat","emre","burak","kaan","can",
+            "enes","kerem","yusuf","ibrahim","ramazan","osman","serkan","ugur","tuncay","ercan",
+            "baris","erhan","furkan","oguz","volkan","kemal","ayhan","salih","halil","kadir",
+            "arif","ilker","sinan","serhat","tamer","taner","orhan","yakup","selim","erkan",
+            "cem","cemil","cenk","tayfun","fatih","tolga","onur","oguzhan","yasin","bilal",
+            "eray","erdogan","ismail","koray","alp","alper","alperen","bugra","kaan","kaan",
+            "dogukan","umut","yigit","serdar","gokhan","metin","vedat","levent","mesut","nuri",
+            "recep","samet","suleyman","zeki","zafer","aykut","berk","berkay","cagri",
+            "demir","emir","ertugrul","hasan","huseyin","ilhan","kaya","mert","omer","ozan",
+            "ramis","selcuk","tugay","turan","veli","yavuz","yunus","zaim", "ayse","fatma",
+            "zeynep","emine","hatice","elif","esra","busra","meryem","sevgi",
+            "yasemin","gizem","gamze","melike","hande","eda","seda","beyza","tuana","cansu",
+            "damla","aylin","hilal","dilan","berfin","nazli","sema","rumeysa","kubra","gokce",
+            "burcu","melis","asli","buket", "ipek","duru","ece","sibel","serap",
+            "gulsah","gul","aysegul","banu","ayca","ayten","gulcan","feride","nazan","necla",
+            "nur","ozge","pelin","rabia","selin","serra","sevda","sinem","songul","tuba",
+            "yagmur","zeliha","zuhal","aleyna","arda","aynur","bahar","cagla","ceyda","dilek",
+            "dilara","emine","feyza","gonca","gulsun","havin","ilayda","kardelen","leyla","meltem",
+            "nisa","ozlem","sultan","tugba","yildiz","zehra","zerrin"],
+
+"LAST_NAMES": 
+    [
+    "yilmaz","kaya","demir","sahin","celik","yildiz","ozdemir","arslan","dogan","kurt",
+    "aydin","ozkan","cakir","kara","aslan","tas","polat","gunes","bulut","kaplan",
+    "acar","avci","unal","turk","koc","er","bozkurt","isik","keskin","altin",
+    "bicakci","cetin","duman","guler","ince","karaca","mutlu","sari","sezer","tekin",
+    "toprak","ucar","yildirim","yuksel","demirtas","karakus",
+
+    "aksoy","akgun","aksu","akbas","akman","akpinar","aksakal","aktas","albayrak","alkan",
+    "alp","altintas","altay","arici","arikan","arslanoglu","atac","ates","ay","aydemir",
+    "aydogan","aykut","aytekin","ayvaz","bakar","bal","balci","baran","bas","basar",
+    "basaran","bayar","bayrak","bayram","bekar","bekiroglu","berk","bilgin","bilici","bircan",
+    "boz","bozdag","bozdemir","bozkaya","bozoglu","budak","buyuk","buyukbayrak","buyukkaya","buyukdemir",
+    "can","candan","cangir","cankaya","cavus","cavusoglu","cevik","cicek","colak","coskun",
+    "dag","dagli","dal","demirel","demirci","demirkan","demiroglu","deniz","derin","dikmen",
+    "dogru","donmez","durak","durmaz","duyar","ekin","ekinci","elmas","engin","erdem",
+    "erdogan","ergin","erkan","erkek","ersoy","ertugrul","esen","eski","esmer","evren",
+    "fikri","firat","gok","gokce","gokhan","goktas","gokturk","gokyil","gol","guleroglu",
+    "gul","guler","gultekin","gur","gurbuz","gurel","gursoy","han","hanoglu","hatipoglu",
+    "icel","ilhan","ipek","karadeniz","karakaya","karaman","karatas","kardes","kayaoglu","kayhan",
+    "keles","kervan","kiliÃ§","kilic","kiraz","koca","korkmaz","koroglu","kozak","koyuncu",
+    "kucuk","kul","kurtoglu","kus","maden","mert","metin","moral","nacar","oguz",
+    "oguzhan","onur","oz","ozcan","ozel","ozgur","ozsoy","oztekin","ozcelik","ozkaya",
+    "pinar","sancar","savas","selcuk","sevim","sevin","sezeroglu","soylu","subasi","sumer",
+    "tan","tanriverdi","tasdemir","tatar","temel","temiz","terzi","tolga","torun","turan",
+    "ulker","ulus","uslu","uyar","varol","yagci","yalcin","yaman","yasar","yayla",
+    "yegen","yesil","yigit","yokus","yonet","yurt","yurtsever","zengin"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "anadoluwolf","bosporusking","istanbulshadow","turkwarrior",
+    "neonankara","dataderwis","cryptosultan","stormottoman",
+    "pixelcrescent","urbanjanissary","neonbosphorus",
+    "cryptoturan","stormanatolia","pixelcappadocia",
+    "datadervish","byteayasofya",
+
+    "anatoliastorm","istanbulnexus","bosporuswave",
+    "ottomancore","turkiyeflare","kapadokyashadow",
+    "egebyte","janissaryflare","turanstorm",
+    "ayasoftwave","crescentgrid","derviscore",
+    "ankaranight","anatolshadow","turkbyte", 
+
+    "geceistanbul","anadoluruzgari",
+    "gunesdogusu","sessizankara",
+    "bozkirruhu","istanbulcocuk",
+    "egeyildizi","karadenizruhu",
+    "ayisikapadokya","anadolucan",
+    "gecekapadokya","turkiyeden",
+    "ruhumarmara","izmirgecesi",
+    "anadoluyurek","bozkiratesi",
+    "yildizankara","istanbulruya",
+    "egeatesi","karadenizgece",
+    "ruhubosfor","geceyolcusu"
+  ]
+}

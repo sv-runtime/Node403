@@ -1,0 +1,64 @@
+{
+"FIRST_NAMES": 
+    [
+            "alexander","andreas","benjamin","christian","daniel","david","felix","florian",
+            "frank","henrik","jan","jonas","julian","kevin","leon","lukas",
+            "marcel","markus","martin","matthias","maximilian","michael","moritz",
+            "niklas","oliver","patrick","philipp","sebastian","stephan","thomas",
+            "tim","tobias","uwe","valentin","anna","birgit","carina","clara",
+            "elisabeth","emma","franziska","hannah","julia","katharina","lara",
+            "lea","lena","leonie","lisa","maria","marie","melanie","nina",
+            "sabine","sarah","sophia","theresa","vanessa"],
+
+"LAST_NAMES": 
+    [
+    "schmidt","schneider","fischer","weber","meyer","wagner","becker","hoffmann",
+    "schaefer","koch","bauer","richter","klein","wolf","schroeder","neumann",
+    "schwarz","zimmermann","braun","krueger","hartmann","lange","werner",
+    "krause","lehmann","schmid","koenig","kraemer","vogt","seidel",
+    "busch","otto","schuster","brand","haas","schulte","engel","horn",
+    "pohl","lorenz","kaiser","frank","heilmann","ritter","friedrich",
+    "dietrich","heinrich","ulrich","keller","jung","hahn","roth",
+    "baumann","barth","jacob","heinz","schilling","weiss","boehm",
+    "ackermann","herrmann","sauer","binder","graf","hauser","lang",
+    "stoll","reich","kuehn","bruckner","seifert","walther",
+
+    "muller","maier","ebert","heinze","hartwig","stein",
+    "berger","roeder","krebs","schubert","thomas","jung",
+    "albrecht","endres","frey","geiger","herzog",
+    "konrad","lorbeer","mayer","nagel","peters",
+    "quast","reinhardt","schulz","thiele","urban",
+    "voigt","winter","zeller","dietz","friedl",
+    "guenther","huber","jacobi","kopp","lindner",
+    "marx","nickel","oertel","pfister","rath",
+    "scholz","trapp","ullmann","vogel","wolfgang",
+    "zeidler","auer","behrens","cornelius","dorn"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "nachtfalke","stahlgeist","datenwolf","cyberritter","neonadler",
+    "digitalsturm","gridmeister","schattenkraft","bytekrieger","urbanpanzer",
+    "pixeljÃ¤ger","darkstrom","neonberlin","cryptorhein","stormhamburg",
+    "pixelbavaria","gridruhr","urbanmunich","datateuton","byteautobahn",
+    "midnightspree",
+
+    "rheinwolf","donauadler","waldgeist","eisenfalke","nordsturm",
+    "schwarzwald","alpenglanz","berlinnebel","hamburgsturm","ruhrkraft",
+    "bayernstolz","sachsenwind","thuringerschatten","hessenhammer",
+    "pfalzfeuer","rheinlandecho","spreegeist","moselnebel",
+    "ostseehauch","nordseegeist","teutonenkraft","stahladler",
+    "waldlÃ¤ufer","nachtwanderer","sturmjÃ¤ger","eisenwolf",
+    "bergfalke","schattenlÃ¤ufer","ruhrwolf","donaukrieger",
+    "alpensturm","nebelkrieger","frostwald","herbststurm",
+    "wintergeist","sommerwind","herzogkraft","reichswind",
+    "waldschatten","berggeist","schwarzwolke","donaufeuer",
+    "berlinkraft","hamburgnebel","mÃ¼nchensturm","dresdenecho",
+    "kÃ¶lnkraft","frankfurtwind","stuttgartsturm","leipzigschatten",
+    "hannoverhauch","bremenwind","kielnebel","essensturm",
+    "dortmundkraft","bonnfalke","heidelberggeist","triernebel",
+    "alpenwolf","bayernwolf","ruhrsturm","sachsenkraft",
+    "teutonenschatten","stahlkraft","eisensturm","nachtadler",
+    "bergjÃ¤ger","waldadler","rheinfeuer","donauwind"
+  ]
+}

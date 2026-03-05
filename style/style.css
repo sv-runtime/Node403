@@ -1,0 +1,554 @@
+/* =========================================================
+   1. DESIGN TOKENS
+========================================================= */
+
+:root {
+  --btn-idle: #888;
+  --btn-hover: #fff;
+
+  --color-primary: #888;
+  --color-secondary: #fff;
+  --color-tertiary: #ccc;
+  --color-error: #ff4d4d;
+
+  --ui-primary: var(--color-primary);
+  --ui-secondary: var(--color-secondary);
+  --ui-tertiary: var(--color-tertiary);
+  --ui-primary-safe: var(--color-primary);
+
+  /* Text sizes */
+  --terminal-font: 14px;
+  --terminal-header-font: 12px;
+  --status-font: 11px;
+
+  /* Button sizes */
+  --btn-font: 14px;                 /* back + fullscreen + ui */
+  --enter-font: 14px;               /* enter (kan apart schalen) */
+
+  /* Button layout */
+  --ui-btn-padding: 10px 18px;
+  --enter-padding: 16px 32px;
+  --ui-btn-letter-spacing: 2px;
+  --enter-letter-spacing: 3px;
+  --ui-btn-min-width: 160px;
+
+  /* Intro title */
+  --intro-title-font: 18px;
+}
+
+.theme-guard-black {
+  --ui-primary-safe: #d0d0d0;
+}
+
+
+/* =========================================================
+   2. GLOBAL BASE
+========================================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #050505;
+  font-family: "IBM Plex Mono", "Noto Sans JP", monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.cursor-hidden {
+  cursor: none;
+}
+
+/* Hide buttons until fonts loaded */
+body:not(.fonts-loaded) .fullscreen-page-btn,
+body:not(.fonts-loaded) #enterBtn,
+body:not(.fonts-loaded) .back-button {
+  visibility: hidden;
+}
+
+:fullscreen .site-footer {
+  display: none;
+}
+
+/* =========================================================
+   3. SHARED UI BUTTON BASE
+========================================================= */
+
+.ui-button,
+.fullscreen-page-btn,
+.back-button {
+  padding: var(--ui-btn-padding);
+  font-size: var(--btn-font);
+  letter-spacing: var(--ui-btn-letter-spacing);
+  min-width: var(--ui-btn-min-width);
+  text-align: center;
+
+  border: 1px solid var(--btn-idle);
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--btn-idle);
+
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* ENTER has its own sizing tokens */
+#enterBtn {
+  padding: var(--enter-padding);
+  font-size: var(--enter-font);
+  letter-spacing: var(--enter-letter-spacing);
+  min-width: var(--ui-btn-min-width);
+  text-align: center;
+
+  border: 1px solid var(--btn-idle);
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--btn-idle);
+
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.25s ease;
+  max-width: 90vw;
+}
+
+#backBtn {
+display:none;
+}
+
+#fullscreenPageBtn {
+display:block;
+}
+
+
+/* =========================================================
+   4. PULSE ANIMATIONS
+========================================================= */
+
+@keyframes pulsePrimary {
+  0%   { box-shadow: 0 0 0 transparent; }
+  50%  { box-shadow: 0 0 18px var(--color-primary); }
+  100% { box-shadow: 0 0 0 transparent; }
+}
+
+@keyframes pulseSecondary {
+  0%   { box-shadow: 0 0 0 transparent; }
+  50%  { box-shadow: 0 0 22px var(--color-secondary); }
+  100% { box-shadow: 0 0 0 transparent; }
+}
+
+
+/* =========================================================
+   5. BUTTON BEHAVIOR
+========================================================= */
+
+/* ENTER: idle primary pulse */
+#enterBtn {
+  animation: pulsePrimary 2.4s ease-in-out infinite;
+}
+
+/* ENTER: hover secondary pulse */
+#enterBtn:hover {
+  animation: pulseSecondary 1.6s ease-in-out infinite;
+  background: rgba(15, 15, 15, 0.9);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+/* BACK + FULLSCREEN: hover secondary pulse (no idle pulse) */
+.back-button:hover,
+.fullscreen-page-btn:hover {
+  animation: pulseSecondary 1.6s ease-in-out infinite;
+  background: rgba(15, 15, 15, 0.9);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+
+/* =========================================================
+   6. POSITIONED UI ELEMENTS
+========================================================= */
+
+.status {
+  position: fixed;
+  top: 18px;
+  left: 28px;
+  font-size: var(--status-font);
+  letter-spacing: 3px;
+  color: rgba(200, 200, 200, 0.45);
+  z-index: 9;
+}
+
+.fullscreen-page-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 12;
+}
+
+/* Hide UI buttons in fullscreen */
+body.is-fullscreen .fullscreen-page-btn {
+display:none;
+}
+
+
+/* =========================================================
+   7. INTRO SCREEN
+========================================================= */
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  visibility: hidden;
+}
+
+.intro-screen.ready {
+  visibility: visible;
+}
+
+.intro-title {
+  font-size: var(--intro-title-font);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  color: var(--ui-tertiary);
+  text-transform: uppercase;
+}
+
+.intro-title::before {
+  content: "> ";
+  color: var(--color-secondary);
+}
+
+.event-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  background: rgba(140, 0, 0, 0.92);
+  color: #fff;
+  z-index: 9999;
+  user-select: none;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* =========================================================
+   8. TERMINAL LAYOUT
+========================================================= */
+
+.terminal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(92vw, 880px);
+  min-width: 320px;
+  height: min(60dvh, 700px);
+  max-height: 90vh;
+
+  background: rgba(14, 18, 14, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.85);
+  z-index: 10;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.terminal.open {
+  opacity: 1;
+}
+
+.terminal-header {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: var(--terminal-header-font);
+  color: rgba(220, 220, 220, 0.75);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.terminal-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  font-size: var(--terminal-font);
+  line-height: 1.55;
+  color: #e8e8e8;
+}
+
+.terminal-output {
+  padding: 12px 18px 40px 18px;
+}
+
+.term-line {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* Terminal colors */
+.userhost { color: #00ff00; }
+.colon { color: #fff; }
+.path { color: #4da6ff; }
+.symbol { color: #fff; }
+.output { color: #ddd; }
+.error { color: var(--color-error); }
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: #e8e8e8;
+  margin-left: 2px;
+  transform: translateY(0.15em);
+}
+
+/* =========================================================
+   9. HEADER
+========================================================= */
+
+.site-header{
+border-bottom:1px solid rgba(255,255,255,0.08);
+background:#050505;
+}
+
+.header-inner{
+max-width:900px;
+margin:auto;
+padding:16px 24px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.header-brand{
+font-size:14px;
+letter-spacing:1px;
+color:#e6e6e6;
+}
+
+.header-nav{
+font-size:13px;
+}
+
+.header-nav a{
+color:#4da6ff;
+text-decoration:none;
+}
+
+.header-nav a:hover{
+text-decoration:underline;
+}
+
+.header-separator{
+margin:0 6px;
+opacity:0.5;
+}
+
+/* =========================================================
+   9. FOOTER
+========================================================= */
+
+.site-footer {
+  position: fixed;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  pointer-events: none;
+  z-index: 30;
+}
+
+.footer-inner {
+  letter-spacing: 0.08em;
+}
+
+.footer-separator {
+  margin: 0 8px;
+  opacity: 0.4;
+}
+
+.site-footer a {
+pointer-events: auto;
+}
+
+.about-node403{
+position:absolute;
+left:-9999px;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+
+/* =========================================================
+   10. RESPONSIVE / TV SCALE (TOKENS ONLY)
+========================================================= */
+
+@media (max-width: 768px) {
+  .terminal {
+    width: 92vw;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    position: absolute;
+    bottom: 70px; 
+    left: 0;
+    right: 0;
+    z-index: 20;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .fullscreen-page-btn,
+  .back-button {
+    bottom: 16px;
+    min-width: auto;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .fullscreen-page-btn {
+    left: 16px;
+  }
+
+  .back-button {
+    right: 16px;
+  }
+
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --terminal-font: 18px;
+    --terminal-header-font: 16px;
+    --status-font: 13px;
+
+    /* verhouding gebaseerd op 1800 */
+    --btn-font: 13px;        /* ~70% van 18 */
+    --enter-font: 16px;      /* ~90% van 18 */
+
+    --ui-btn-padding: 10px 18px;
+    --enter-padding: 18px 36px;
+
+    --intro-title-font: 22px; /* ~120% van 18 */
+  }
+
+  .terminal {
+    width: min(90vw, 1100px);
+    height: min(70vh, 820px);
+  }
+
+  .terminal-header {
+    height: 48px;
+  }
+
+  canvas {
+    transform: scale(1.2);
+    transform-origin: top left;
+
+  }
+}
+
+
+@media (min-width: 1800px) {
+  :root {
+    --terminal-font: 20px;
+    --terminal-header-font: 16px;
+    --status-font: 14px;
+
+    --btn-font: 14px;
+    --enter-font: 18px;
+
+    --intro-title-font: 24px;
+  }
+
+  .terminal {
+    width: min(88vw, 1300px);
+    height: min(75vh, 900px);
+  }
+}
+
+
+@media (min-width: 2400px) {
+  :root {
+    --terminal-font: 22px;
+    --terminal-header-font: 18px;
+    --status-font: 16px;
+
+    /* zelfde verhouding doortrekken */
+    --btn-font: 15px;        /* ~70% van 22 */
+    --enter-font: 20px;      /* ~90% van 22 */
+
+    --intro-title-font: 26px; /* ~120% van 22 */
+  }
+
+  canvas {
+    transform: scale(1.8);
+    transform-origin: top left;
+  }
+}
+
+
+@media (min-width: 2600px) {
+  :root {
+    --terminal-font: 26px;
+    --terminal-header-font: 20px;
+    --status-font: 18px;
+
+    /* zelfde verhouding */
+    --btn-font: 18px;        /* ~70% van 26 */
+    --enter-font: 23px;      /* ~90% van 26 */
+
+    --intro-title-font: 31px; /* ~120% van 26 */
+  }
+
+  .terminal {
+    width: min(85vw, 1600px);
+    height: min(80vh, 1100px);
+  }
+}

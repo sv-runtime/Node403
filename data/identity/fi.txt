@@ -1,0 +1,41 @@
+{
+"FIRST_NAMES": 
+    [
+    "mika","juha","eemil","aino","laura","sofia",
+    "antti","jani","jari","kari","lasse","marko",
+    "matti","niklas","olli","pekka","sami","teemu",
+    "tero","tuomas","ville","aarni","alina",
+    "eevi","ella","helmi","iida","janika",
+    "katri","liisa","noora","pauliina","saara","venla"
+  ],
+
+"LAST_NAMES": 
+    [
+    "virtanen","korhonen","nieminen","makinen","laine",
+    "heikkinen","koski","jarvinen","lehtonen","lehtinen","salminen","heikkila","saarinen","niskanen","rantanen",
+    "karjalainen","ahonen","savolainen","hakala","kallio","heinonen","lahtinen","aalto","pitkanen","manninen",
+    "tuominen","salonen","laitinen","hiltunen","kinnunen","kuusela","pulkkinen","seppala","paavola","hietala",
+    "rautiainen","toivonen","niemela","laakso","ojala","hynninen","koskela","lammi","marttila","rauhala",
+    "ronkainen","vuorinen","anttila","peltonen","voutilainen","isomaki","parviainen","malinen","miettinen","korpela",
+    "timonen","kokkonen","vuori","siltanen","keskinen","oravainen","harju","sarvela","myllymaki","suominen",
+    "koskinen","rajasalo","salmi","turunen","leppanen","ylitalo","juutilainen","hakalahti","viitanen","lahtela",
+    "karppinen","karhu","koivisto","koivu","leino","mattila","nurmi","pelto","rintala","salo",
+    "toivanen","valkama","vuokila","ylonen","ylanen","hakkinen","saarikoski","salovaara","viitala","vesala"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonhelsinki","cryptosauna","stormlapland","pixelnord","urbanice",
+  "neonturku","cryptofinland","stormarctic","pixeloulu",
+  "urbanfin","datasauna","shadowaurora","bytehelsinki",
+  "midnightlapland","gridnordic",
+  "helsinki_404","sauna.byte","lapland_x","fin.exe","oulu_night",
+  "arctic88","turku.dev","nord_shadow","grid358","midnight_fi","stormice",
+
+  "helsinginyossa","revontulivalo","lapinyot",
+  "suomenhenki","ouluntuuli","tamperevalo",
+  "turunyossa","sisuvoima","talviyossa",
+  "suomiydin","pohjanvalo","jarvituuli",
+  "karjalanyot","rovaniemenvalo","suomensydan"
+]
+}

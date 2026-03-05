@@ -1,0 +1,51 @@
+{
+"FIRST_NAMES": 
+    [
+  "Adi","Agus","Ahmad","Ari","Arief","Bagus","Bayu","Budi","Dani","Dimas",
+  "Eko","Fajar","Farhan","Hadi","Hendra","Indra","Irfan","Rizky","Rudi","Surya",
+  "Yusuf","Zaki","Putra","Reza","Rama",
+  "Ayu","Citra","Dewi","Fitri","Intan","Kartika","Lestari","Maya","Nabila","Putri",
+  "Ratna","Sari","Wati","Yuni","Zahra",
+
+  "Aditya","Akbar","Andi","Angga","Arman","Bambang","Bimo","Dede","Dian","Fahmi",
+  "Galih","Gunawan","Hafiz","Hilman","Imam","Iqbal","Joko","Joni","Kevin","Lukman",
+  "Maulana","Nugroho","Prasetyo","Rafi","Rizal","Satria","Setiawan","Taufik","Wahyu","Yoga",
+
+  "Aisyah","Anisa","Anita","Bella","Dinda","Erika","Farah","Gita","Hani","Indah",
+  "Kartini","Lina","Melati","Nadya","Nia","Putriani","Rahma","Rani","Safira","Sinta",
+  "Tiara","Vina","Widya","Yuliana","Zahira"
+],
+
+"LAST_NAMES": 
+    [
+    "pratama","wijaya","saputra","saputri","santoso","setiawan","kurniawan","hidayat",
+    "nugroho","firmansyah","gunawan","permana","siregar","simanjuntak","manurung",
+    "hutabarat","nasution","sutanto","susanto","hartono","wibowo","maulana",
+    "ramadhan","utama","iskandar","putra","putri",
+
+    "abdurrahman","adiputra","anwar","arifin","basuki","budiman",
+    "cahyono","darwis","fahmi","fauzi","hakim","hamzah",
+    "hasan","hermawan","hidayah","ibrahim","imawan",
+    "irawan","khalid","kusuma","laksamana","lesmana",
+    "mahmud","mulya","mulyadi","mulyono","prabowo",
+    "pranata","prasetyo","rahman","rinaldi","rizki",
+    "salim","sanjaya","setia","subagyo","subekti",
+    "sudrajat","sugiarto","suharto","sukma","sumarno",
+    "supriyanto","syahputra","tanjung","wahyudi","yulianto"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonjakarta","cryptoborneo","stormjava","pixelbali",
+  "gridnusantara","urbanbandung","datakomodo","shadowborobudur",
+  "byteindonesia","midnightjava","archipelagostorm","javawolf",
+  "jakarta_404","bali.byte","nusantara_x","bandung.exe","borneo_night",
+  "id_shadow","grid62","stormid99","komodo_x","java.dev","pixelid88",
+
+  "jakartamalam","nusantarajiwa","anginlaut",
+  "balisenja","sumatracahaya","jawahati",
+  "malambandung","cahayabali","lautnusa",
+  "jiwaindonesia","anginkalimantan","senjajawa",
+  "nusantarahati","malamjakarta","cahayasumatra"
+]
+}

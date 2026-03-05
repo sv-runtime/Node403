@@ -1,0 +1,54 @@
+{
+"FIRST_NAMES": 
+    [
+    "liam","ethan","noah","olivia","emma","charlotte",
+    "william","benjamin","jack","lucas","henry","alexander",
+    "daniel","logan","jacob","mason","sebastian","james",
+    "ava","amelia","harper","sophia","isabella","mia",
+    "abigail","ella","scarlett","victoria","grace","zoe",
+    "madison","nathan","ryan","owen","caleb","lily"
+  ],
+
+"LAST_NAMES": 
+    [
+    "smith","brown","wilson","martin","tremblay",
+    "roy","gagnon","lee","clark","leblanc","walker","hall","young","king","wright",
+    "lopez","hill","scott","green","adams","baker","nelson","carter","mitchell","perez",
+    "roberts","turner","phillips","campbell","parker","evans","edwards","collins","stewart","morris",
+    "rogers","reed","cook","morgan","bell","murphy","bailey","rivera","cooper","richardson",
+    "cox","howard","ward","torres","peterson","gray","ramirez","james","watson","brooks",
+    "kelly","sanderson","macdonald","mcdonald","mckenzie","mckay","morrison","thompson","anderson","johnson",
+    "white","harris","jackson","allen","wood","barnes","graham","harrison","freeman","carroll",
+    "johnston","patterson","marshall","kennedy","douglas","hunter","sullivan","coleman","wardle","clarke",
+    "miller","robinson","lewis","powell","francis","robertson","jordan","elliott","chapman","taylor",
+    "hamilton","armstrong","gibson","nicholson","dawson","bishop","gordon","grant","newton","owen",
+    "reid","ross","simpson","stevens","tucker","watts","weaver","youngblood","bennett","bouchard",
+    "cameron","cote","desjardins","dufour","fournier","girard","lavoie","leroux","martel","pelletier",
+    "pierre","ranger","richard","savard","trudeau","villeneuve","bourque","chretien","cormier","denis",
+    "gauthier","goulet","hebert","lafleur","lambert","landry","martin","paquet","richer","royer",
+    "stpierre","aubin","beaulieu","bergeron","caron","chartrand","cloutier","fortin","gaudreault","laurier",
+    "morin","perron","plante","rancourt","rochefort","stlaurent","vallee","beaudoin","bisson","bourdon",
+    "brunet","carrier","chevalier","duval","gagne","lapointe","marois","provencher","rheault","simard",
+    "thibault","vadnais","vincent","albert","alvarez","arnold","barrett","boyd","bradley","burke",
+    "cunningham","duncan","fisher","fletcher","foster","gardner","griffin","hayes","henderson","hicks",
+    "holmes","hudson","jenkins","kelley","knight","lane","lawrence","meyer","mills","murray",
+    "palmer","pearson","perkins","porter","price","ray","riley","shaw","snyder","stone",
+    "vaughan","wells","wheeler","wilkins","williams","woodward","zhao","chen","singh","khan"
+  ],
+
+"WEIRD_NAMES":
+    [
+      "neonmaple","frostbyte","stormontario","cybermoose","gridtoronto",
+      "neonquebec","cryptoyukon","stormvancouver","pixelmontreal",
+      "urbanottawa","datacanuck","shadowarctic","bytecalgary",
+      "midnightaurora","gridcanada",
+      "maple404","ontario_x","moose.exe","qc_night","canada_ghost",
+      "yyzbyte","northgrid_ca","arctic_88","canuck_dev","storm613","mtl_shadow",
+
+      "mapleleafcode","torontonight","vancouvervibe",
+      "prairiewind","albertasky","halifaxwave",
+      "northpulse","canadacore","qcconnect",
+      "ottawabyte","truecanuck","polarnorth",
+      "mapleshadow","yukonnight","greatwhitegrid"
+    ]
+}

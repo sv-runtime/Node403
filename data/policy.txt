@@ -1,0 +1,32 @@
+{
+"POLICY_RESULTS": {
+  "default": [
+    { "status": "FAILED", "reason": "insufficient scope" },
+    { "status": "FAILED", "reason": "token expired" },
+    { "status": "FAILED", "reason": "signature mismatch" },
+    { "status": "DENIED", "reason": "missing authentication header" }
+  ],
+  "residential": [
+    { "status": "FAILED", "reason": "insufficient scope" },
+    { "status": "FAILED", "reason": "token expired" }
+  ],
+  "datacenter": [
+      { "status": "DENIED", "reason": "IP reputation blocked" },
+      { "status": "DENIED", "reason": "automated traffic policy" }
+    ],
+  "scripted": [
+    { "status": "REJECTED", "reason": "automated traffic detected" },
+    { "status": "FAILED", "reason": "CSRF validation failed" }
+  ]
+}, 
+
+"GEO_RESTRICTED_COUNTRIES": [
+  "cn", 
+  "kp", 
+  "ir",
+  "ru",
+  "sa", 
+  "mm", 
+  "tm"  
+]
+}

@@ -1,0 +1,49 @@
+{
+"FIRST_NAMES": 
+    [
+    "ole","lars","magnus","emma","ida","sofie",
+    "anders","arne","bjorn","christian","eirik","erling",
+    "haakon","henrik","jonas","kristian","martin",
+    "marius","olav","ove","per","sindre","stian",
+    "thomas","tor","vetle","astrid","ingrid",
+    "karoline","marte","silje","thea","tuva"
+  ],
+
+"LAST_NAMES": 
+    [
+    "hansen","johansen","olsen","larsen","andersen",
+    "pedersen","nilsen","haugen","lunde","solberg","strand","berg","moen","dahl","bakke",
+    "kristiansen","karlsen","johnsen","halvorsen","holen","egeland","tangen","gundersen","iversen","vik",
+    "aasen","amundsen","arnesen","bjerke","bjornstad","brekke","bye","christensen","dalen","eide",
+    "eliassen","eng","eriksen","foss","fredriksen","gjelstad","gran","gronli","hagen","haug",
+    "helland","hermansen","hjelm","holmen","holt","jacobsen","jakobsen","jensen","karlsson","kjellsen",
+    "kleveland","knudsen","kristoffersen","krogh","kvaal","langseth","lie","lillevik","lund","lundberg",
+    "lundgren","lyngstad","madsen","martinsen","mikkelsen","moe","myhre","naess","nygaard","nyhus",
+    "nyland","odegard","olafsen","paulsen","pettersen","ranum","rasmussen","riis","ronning","rud",
+    "rygh","sand","sandvik","seim","selvik","skogen","skov","solheim","sorensen","stangeland",
+    "stensen","storvik","svendsen","thomassen","thorsen","tveit","ulriksen","valen","vangen","vassvik",
+    "vestby","volden","voll","waage","winther","aagaard","aamodt","aas","aasland","aarseth"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonfjord","cryptoviking","stormoslo","pixelarctic","urbanbergen",
+  "neontrondheim","cryptonord","stormlofoten","pixelvalhalla",
+  "urbannordic","dataviking","shadowaurora","byteoslofjord",
+  "midnightfjord","gridnorway",
+  "oslo_404","fjord.byte","nord_x","viking.exe","bergen_night",
+  "aurora88","valhalla.dev","storm47","arctic_shadow","nor_grid","trd_ghost",
+  "oslonatt","bergenvind","fjordlys",
+  "nordlysflow","trondheimkode","lofotennight",
+  "arktiskvind","norskbyte","skandinavgrid",
+  "osloconnect","fjellvind","norwaypulse",
+  "nordiclight","bergenflow","oslogrid",
+
+  "oslokveld","bergenlys","trondheimvind",
+  "lofotenlys","nordnorge","fjellkveld",
+  "havbris","vestlandvind","norsksjel",
+  "kystlys","fjordkveld","midnattssol",
+  "ostland","sorlandet","oslofjord",
+  "bergenkveld","trondheimsjel","nordlys"
+]
+}

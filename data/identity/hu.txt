@@ -1,0 +1,51 @@
+{
+"FIRST_NAMES": 
+    [
+    "adam","balazs","gergo","laszlo","zoltan","anna","eszter","kata","zsuzsa","noemi",
+    "andras","attila","bence","david","ferenc","gabor",
+    "istvan","krisztian","mate","peter","roland","sandor",
+    "tamas","viktor","zsolt",
+    "agnes","brigitta","csilla","dora","eva","hajnalka",
+    "ildiko","julia","krisztina","renata","timea","viktoria"
+  ],
+
+"LAST_NAMES": 
+    [
+    "nagy","kovacs","toth","szabo","horvath","varga","kiss",
+
+    "molnar","nemeth","farkas","balogh","papp","lakatos","simon","racz","feher","kocsis",
+    "szalai","takacs","balazs","gal","szabo","biro","veres","torok","meszaros","szucs",
+    "fodor","bene","sipos","szilagyi","csernai","domokos","fazekas","gabor","gyori","halasz",
+    "illess","jakab","janos","kadar","kallo","kertesz","kiraly","konya","lazar","lorincz",
+    "major","marton","miklos","orosz","peter","radics","sarkadi","sipos","szabados","szanto",
+    "szekeres","szilveszter","tamas","varadi","vincze","zsoldos","adam","antal","barta","bartha",
+    "bartok","bodnar","boros","csaba","csanyi","csaszar","csillag","csoka","csorba","danko",
+    "erdei","fekete","forgacs","fuzesi","gergely","gyarmati","gyongyosi","hajdu","halmai","harangoz",
+    "hegedus","imre","janosi","kalman","kardos","karoly","katona","kelemen","koltai","komaromi",
+    "kovari","kristof","lengyel","losonczi","mako","makk","marosi","mihaly","moldovan","nyari",
+    "orszag","pali","palfi","puskas","rakosi","roka","sari","somogyi","sos","szalai",
+    "szarka","szecsi","szendrei","szepesi","szigeti","szoke","szollosi","szucs","tatai","udvari",
+    "vajda","valko","varju","vidra","zambo","zsombor","acs","bagi","baranyai","batki",
+    "berki","bodrogi","bognar","csapodi","csikos","csillag","csoka","daroczi","dobozi","egri",
+    "elek","fejes","finta","fulop","gombos","gyurcsany","hargitai","huszar","ilias","janik",
+    "kecskemeti","keresztes","kocsis","komjati","ladanyi","legendi","lovas","magyari","nadas","nyilas",
+    "olasz","orban","rakoczi","resz","samu","szabo","szalai","szanto","szanto","szatmari",
+    "szekely","szilasi","szucs","szurok","tanczos","tarcsa","torma","turi","uzonyi","vereb"
+  ],
+
+"WEIRD_NAMES":
+    [
+  "neonbudapest","cryptomagyar","stormdanube","pixelpusta","gridhungary",
+  "neondebrecen","cryptohun","stormbalaton","pixelbudacode",
+  "urbanmagyar","datadanube","shadowpannon","bytebudapest",
+  "midnightpusta","gridcarpathian",
+  "budapest_404","magyar.byte","danube_x","balaton.exe","pusta_night",
+  "hun88","carpathian.dev","grid36","debrecen_x","stormhu99","shadowhun",
+
+  "budapestej","magyarlelek","dunafeny",
+  "balatonpart","pusztaszell","karpatfeny",
+  "szegedej","magyarfold","tiszapart",
+  "hunlelek","budafeny","alfoldszel",
+  "magyarfeny","dunaej","balatonszel"
+]
+}

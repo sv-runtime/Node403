@@ -1,0 +1,56 @@
+{
+"FIRST_NAMES": 
+    [
+    "andriy","arsen","dmytro","ihor","ivan","maksym",
+    "mykola","oleh","roman","serhiy","taras","viktor",
+    "yaroslav","anastasiya","daryna","iryna","kateryna",
+    "mariya","nadiya","olena","sofiya","tetiana","yuliya",
+
+    "bohdan","denys","eduard","oleksandr","volodymyr",
+    "vasyl","vyacheslav","yuriy","oleksiy","yevhen",
+    "mykhailo","petro","stepan","vladyslav","vitaliy",
+    "nazariy","rostyslav","artyom","kyrylo","leh",
+
+    "alina","alla","bohdana","diana","halyna",
+    "ivanna","khrystyna","liliya","lyudmyla","marta",
+    "oksana","polina","ruslana","solomiya","uliana",
+    "veronika","viktoriya","yeva","zlata","yarina"
+  ],
+
+"LAST_NAMES": 
+    [
+    "shevchenko","kovalenko","boyko","bondarenko","tkachenko","kovalchuk","melnyk","kravchenko","polishchuk",
+    "liashenko","marchenko","moroz","solovey","denysenko","ostapenko","savchenko","ivanenko",
+    "pavlenko","kuzmenko","tereshchenko","zhuk","shapoval","tarasenko","korolenko",
+
+    "andriyenko","antonov","baran","baranov","bilyk","bilous","bondar","bondarchuk","bryukhovetsky","bukhalov",
+    "burakov","burda","chernov","chernykh","chumak","danylko","demchenko","dmytrenko","dobrovolsky","doroshenko",
+    "fedorchuk","fedorenko","filipenko","gavrilenko","gerasimchuk","gorbunov","gordiyenko","gromov","hrytsenko","hryhorenko",
+    "holub","horbunov","humenyuk","ivanov","ivanchuk","kalashnikov","kalyta","karpenko","kharchenko","khmelnytsky",
+    "klymenko","kondratenko","kononenko","koretsky","kostyuk","kot","kozachenko","kozlov","kramar","kravets",
+    "kucher","kulish","kupchuk","kurylo","lavrenko","lebid","levchenko","litvin","litvinenko","lysenko",
+    "makarenko","maksymenko","martyniuk","meleshko","melnichuk","mishchenko","myronenko","naumenko","nikiforov","novak",
+    "oleksiyenko","oleynik","orlyk","osadchuk","panchenko","pasichnyk","petrenko","petriv","petruk","piven",
+    "poliakov","polovyi","prykhodko","radchenko","romanchenko","ruban","rybachenko","savchuk","serdyuk","shepel",
+    "shestak","shestopal","shulha","sidorov","skrypnyk","solonenko","soroka","stetsenko","stepanenko","sydorenko",
+    "taran","tymchenko","tymofiyenko","vasylchenko","vasyliv","verbovyi","verbytsky","vovk","yakymenko","yatsenko",
+    "yavorsky","yermak","zadorozhny","zakharchenko","zaritsky","zharikov","zhdanov","zherebko","zinkevych","zubko"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "neondnipro","datakiev","pixelkyiv",
+    "cryptosteppe","stormukraine","urbantryzub",
+    "shadowkarpaty","bytecosack","gridukr",
+    "neonlviv","midnightdnipro",
+
+    "nichkyiv","stepovyyviter",
+    "karpatyhora","lvivnoch",
+    "dniprohvylia","ukrayinadusha",
+    "kozatskyiveter","poltavavibe",
+    "odesanich","chernivtsisvitlo",
+    "kharkivnoch","zoryaukrainy",
+    "slavayiv","kyivsvitlo",
+    "steppewindua","ukrainavive"
+  ]
+}

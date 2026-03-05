@@ -1,0 +1,60 @@
+{
+"FIRST_NAMES": 
+    [
+    "janis","kristaps","martins","edgars","arturs","laura","liga","santa","anete","eva",
+    "andris","davis","eriks","gatis","ilmars","kaspars",
+    "maris","raimonds","roberts","valdis","viktors",
+    "agnese","baiba","dace","elina","inga","iveta",
+    "kristine","madara","sandra","zane","una","ilze"
+  ],
+
+"LAST_NAMES": 
+    [
+    "berzins","kalnins","ozols","petersons","jansons",
+    "balodis","briedis","liepins","kristaps","ziedins","smits","abols","zvaigzne",
+    "andersons","blumbergs","brants","cimmers","dambis","dreimanis","ezerins",
+    "feldmanis","freimanis","gaile","gailis","garklavs","grinbergs","gulbis",
+    "ievins","jakovlevs","janis","janis","jurjans","karklins","karlsons",
+    "kronbergs","kuzmins","lacis","lauris","liepa","lodins","meiers",
+    "melniks","miezis","ozolins","paeglis","pauls","pavlovs","peters",
+    "plavins","prietis","puce","ratnieks","reinis","roze","rubenis",
+    "saulitis","silins","skudra","sprudzs","strautins","sukurs","sulis",
+    "teters","ulmanis","valters","veinbergs","viksna","vilks","zeltins",
+    "zvejnieks","zvirbulis"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neonriga","datadaugava","pixelbaltic","cryptolatvia",
+  "stormjurmla","urbanlatgale","shadowkurzeme",
+  "bytevidzeme","gridzemgale","midnightriga",
+  "cyberulmanis","nocturnebaltic","neonliepaja",
+  "cryptodaugava","stormcesis",
+  "pixelventspils","datariga","shadowgaujapark",
+
+  "balticcore","riganight","amberflare",
+  "daugavapulse","liepajagrid","ventspilsstorm",
+  "gaujaengine","cesiscode","latvianbyte",
+  "kurzemeshadow","baltmatrix","rigawave",
+
+  "baltuguns","mezasena","ziemeluvetra",
+  "dzintaraflare","vilkshadow","perkonastorm",
+  "laumacipher","latvianight","gaujasghost",
+  "latviacore","baltforge","rigaghost",
+
+  "perkonabyte","dzintaracode","gaujamatrix",
+  "liepajapulse","ventspilswave","rigaengine",
+  "balticghost","latgalevortex","kurzemeflare",
+  "vidzemecode","zemgalepulse","rigaunderground",
+
+  "latviasignal","baltshadow","daugavacipher",
+  "ambermatrix","vilksengine","balticflare",
+  "perkonamatrix","rigavector","liepajaghost",
+  "ventspilsforge","kurzemecore","vidzemevibe",
+
+  "latvialight","riganightx","baltstorm",
+  "gaujanight","perkonovortex","dzintarastorm",
+  "rigaphantom","balticnexus","liepajacipher",
+  "ventspilsshadow"
+]
+}

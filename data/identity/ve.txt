@@ -1,0 +1,61 @@
+{
+"FIRST_NAMES": 
+    [
+    "alejandro","luis","carlos","jose","daniel","maria","valeria","andrea","paola","camila",
+    "angel","armando","diego","eduardo","gabriel","jesus",
+    "jorge","manuel","miguel","rafael","ricardo","victor",
+    "ximena","adriana","alejandra","carmen","diana","gabriela",
+    "karla","mariana","natalia","sofia","valentina","yuliana"
+  ],
+
+"LAST_NAMES": 
+    [
+    "perez","rodriguez","fernandez","gonzalez","ramirez",
+    "martinez","lopez","garcia","torres","flores","morales","jimenez","castro","ortiz","vargas",
+    "castillo","ruiz","romero","suarez","mendoza","gutierrez","arias","cardenas","valencia","salazar",
+    "rojas","aguilar","pena","velez","herrera","marin","silva","reyes","parra","navarro",
+    "rios","guzman","trujillo","avila","montoya","mejia","restrepo","pardo","cortes","serrano",
+    "ospina","zamora","molina","acosta","calderon","cabrera","escobar","franco","alvarez","bautista",
+    "benitez","bernal","camacho","campo","cano","carvajal","correa","delgado","duarte","espinosa",
+    "fajardo","figueroa","fonseca","gallego","gil","granados","guerrero","jaramillo","leon","maldonado",
+    "montero","montes","moreno","munoz","nieto","nunez","patiÃ±o","quintero","rendon","salas",
+    "santana","solano","tamayo","toro","uribe","vallejo","velasco","vera","villalba","zapata",
+    "bravo","prieto","soto","arias","herrera","caceres","marquez","arias","villanueva","cordero",
+    "delvalle","escalona","colmenares","betancourt","hurtado","prieto","ponce","palacios","rivero","ponte"
+  ],
+
+"WEIRD_NAMES":
+[
+  "neoncaracas","dataorinoco","pixelmaracaibo","cryptovenezuela",
+  "stormandes","urbancaribe","shadowavilar",
+  "bytevalencia","gridbarquisimeto","midnightcaracas",
+  "cybersimonbolivar","nocturnecumana","neonmerida",
+  "cryptoguayana","stormmaracay",
+  "pixelmargarita","datalara","shadowzulia",
+
+  "caribecore","caracasnight","tropicalflare",
+  "orinocopulse","maracaibogrid","meridastorm",
+  "avilacode","zuliabyte","venezuelamatrix",
+  "andeswave","guayanavector","caribeshadow",
+
+  "llanoflare","selvavortex","solcaribe",
+  "cumbiacode","arepastorm","cafecaracas",
+  "bolivarbyte","libertadorcore","tropengine",
+  "costashadow","cacaoforge","caribepulse",
+
+  "andescipher","orinocoghost","margaritawave",
+  "maracaibopulse","caracasunderground","tropicalmatrix",
+  "guayanastorm","zuliaflare","meridacipher",
+  "laravector","valenciashadow","caribevibe",
+
+  "solvortex","llanomatrix","selvacyber",
+  "bolivarstorm","caribeblaze","andessignal",
+  "orinococode","maracaiboghost","tropforge",
+  "caracasphantom","guayanapulse","zuliacore",
+
+  "neonbolivar","datacaribe","pixelorinoco",
+  "stormvenezuela","urbanllano","shadowguayana",
+  "byteandes","gridcaracas","tropicalghost",
+  "venezuelaflare","caribematrix","andeshaze"
+]
+}

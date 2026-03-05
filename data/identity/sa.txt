@@ -1,0 +1,39 @@
+{
+  "FIRST_NAMES":
+  [
+    "mohammed","ahmed","abdullah","faisal","khalid","saud","omar","hamza","yousef","ibrahim",
+    "abdulrahman","turki","salman","waleed","majed","nasser","tariq","zayed","hassan","ali",
+    "saif","faris","riyad","hadi","ammar","samir","bilal","sultan","bandar","raed",
+
+    "محمد","أحمد","عبدالله","فيصل","خالد","سعود","عمر","حمزة","يوسف","إبراهيم",
+    "عبدالرحمن","تركي","سلمان","وليد","ماجد","ناصر","طارق","زايد","حسن","علي",
+    "سيف","فارس","رياض","هادي","عمار","سمير","بلال","سلطان","بندر","رائد",
+
+    "fatimah","aisha","noura","layla","mariam","hana","sara","amal","reem","yasmin",
+    "farah","najla","dana","lina","rania","huda","salma","alia","zainab","iman",
+
+    "فاطمة","عائشة","نورة","ليلى","مريم","هناء","سارة","أمل","ريم","ياسمين",
+    "فرح","نجلاء","دانا","لينا","رانيا","هدى","سلمى","عالية","زينب","إيمان"
+  ],
+
+  "LAST_NAMES":
+  [
+    "alharbi","alotaibi","alqahtani","alsaud","alshammari","aldossari","almutairi","alghamdi",
+    "alrashid","alzahrani","alenezi","alajmi","alsharif","alharthi","alruwaili","alshahrani",
+    "alansari","alabdullah","alkhalid","alshehri",
+
+    "الحربي","العتيبي","القحطاني","آل سعود","الشمري","الدوسري","المطيري","الغامدي",
+    "الرشيد","الزهراني","العنزي","العجمي","الشريف","الحارثي","الرويلي","الشهراني",
+    "الأنصاري","آل عبدالله","الخالد","الشهري"
+  ],
+
+  "WEIRD_NAMES":
+  [
+    "desertnode","riyadhcore","meccaflux","medinasync","arabianbyte",
+    "sandstormx","falconmatrix","redsealink","duneshadow","oasisvector",
+    "kingdomcipher","najdengine","hejazpulse","crescentforge","duneforge",
+
+    "صقر_الرياض","عاصفة_الصحراء","ظل_الواحة","نبض_نجد","شيفرة_الحجاز",
+    "موجة_البحر_الأحمر","مصفوفة_الصحراء","نواة_الرياض","محرك_الواحة","فجر_المملكة"
+  ]
+}

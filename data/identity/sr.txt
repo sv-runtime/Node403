@@ -1,0 +1,84 @@
+{
+  "FIRST_NAMES": [
+    "rajiv","rakesh","sunil","amit","vishal","rohit",
+    "anil","sanjay","deepak","ashwin","krishna","ravi",
+    "priya","anita","kavita","sapna","shreya","pooja",
+
+    "jason","kevin","marvin","ronald","anthony","jerome",
+    "denzel","clifton","gilbert","patrick","dwayne","marvin",
+    "chantal","shelly","melissa","nicole","vanessa","tamara",
+
+    "soekrishna","radj","shivam","ramdath","bhola","indra",
+    "reshma","laila","farah","naila","imro","amir",
+
+    "joni","rudi","hendrik","melvin","steven","richard",
+    "romy","sharon","nadine","kimberly","naomi","daisy",
+
+    "yuan","liang","chen","ming","xia","lin",
+    "siti","agus","putri","yanto","rahma","indra",
+
+    "kwame","joel","isaiah","samuel","emmanuel","amos",
+    "alisha","danielle","samantha","rihanna","ashley","kaylee"
+  ],
+
+  "LAST_NAMES": [
+    "ramdin","persad","ramkhelawan","rambaran","ramautar","ramlal",
+    "chand","kalloe","soekhai","hindori","raghoebarsing","koendjbiharie",
+
+    "abrahams","martina","fraser","jansen","wilson","leeflang",
+    "sitalsing","brug","braak","tjong","veer","pengel",
+
+    "li","wang","chen","tsang","lauw","chang",
+
+    "mohamed","ali","hoesein","khan","safira","abdullah",
+
+    "sumter","coleridge","belfort","gummels","winter","baboeram",
+    "blijden","pawiroredjo","kisoensingh","koenders","sabajo",
+
+    "rudge","veldman","fontein","doe","lichtveld","vanommeren",
+    "vanamson","vandijk","vanleeuwen","vanwest","brunswijk",
+
+    "jabini","aboikoni","pinas","nibte","pakosie","wijngaarde"
+  ],
+
+  "WEIRD_NAMES": [
+    "neonparamaribo","datacommee","jungleboss","cryptosuriname",
+    "pixelibo","stormmarowijne","riverghost","savannabyte",
+    "rainforest404","brownsbergpulse","albina_night",
+    "brokopondomatrix","junglecipher","ibo_shadow",
+
+    "switiwave","srananflow","wanpipelnexus",
+    "granmanbyte","parboboy","parbogirl",
+    "kasekocode","dushimatrix","srananvibes",
+    "iboengine","jungleflare","savannavector",
+
+    "ramdath.exe","soekhai404","tjongbyte",
+    "ali_cipher","khanmatrix","chenvector",
+    "ramdinpulse","martinaghost",
+
+    "brokopondo_beast","marowijnecore",
+    "surinameriver","paramariboking",
+    "ibo_fiesta","switilife","wanpipelpower",
+
+    "junglejuice","parbo_power",
+    "ibolegend","savannahstorm",
+    "rainforestking","sranan_soldier",
+
+    "kaseko_night","dushi_data",
+    "granmanstorm","riverbyte",
+    "pinasmatrix","wijngaardewave",
+
+    "wanpipellive","switidata",
+    "junglevibes","paramatrix",
+    "srananpulse","ibo_ghost",
+
+    "rainforestboss","brownsbergwave",
+    "brokopondoking","marowijneflare",
+    "surishadow","iboengineer",
+
+    "ramdin","martina",
+    "parbo_king","switi_queen88",
+    "ibo_master","jungle_hacker",
+    "savanna","rainforest.exe"
+  ]
+}

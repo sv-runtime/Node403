@@ -1,0 +1,80 @@
+{
+"FIRST_NAMES": 
+    [
+  "aleksei","anatoly","andrei","anton","arkady","arseniy","boris",
+  "daniil","denis","dmitry","egor","evgeny","fedor","gennady",
+  "grigory","ilya","ivan","kirill","konstantin","leonid",
+  "maksim","mikhail","nikita","oleg","pavel","roman",
+  "sergei","stepan","timur","vadim","valery","viktor",
+  "vladimir","vyacheslav","yuri",
+
+  "alina","anastasia","anna","daria","ekaterina","elena",
+  "irina","karina","kristina","kseniya","larisa","lidia",
+  "maria","marina","natalia","nina","olga","polina",
+  "sofia","svetlana","tatiana","valentina","veronika",
+  "viktoria","yulia",
+
+  "artem","bogdan","denys","eduard","german","ignat",
+  "ilyas","maksym","matvey","miron","rodion","ruslan",
+  "saveliy","stanislav","taras","yaroslav","arslan",
+  "valentin","vsevolod","zakhar","yegor","roman",
+
+  "agata","aleksandra","alla","angelina","arina","diana",
+  "elizaveta","galina","inna","karolina","katerina",
+  "ksenia","liliya","lyubov","margarita","milana",
+  "nadezhda","oksana","rada","regina","rimma",
+  "tamila","uliana","varvara","vera","zlata"
+],
+
+"LAST_NAMES": 
+    [
+    "alekseev","andreev","antonov","baranov","belov",
+    "bogdanov","borisov","fedorov","ivanov","kalinin",
+    "kozlov","kuznetsov","lebedev","mikhailov","morozov",
+    "nikolaev","novikov","orlov","pavlov","petrov",
+    "romanov","semenov","sergeev","smirnov","sokolov",
+    "tarasov","vasiliev","volkov","voronin","yakovlev",
+    "zaitsev","zhukov",
+
+    "abramov","afanasiev","alekhin","alexeev","andrianov","anisimov","artamonov","avdeev","axenov","babanov",
+    "babushkin","belyaev","belyakov","bogomolov","bolshakov","borodin","borovikov","bragin","bryukhanov","bunin",
+    "butov","bykov","chernov","chernyshev","danilov","demidov","denisov","dmitriev","dorofeev","drozdov",
+    "efimov","egorov","ermakov","ershov","evdokimov","fadeev","filatov","fomin","gavrilenko","gavrilov",
+    "gerasimov","gorbachev","gorbunov","gordeev","gorshkov","gusev","ignatiev","isaev","ivanchenko","kapustin",
+    "karpov","kiselev","kiselev","kiselev","kolesnikov","komarov","konovalov","korolev","kostin","krotov",
+    "kravtsov","krylov","kulikov","kuragin","lapin","litvinov","lobanov","loginov","lukin","makarov",
+    "maksimov","malyshev","markov","matveev","medvedev","melnikov","mishin","moiseev","nikitin","nosov",
+    "osipov","pakhomov","panin","panov","paramonov","pashkov","polyakov","ponomarev","popov","prokhorov",
+    "ratnikov","rodionov","rogozin","rubtsov","ryabov","ryzhov","savelyev","savitsky","selivanov","shapovalov",
+    "shevchenko","shilov","shubin","shumakov","sidorenko","solovyov","stepanov","stolyarov","suvorov","sychev",
+    "terentyev","timofeev","titov","tokarev","tretyakov","trofimov","tsvetkov","ushakov","vavilov","vereshchagin",
+    "vinogradov","vlasov","vodopyanov","volodin","vostrikov","vyazemsky","yakushin","zakharchenko","zarubin","zubov"
+  ],
+
+"WEIRD_NAMES":
+    [
+    "darkbear","redcomrade","cybervolk","nightvodka","ironmoscow",
+    "neonkremlin","dataknight","cryptowolf","stormtaiga",
+    "pixelvostok","urbanboris","midnightsteppe","gridrussia",
+    "neonural","cryptosiberia","stormvolga",
+    "bytecossack","shadowruble",
+
+    "moscownight","uralstorm","taigashadow","siberwave",
+    "kremlincore","volgabyte","steppeflare",
+    "russiannexus","northbearcore","redtaiga",
+    "uralsombra","siberstorm","kremlinwave",
+    "vostokflare","ironsteppe","rublegrid", 
+
+    "nochmoskva","severnyiveter",
+    "dusharossii","moskovskaya",
+    "zvezdanyoch","uralskiyput",
+    "sibirskayanoch","volnyvolgi",
+    "novayazarya","tenkremlya",
+    "polarnyiveter","rossiyskydom",
+    "lesnayadusha","snegovoyput",
+    "dalniyvostok","taynataigi",
+    "moskovskayanoch","uralskayazvezda",
+    "severnyidom","dushaural",
+    "zaryasibiri","veterstepi"
+  ]
+}
