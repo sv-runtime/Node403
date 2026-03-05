@@ -252,6 +252,22 @@ display:none;
   user-select: none;
 }
 
+.intro-tagline{
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: var(--ui-secondary);
+  opacity: 0.9;
+
+  margin-top: 6px;
+  margin-bottom: 22px;
+}
+
+.intro-action {
+  margin-top: 20px;
+}
+
 .hidden {
   display: none;
 }

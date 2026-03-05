@@ -18,7 +18,7 @@ export function createResizeHandler({
   setMatrixState               // (state) => { introDrops=..., drops=..., ... }
 }) {
   return function resize() {
-    const ratio = window.devicePixelRatio || 1;
+    const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
     const cssWidth = window.innerWidth;
     const cssHeight = window.innerHeight;
 

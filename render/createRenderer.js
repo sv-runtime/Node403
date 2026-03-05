@@ -1,7 +1,6 @@
 export function createRenderer(deps) {
 
   function wrapLine(ctx, line, maxWidth) {
-
     if (line === "") return [""];
 
     const words = line.split(" ");
@@ -25,37 +24,44 @@ export function createRenderer(deps) {
   }
 
   function render(timestamp) {
+
     const {
       canvas,
       ctx,
-
       PHASE,
       STATES,
       setState,
       TIMING,
-
       randFloat,
       getThemePalette,
-
       titleEngine,
       curtainEngine,
       hashScreen,
       glitchEngine,
       resolveVisitorIP,
-
       startTerminalSequence,
-
       matrixChars,
-
       getLoopDuration,
       getExperienceStart,
       setExperienceStart,
-
-      getMatrixGeometry, 
-      getMatrixState,    
-
+      getMatrixGeometry,
+      getMatrixState,
       renderState
     } = deps;
+
+    const TARGET_FPS = 30;
+    const FRAME_TIME = 1000 / TARGET_FPS;
+
+    if (!renderState.lastFrameTime) {
+      renderState.lastFrameTime = timestamp;
+    }
+
+    if (timestamp - renderState.lastFrameTime < FRAME_TIME) {
+      requestAnimationFrame(render);
+      return;
+    }
+
+    renderState.lastFrameTime = timestamp;
 
     const runtime = getExperienceStart() ? (timestamp - getExperienceStart()) : 0;
 
@@ -227,11 +233,20 @@ ctx.textBaseline = "alphabetic";
       if (!renderState.lastTypeTime) renderState.lastTypeTime = timestamp;
 
       if (renderState.typedLength < currentTitle.length) {
-        if (timestamp - renderState.lastTypeTime > TIMING.typingSpeed) {
-          renderState.typedLength++;
-          renderState.lastTypeTime = timestamp;
-        }
-      } else {
+
+      const elapsed = timestamp - renderState.lastTypeTime;
+      const chars = Math.floor(elapsed / TIMING.typingSpeed);
+
+      if (chars > 0) {
+        renderState.typedLength = Math.min(
+          renderState.typedLength + chars,
+          currentTitle.length
+        );
+
+        renderState.lastTypeTime += chars * TIMING.typingSpeed;
+      }
+
+    }else {
         if (!renderState.titleFinished) renderState.titleFinished = timestamp;
         if (timestamp - renderState.titleFinished > TIMING.titlePause) {
           setState(STATES.CURTAIN, timestamp);

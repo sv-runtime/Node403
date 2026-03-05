@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
-
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 date_default_timezone_set('Europe/Amsterdam');
 
 /*
@@ -74,6 +75,30 @@ function getClientIp(array $server, array $trusted): array {
     return [$ip, $source];
 }
 
+function botLevel(string $ua): int {
+
+    $ua = strtolower($ua);
+
+    if (strpos($ua, 'googlebot') !== false ||
+        strpos($ua, 'bingbot') !== false ||
+        strpos($ua, 'applebot') !== false) {
+        return 1;
+    }
+
+    if (strpos($ua, 'claudebot') !== false ||
+        strpos($ua, 'scrapy') !== false) {
+        return 2;
+    }
+
+    if (strpos($ua, 'headless') !== false ||
+        strpos($ua, 'curl') !== false ||
+        strpos($ua, 'wget') !== false ||
+        strpos($ua, 'python') !== false) {
+        return 3;
+    }
+
+    return 0;
+}
 
 // bot detectie
 function isBot(string $ua): bool {
@@ -107,13 +132,19 @@ function isBot(string $ua): bool {
 // gegevens verzamelen
 [$ip, $ipSource] = getClientIp($_SERVER, $TRUSTED_PROXIES);
 
+// eigen netwerk niet loggen
+$ignore_logging =
+    strpos($ip, "2a02:a45e") === 0 ||
+    $ip === "127.0.0.1" ||
+    $ip === "::1";
+
 $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
 $referrer  = $_SERVER['HTTP_REFERER'] ?? '';
 $path      = $_SERVER['REQUEST_URI'] ?? '';
 $method    = $_SERVER['REQUEST_METHOD'] ?? '';
 $host      = $_SERVER['HTTP_HOST'] ?? '';
 
-$bot = isBot($userAgent) ? 1 : 0;
+$bot = botLevel($userAgent);
 
 $entry = [
     'ts' => date('c'),
@@ -127,8 +158,10 @@ $entry = [
     'bot' => $bot
 ];
 
-file_put_contents(
-    $LOG_FILE,
-    json_encode($entry, JSON_UNESCAPED_SLASHES) . PHP_EOL,
-    FILE_APPEND | LOCK_EX
-);
+if (!$ignore_logging) {
+    file_put_contents(
+        $LOG_FILE,
+        json_encode($entry, JSON_UNESCAPED_SLASHES) . PHP_EOL,
+        FILE_APPEND | LOCK_EX
+    );
+}

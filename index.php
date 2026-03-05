@@ -5,6 +5,7 @@
 <?php
 require_once __DIR__ . '/api/log-visitor.php';
 ?>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
 <script>
@@ -24,13 +25,33 @@ gtag('config', 'G-KGB3F6B4FS', {
 
 <meta name="description" content="Node403 is an interactive terminal-style web simulation that visualizes HTTP 403 access denial, authorization policy evaluation and network security enforcement inside a stylized system console.">
 
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="keywords" content="
+http 403,
+authorization simulation,
+security terminal,
+hacker console simulation,
+cyber security visualization,
+network monitoring simulation,
+developer terminal demo,
+matrix style terminal,
+security log console,
+web security visualization,
+terminal ambience,
+cyberpunk terminal screen,
+hacker ambience website
+">
+
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+
 <meta name="author" content="S. Veenstra">
 <meta name="color-scheme" content="dark">
 
 <link rel="canonical" href="https://node403.com/">
 
 <meta name="theme-color" content="#000000">
+
+<!-- OpenGraph -->
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Node403">
@@ -46,11 +67,26 @@ gtag('config', 'G-KGB3F6B4FS', {
 
 <meta property="og:locale" content="en_US">
 
+<!-- Twitter -->
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Node403 — Interactive HTTP 403 Security Simulation">
 <meta name="twitter:description" content="Interactive terminal simulation demonstrating HTTP 403 security enforcement and access control systems.">
 <meta name="twitter:image" content="https://node403.com/style/node403.png">
 <meta name="twitter:image:alt" content="Node403 HTTP 403 security terminal simulation">
+
+<!-- Extra SEO / indexing hints -->
+
+<meta name="application-name" content="Node403">
+<meta name="apple-mobile-web-app-title" content="Node403">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+<meta name="language" content="en">
+
+<!-- Structured Data -->
 
 <script type="application/ld+json">
 {
@@ -63,9 +99,22 @@ gtag('config', 'G-KGB3F6B4FS', {
  "image": "https://node403.com/style/node403.png",
  "inLanguage": "en",
  "description": "Interactive browser-based simulation of an authorization system demonstrating HTTP 403 access denial, security policy evaluation and terminal-style network monitoring.",
+ "keywords": [
+  "HTTP 403",
+  "security simulation",
+  "terminal interface",
+  "network monitoring",
+  "cyber security visualization",
+  "developer demo"
+ ],
  "creator": {
    "@type": "Person",
    "name": "S. Veenstra"
+ },
+ "offers": {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "USD"
  }
 }
 </script>
@@ -74,8 +123,12 @@ gtag('config', 'G-KGB3F6B4FS', {
 <link rel="icon" type="image/png" sizes="32x32" href="/style/node403.png">
 <link rel="apple-touch-icon" href="/style/node403.png">
 
+<!-- Performance (SEO ranking factor) -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preload" href="/style/style.css?v=1" as="style">
 
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
@@ -101,8 +154,10 @@ history.replaceState(null, null, window.location.pathname + window.location.sear
 <div id="introScreen" class="intro-screen">
 
 <div class="intro-title">
-  403
+  NODE403
 </div>
+
+<div class="intro-tagline" id="introTagline"></div>
 
 <div class="intro-action">
   <button id="enterBtn" class="enter-btn"></button>
