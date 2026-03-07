@@ -1,11 +1,12 @@
 // ./core/createStartExperience.js
 export function createStartExperience({ PHASE, STATES, hasBootedOnceRef, resetExperience }) {
   return async function startExperience() {
-    if (
+         if (
       PHASE.current !== STATES.INTRO &&
+      PHASE.current !== STATES.MENU &&
       PHASE.current !== STATES.LOADING &&
       PHASE.current !== STATES.TITLE
-    ) return;
+     ) return;
 
     hasBootedOnceRef.value = true;
     await resetExperience();

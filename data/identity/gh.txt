@@ -22,7 +22,7 @@
   "adomaa","agyapomaa","akumaa","akua","ampofoa","araba",
   "baaba","efia","eunice","felicia","gifty","joana",
   "mavis","naana","perpetual","philomena","regina",
-  "serwaa","vida","yeaa","yeboaa", "jewel"
+  "serwaa","vida","yeaa","yeboaa"
 ],
 
 "LAST_NAMES": 
@@ -31,7 +31,7 @@
     "agyeman","darko","kusi","opoku","sarfo","osei","tetteh",
     "lamptey","quaye","amoah","gyasi","annor","baah","boadu",
     "frimpong","kwakye","poku","adusei","donkor","amoako",
-    "akuffo","atta","ankrah","badu","ofori","nyarko",
+    "akuffo","atta","ankrah","badu","ofori","nyarko","jewel","emmanuel",
     "achampong","adomako","agyapong","akoto","ampofo",
     "ankomah","asiedu","awuku","ayim","baidoo",
     "bannerman","bempah","botchway","dartey","dede",
@@ -41,7 +41,7 @@
     "nante","nkrumah","obeng","oduro","okai",
     "okine","omane","otoo","oware","quansah",
     "sackey","sarpong","tawiah","teye","twum",
-    "yeboah","yirenkyi","zanu","zongo","zormelo", "okraku"
+    "yeboah","yirenkyi","zanu","zongo","zormelo"
   ],
 
 "WEIRD_NAMES":

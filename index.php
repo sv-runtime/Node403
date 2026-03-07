@@ -2,9 +2,17 @@
 
 <html lang="en">
 <head>
-<?php
-require_once __DIR__ . '/api/log-visitor.php';
-?>
+<script>
+fetch("/api/log-visitor.php", {
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify({
+page: window.location.pathname
+})
+}).catch(()=>{});
+</script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
@@ -134,7 +142,8 @@ hacker ambience website
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="./style/style.css?v=1">
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4191744023231140"
+crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -143,7 +152,7 @@ if (window.location.hash) {
 history.replaceState(null, null, window.location.pathname + window.location.search);
 }
 </script>
-<h1 style="position:absolute;left:-9999px;">Node403 Interactive HTTP 403 Security Simulation</h1>
+<h1 style="position:absolute;left:-9999px;">Node403 HTTP 403 Security Simulation</h1>
 
 <canvas id="matrix"></canvas>
 
@@ -164,6 +173,7 @@ history.replaceState(null, null, window.location.pathname + window.location.sear
 </div>
 
 </div>
+
 
 
 <button class="back-button back-inline" id="backBtn"></button>

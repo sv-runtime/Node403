@@ -3,12 +3,16 @@
 <div class="footer-inner">
 
 <span class="footer-brand">© 2026 Node403</span>
+<span class="footer-separator">·</span>
 
+<a href="/privacy.php">Privacy Policy</a>
+<span class="footer-separator">·</span>
+
+<a href="/admin/login.php">Admin</a>
 <span class="footer-separator">·</span>
 
 <a href="https://buymeacoffee.com/node403" target="_blank" rel="noopener">
-Buy me a coffee ☕
-</a>
+Support this project</a>
 
 <span class="footer-separator">·</span>
 
@@ -17,3 +21,4 @@ Buy me a coffee ☕
 </div>
 
 </footer>
+

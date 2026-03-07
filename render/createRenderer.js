@@ -52,13 +52,17 @@ export function createRenderer(deps) {
     const TARGET_FPS = 30;
     const FRAME_TIME = 1000 / TARGET_FPS;
 
-    if (!renderState.lastFrameTime) {
-      renderState.lastFrameTime = timestamp;
-    }
+    if (PHASE.current >= STATES.MATRIX_INTRO) {
+      if (!renderState.lastFrameTime) {
+        renderState.lastFrameTime = timestamp;
+      }
 
-    if (timestamp - renderState.lastFrameTime < FRAME_TIME) {
-      requestAnimationFrame(render);
-      return;
+      if (timestamp - renderState.lastFrameTime < FRAME_TIME) {
+        requestAnimationFrame(render);
+        return;
+      }
+
+      renderState.lastFrameTime = timestamp;
     }
 
     renderState.lastFrameTime = timestamp;
@@ -172,6 +176,17 @@ export function createRenderer(deps) {
       return;
     }
 
+ /* ===== FASE -90 MENU ===== */
+ if (PHASE.current === STATES.MENU) {
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#000";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  requestAnimationFrame(render);
+  return;
+ }
+
 /* ===== FASE -75 LOADING ===== */
 if (PHASE.current === STATES.LOADING) {
 
@@ -246,7 +261,7 @@ ctx.textBaseline = "alphabetic";
         renderState.lastTypeTime += chars * TIMING.typingSpeed;
       }
 
-    }else {
+    } else {
         if (!renderState.titleFinished) renderState.titleFinished = timestamp;
         if (timestamp - renderState.titleFinished > TIMING.titlePause) {
           setState(STATES.CURTAIN, timestamp);
@@ -305,6 +320,8 @@ ctx.textBaseline = "alphabetic";
       requestAnimationFrame(render);
       return;
     }
+
+
 
     /* ===== FASE 100 BLACKOUT ===== */
     if (PHASE.current === STATES.BLACKOUT) {
@@ -407,7 +424,7 @@ ctx.textBaseline = "alphabetic";
           if (d === depthLayers.length - 1) {
             ctx.fillStyle = "#e6e6e6";
             ctx.globalAlpha = 1;
-            ctx.shadowBlur = 12;
+            ctx.shadowBlur = 6;
             ctx.shadowColor = "rgba(230,230,230,0.9)";
           } else {
             const isBlack = colColor.toLowerCase() === "#000000";
@@ -443,7 +460,9 @@ ctx.textBaseline = "alphabetic";
 
         if (stacks[i].length > maxLengths[i]) stacks[i].pop();
 
-        for (let t = 0; t < stacks[i].length; t++) {
+        const MAX_TRAIL = 12;
+
+        for (let t = 0; t < Math.min(stacks[i].length, MAX_TRAIL); t++) {
           const trailY = y - t * trailSpacing;
           if (trailY < 0) continue;
 
@@ -453,7 +472,7 @@ ctx.textBaseline = "alphabetic";
             ctx.fillStyle = "#e6e6e6";
             ctx.globalAlpha = 0.25;
 
-            ctx.shadowBlur = 12;
+            ctx.shadowBlur = 6;
             ctx.shadowColor = "rgba(230,230,230,0.9)";
           } else {
             const baseColor = palette[i % palette.length];

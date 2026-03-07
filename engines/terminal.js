@@ -1,4 +1,9 @@
+import { lockTerminal } from "../core/state.js";
+
 export function createTerminalEngine(deps) {
+
+const outputNode = document.getElementById("terminalOutput");
+const bodyNode = document.getElementById("terminalBody");
 
 const REQUEST_METHODS = [
   "GET",
@@ -127,11 +132,11 @@ function maybeSecurityEvent() {
 }
 
   function getNodes() {
-    return {
-      output: document.getElementById("terminalOutput"),
-      body: document.getElementById("terminalBody")
-    };
-  }
+  return {
+        output: outputNode,
+        body: bodyNode
+      };
+    }
 
 function getTrafficLabel(type) {
  if (type === "scripted") return "bot";
@@ -157,7 +162,7 @@ function getTrafficLabel(type) {
      ACCESS LOG BUFFER
   ========================= */
 
-  const LOG_BUFFER_SIZE = 200;
+  const LOG_BUFFER_SIZE = 50;
 
   const accessLogBuffer = [];
 
@@ -172,7 +177,7 @@ function getTrafficLabel(type) {
 
     if (accessLogBuffer.length > 0) return;
 
-    const count = 9;
+    const count = 2;
 
     for (let i = 0; i < count; i++) {
       pushAccessLog(generateOldLog());
@@ -288,14 +293,25 @@ const path = pickRequestPath(BASE_DOMAIN);
     cursor.className = "cursor";
     line.appendChild(cursor);
 
+    let buffer = "";
+
     for (let i = 0; i < text.length; i++) {
 
-      line.insertBefore(document.createTextNode(text[i]), cursor);
+      buffer += text[i];
+
+      if (i % 3 === 0) {
+        line.insertBefore(document.createTextNode(buffer), cursor);
+        buffer = "";
+      }
 
       await sleep(speed + randFloat()*20);
-
-      body.scrollTop = body.scrollHeight;
     }
+
+    if (buffer) {
+      line.insertBefore(document.createTextNode(buffer), cursor);
+    }
+
+    body.scrollTop = body.scrollHeight;
 
     cursor.remove();
 
@@ -316,7 +332,7 @@ const path = pickRequestPath(BASE_DOMAIN);
 
       body.scrollTop = body.scrollHeight;
 
-      await sleep(80 + randFloat()*80);
+      await sleep(140 + randFloat()*120);
     }
   }
 
@@ -334,7 +350,8 @@ const path = pickRequestPath(BASE_DOMAIN);
 
       body.scrollTop = body.scrollHeight;
 
-      await sleep(60 + randFloat()*80);
+      await sleep(120 + randFloat()*120);
+
     }
   }
 
@@ -400,7 +417,7 @@ const rootPrompt = createRootPrompt(output);
 
 await sleep(200);
 
-await typeLine(rootPrompt, "tail -n 10 access.log", body);
+await typeLine(rootPrompt, "tail -n 3 access.log", body);
 
 const protocol = randFloat() < 0.7 ? "HTTP/1.1" : "HTTP/2";
 const method = pickRequestMethod();
@@ -460,15 +477,106 @@ const tail = accessLogBuffer.slice(-10);
 
 await printAccessTail(output, body, tail);
 
-    const finalPrompt = createRootPrompt(output);
+/* ===== HELP HINT ===== */
 
-    const cursor = document.createElement("span");
-    cursor.className = "cursor";
+const helpPrompt = createRootPrompt(output);
 
-        finalPrompt.appendChild(cursor);
+await sleep(200);
 
-    terminalRunning = false;
+await typeLine(helpPrompt, `echo "enter 'help' for command list"`, body);
+
+/* ===== INTERACTIVE PROMPT ===== */
+
+const finalPrompt = createRootPrompt(output);
+
+terminalRunning = false;
+
+openCommandPrompt(finalPrompt);
+      }
+
+function echoCommand(cmd) {
+
+ const output = document.getElementById("terminalOutput");
+
+ const row = document.createElement("pre");
+
+ row.className = "term-line";
+
+ row.textContent = cmd;
+
+ output.appendChild(row);
+
+}
+
+function printTerminalLine(text) {
+
+ const output = document.getElementById("terminalOutput");
+
+ const row = document.createElement("pre");
+
+ row.className = "term-line";
+
+ row.textContent = text;
+
+ output.appendChild(row);
+
+}
+
+function openCommandPrompt(promptLine) {
+
+ const body = document.getElementById("terminalBody");
+
+ const input = document.createElement("input");
+
+ input.id = "terminalCommand";
+ input.style.background = "transparent";
+ input.style.border = "0";
+ input.style.color = "#fff";
+ input.style.fontFamily = "inherit";
+ input.style.outline = "none";
+ input.style.width = "200px";
+
+ promptLine.appendChild(input);
+
+ body.scrollTop = body.scrollHeight;
+
+ input.focus();
+
+ input.addEventListener("keydown", function(e){
+
+  if (e.key !== "Enter") return;
+    lockTerminal();
+  const cmd = input.value.trim();
+  const lower = cmd.toLowerCase();
+
+  input.remove();
+
+  echoCommand(cmd);
+
+  if (lower === "live") {
+    window.location.href = "/live.php";
+    return;
   }
+
+  if (lower === "help") {
+
+    printTerminalLine("available commands:");
+    printTerminalLine("  live   view live monitor");
+    printTerminalLine("  help   show available commands");
+
+    const newPrompt = createRootPrompt(outputNode);
+    openCommandPrompt(newPrompt);
+    return;
+  }
+
+  printTerminalLine("command not found");
+
+  const newPrompt = createRootPrompt(outputNode);
+  openCommandPrompt(newPrompt);
+
+ });
+
+}
 
   return {
     runTerminal,
@@ -476,5 +584,4 @@ await printAccessTail(output, body, tail);
       terminalRunning = false;
     }
   };
-
 }

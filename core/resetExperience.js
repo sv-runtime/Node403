@@ -1,3 +1,4 @@
+import { TERMINAL_LOCK } from "./state.js";
 // ./core/resetExperience.js
 export function createResetExperience({
   // core resets
@@ -63,7 +64,12 @@ setPolicy,
 }) {
 
   return async function resetExperience() {
-    reseedWorld();
+
+     if (TERMINAL_LOCK) {
+      return;
+     }
+
+     reseedWorld();
 
     // refs reset
     CAPTURED_PASSWORD_REF.value = null;

@@ -14,9 +14,14 @@
 <a href="./contact.php">Contact</a>
 
 <span class="footer-separator">·</span>
+<a href="./docs/index.php">Documentation</a>
+
+<span class="footer-separator">·</span>
+<a href="./admin/login.php">Admin</a>
+
+<span class="footer-separator">·</span>
 <a href="https://buymeacoffee.com/node403" target="_blank" rel="noopener">
-Buy me a coffee ☕
-</a>
+Support this project</a>
 
 <span class="footer-separator">·</span>
 
@@ -25,3 +30,4 @@ Buy me a coffee ☕
 </div>
 
 </footer>
+

@@ -5,5 +5,5 @@ export function computeLoopDuration(session, randFloat) {
   if (session?.type === "datacenter") {
     return Math.floor(35000 + randFloat() * 15000); // 35–50s
   }
-  return Math.floor(40000 + randFloat() * 20000);   // 40–60s
+  return Math.floor(45000 + randFloat() * 20000);   // 45–65s
 }

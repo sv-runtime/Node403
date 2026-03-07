@@ -1,28 +1,39 @@
-<?php
-require_once __DIR__ . '/../api/log-visitor.php';
-?>
-
 <header class="site-header">
 
-  <div class="header-inner">
+<script>
+fetch("/api/log-visitor.php", {
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify({
+page: window.location.pathname
+})
+}).catch(()=>{});
+</script>
 
-    <div class="header-brand">
-      Node403
-    </div>
+<div class="header-inner">
 
-    <nav class="header-nav">
-      <a href="/">Home</a>
-      <span class="header-separator">·</span>
+<div class="header-brand">
+Node403
+</div>
 
-      <a href="./about.php">About</a>
-      <span class="header-separator">·</span>
+<nav class="header-nav">
 
-      <a href="./privacy.php">Privacy</a>
-      <span class="header-separator">·</span>
+<a href="/">Home</a>
+<span class="header-separator">·</span>
 
-      <a href="./contact.php">Contact</a>
-    </nav>
+<a href="/about.php">About</a>
+<span class="header-separator">·</span>
 
-  </div>
+<a href="/contact.php">Contact</a>
+<span class="header-separator">·</span>
+
+<a href="/docs/index.php">Documentation</a>
+
+</nav>
+
+</div>
 
 </header>
+

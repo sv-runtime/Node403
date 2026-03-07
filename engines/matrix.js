@@ -13,8 +13,8 @@ export function initMatrixState({ introColumns, matrixColumns, randFloat }) {
     maxLengthBase: 10,
     maxLengthRange: 40,
 
-    spawnMin: 0.3,
-    spawnRange: 0.6,
+    spawnMin: 0.15,
+    spawnRange: 0.35,
 
     driftRange: 6
   };

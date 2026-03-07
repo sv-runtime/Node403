@@ -272,9 +272,72 @@ display:none;
   display: none;
 }
 
+/* =========================================================
+   8. MENU SCREEN
+========================================================= */
+
+
+.menu-screen{
+ position: fixed;
+ inset: 0;
+ display: none;
+ align-items: center;
+ justify-content: center;
+ z-index: 11;
+ background: rgba(0,0,0,0.92);
+}
+
+.menu-terminal{
+ width: min(92vw, 720px);
+ background: rgba(15,20,15,0.78);
+ border: 1px solid rgba(255,255,255,0.08);
+ padding: 28px;
+ color: #e6e6e6;
+ box-shadow: 0 0 30px rgba(0,0,0,0.45);
+}
+
+.menu-title{
+ font-size: 18px;
+ letter-spacing: 2px;
+ margin-bottom: 20px;
+ color: var(--ui-tertiary, #d0d0d0);
+}
+
+.menu-title::before{
+ content: "> ";
+ color: var(--color-secondary, #4da6ff);
+}
+
+.menu-line{
+ margin-bottom: 8px;
+ white-space: pre-wrap;
+}
+
+.menu-actions{
+ margin-top: 24px;
+ display: grid;
+ gap: 10px;
+}
+
+.menu-btn{
+ padding: 12px 16px;
+ font: inherit;
+ text-align: left;
+ border: 1px solid var(--btn-idle, #888);
+ background: rgba(0,0,0,0.75);
+ color: var(--btn-idle, #ddd);
+ cursor: pointer;
+}
+
+.menu-btn:hover{
+ border-color: var(--color-secondary, #4da6ff);
+ color: var(--color-secondary, #4da6ff);
+ background: rgba(15,15,15,0.9);
+}
+
 
 /* =========================================================
-   8. TERMINAL LAYOUT
+   9. TERMINAL LAYOUT
 ========================================================= */
 
 .terminal {
@@ -359,7 +422,7 @@ display:none;
 }
 
 /* =========================================================
-   9. HEADER
+   10. HEADER
 ========================================================= */
 
 .site-header{
@@ -401,7 +464,7 @@ opacity:0.5;
 }
 
 /* =========================================================
-   9. FOOTER
+   11. FOOTER
 ========================================================= */
 
 .site-footer {
@@ -438,7 +501,7 @@ overflow:hidden;
 }
 
 /* =========================================================
-   10. RESPONSIVE / TV SCALE (TOKENS ONLY)
+   12. RESPONSIVE / TV SCALE (TOKENS ONLY)
 ========================================================= */
 
 @media (max-width: 768px) {
