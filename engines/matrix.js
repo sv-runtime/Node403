@@ -7,14 +7,14 @@ export function initMatrixState({ introColumns, matrixColumns, randFloat }) {
     introDepthLayers: 3,
     introDropRange: 50,
 
-    speedMin: 0.08,
-    speedRange: 0.25,
+    speedMin: 0.04,
+    speedRange: 0.35,
 
     maxLengthBase: 10,
     maxLengthRange: 40,
 
-    spawnMin: 0.15,
-    spawnRange: 0.35,
+    spawnMin: 0.3,
+    spawnRange: 0.6,
 
     driftRange: 6
   };

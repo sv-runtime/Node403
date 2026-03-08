@@ -17,7 +17,7 @@ usort($files, function($a, $b) {
 
 $latestLog = $files[0];
 
-$lines = array_slice(file($latestLog), -20);
+$lines = array_slice(file($latestLog), -10);
 
 $data = [];
 

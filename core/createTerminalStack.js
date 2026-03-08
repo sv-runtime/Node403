@@ -31,7 +31,12 @@ export function createTerminalStack({
   CAPTURED_PASSWORD_REF,
   FINAL_SESSION_ID_REF,
   LAST_PROTOCOL_REF,
-  REQUEST_TIME_REF
+  REQUEST_TIME_REF, 
+
+resetExperience,
+setExperienceStart,
+setState,
+STATES
 }) {
 
   const hashScreen = createHashScreenEngine({
@@ -49,28 +54,32 @@ export function createTerminalStack({
     REQUEST_TIME_REF
   });
 
-  const terminalEngine = createTerminalEngine({
-    randFloat,
-    getVisitorIP,
-    getHostLabel,
-    getThemeForGroup,
-    getWeightedGroup: (region) => groupSelector.getWeightedGroup(region, GROUP_WEIGHTS),
-    GROUP_LABELS,
-    FLAG_THEMES,
-    getSession,
-    getSiteUser,
-    getRandomUserByGroup,
-    getNetworkGroup,
-    BASE_DOMAIN,
-    FULL_DOMAIN,
-    IP_ADDRESS,
-    pushAccessLog,
-    getTailLines,
-    CAPTURED_PASSWORD_REF,
-    FINAL_SESSION_ID_REF,
-    LAST_PROTOCOL_REF,
-    REQUEST_TIME_REF
-  });
+const terminalEngine = createTerminalEngine({
+  randFloat,
+  getVisitorIP,
+  getHostLabel,
+  getThemeForGroup,
+  getWeightedGroup: (region) => groupSelector.getWeightedGroup(region, GROUP_WEIGHTS),
+  GROUP_LABELS,
+  FLAG_THEMES,
+  getSession,
+  getSiteUser,
+  getRandomUserByGroup,
+  getNetworkGroup,
+  BASE_DOMAIN,
+  FULL_DOMAIN,
+  IP_ADDRESS,
+  pushAccessLog,
+  getTailLines,
+  CAPTURED_PASSWORD_REF,
+  FINAL_SESSION_ID_REF,
+  LAST_PROTOCOL_REF,
+  REQUEST_TIME_REF,
+  resetExperience,
+  setExperienceStart,
+  setState,
+  STATES
+});
 
   return { hashScreen, terminalEngine };
 }

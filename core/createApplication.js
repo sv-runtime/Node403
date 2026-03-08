@@ -17,7 +17,7 @@ import { createBootController } from "./bootController.js";
 import { preloadAllIdentities } from "./loaders/identityLoader.js";
 import { createUserGenerator } from "../experience/users.js";
 
-import { STATES, PHASE, setState } from "./state.js";
+import { STATES, PHASE, setState, setExperienceStart } from "./state.js";
 import { randFloat } from "./random.js";
 import { getVisitorIP, getHostLabel, resolveVisitorIP, isIPResolved } from "./ip.js";
 import { getThemeForGroup, getThemePalette } from "./theme.js";
@@ -171,6 +171,8 @@ export async function createApplication() {
     terminalStartedRef,
     dom,
     resize,
+  STATES,
+  setExperienceStart,
 
     terminalRuntime
   });
@@ -216,29 +218,32 @@ export async function createApplication() {
      BOOT CONTROLLER
   ============================= */
 
-  const bootController = createBootController({
-    dom,
-    GROUP_WEIGHTS,
-    preloadAllIdentities,
-    createUserGenerator,
-    randFloat,
+const bootController = createBootController({
+  dom,
+  GROUP_WEIGHTS,
+  preloadAllIdentities,
+  createUserGenerator,
+  randFloat,
 
-    STATES,
-    setState,
-    renderState,
+  STATES,
+  setState,
+  renderState,
 
-    getAllIdentities: () => exp.ALL_IDENTITIES,
-    setAllIdentities: (v) => { exp.ALL_IDENTITIES = v; },
+  getAllIdentities: () => exp.ALL_IDENTITIES,
+  setAllIdentities: (v) => { exp.ALL_IDENTITIES = v; },
 
-    getUserGen: () => exp.userGen,
-    setUserGen: (v) => { exp.userGen = v; },
+  getUserGen: () => exp.userGen,
+  setUserGen: (v) => { exp.userGen = v; },
 
-    setGetRandomUserByGroupRef: (fn) => {
-      exp.getRandomUserByGroupRef = fn;
-    },
+  UI_TEXT,
+  getNetworkGroup,
 
-    startExperience
-  });
+  setGetRandomUserByGroupRef: (fn) => {
+    exp.getRandomUserByGroupRef = fn;
+  },
+
+  startExperience
+});
 
   function start() {
     appRenderer.start();

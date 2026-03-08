@@ -1,4 +1,4 @@
-import { lockTerminal } from "../core/state.js";
+import { lockTerminal, unlockTerminal } from "../core/state.js";
 
 export function createTerminalEngine(deps) {
 
@@ -483,7 +483,7 @@ const helpPrompt = createRootPrompt(output);
 
 await sleep(200);
 
-await typeLine(helpPrompt, `echo "enter 'help' for command list"`, body);
+await typeLine(helpPrompt, `echo "enter 'h' for command list"`, body);
 
 /* ===== INTERACTIVE PROMPT ===== */
 
@@ -553,16 +553,29 @@ function openCommandPrompt(promptLine) {
 
   echoCommand(cmd);
 
-  if (lower === "live") {
+  if (lower === "l") {
     window.location.href = "/live.php";
     return;
   }
 
-  if (lower === "help") {
+if (lower === "r" || lower === "reboot") {
+
+  printTerminalLine("^C");
+  printTerminalLine("rebooting...");
+
+  setTimeout(() => {
+    window.location.reload();
+  }, 200);
+
+  return;
+}
+
+  if (lower === "h") {
 
     printTerminalLine("available commands:");
-    printTerminalLine("  live   view live monitor");
-    printTerminalLine("  help   show available commands");
+    printTerminalLine("  l     view live monitor");
+    printTerminalLine("  r        reboot the system");
+    printTerminalLine("  h     show available commands");
 
     const newPrompt = createRootPrompt(outputNode);
     openCommandPrompt(newPrompt);
@@ -581,7 +594,6 @@ function openCommandPrompt(promptLine) {
   return {
     runTerminal,
     reset() {
-      terminalRunning = false;
     }
   };
 }

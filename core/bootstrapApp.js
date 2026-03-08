@@ -24,7 +24,7 @@ export async function bootstrapApp({ randFloat, ACTIVE_REGION, dom }) {
     GROUP_WEIGHTS
   );
 
-  applyUILanguage(initialNetworkGroup, UI_TEXT);
+  applyUILanguage(initialNetworkGroup, UI_TEXT, "simulation");
   applyTheme(getThemeForGroup(initialNetworkGroup));
 
   if (dom?.introScreen) {

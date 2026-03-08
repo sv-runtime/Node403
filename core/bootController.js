@@ -1,54 +1,67 @@
 // ./core/bootController.js
 import { bindUIEvents } from "../ui/dom.js";
+import { applyUILanguage } from "../ui/i18n.js";
+
+let uiMode = "terminal";
 
 export function createBootController(deps) {
 
-  const {
-    dom,
-    GROUP_WEIGHTS,
-    preloadAllIdentities,
-    createUserGenerator,
-    randFloat,
-    STATES,
-    setState,
-    renderState,
-    getAllIdentities,
-    setUserGen,
-    setGetRandomUserByGroupRef,
-    startExperience
-  } = deps;
+const {
+ dom,
+ GROUP_WEIGHTS,
+ preloadAllIdentities,
+ createUserGenerator,
+ randFloat,
+ STATES,
+ setState,
+ renderState,
+ getAllIdentities,
+ setAllIdentities,
+ getUserGen,
+ setUserGen,
+ setGetRandomUserByGroupRef,
+ startExperience,
+ UI_TEXT,
+ getNetworkGroup
+} = deps;
+
+window.addEventListener("pageshow", function (event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+});
 
   let menuListenerActive = false;
+
+function startTerminalStatusbar(){
+
+ const el = document.getElementById("terminalClock");
+ if(!el) return;
+
+ function update(){
+
+  const now = new Date();
+
+  const date = now.toISOString().slice(0,10);
+  const time = now.toLocaleTimeString("en-GB");
+
+  el.textContent = `${date} | ${time}`;
+
+ }
+
+ update();
+ setInterval(update,1000);
+}
 
     let liveMode = false;
     let liveInterval = null;
 
-const playlist = [
-  {
-    title: "Everything Is Dead - Ambient",
-    file: "assets/audio/everything_is_dead-ambient-ambient-music-493695.mp3"
-  },
-  {
-    title: "Blues Ballad - Alec Koff",
-    file: "assets/audio/alec_koff-blues-ballad-487408.mp3"
-  },
-  {
-    title: "Bransboynd - Retro Lounge",
-    file: "assets/audio/bransboynd-retro-lounge-389644.mp3"
-  }, 
-  {
-    title: "Coma Media - Glossy",
-    file: "assets/audio/coma-media-glossy-168156.mp3"
-  }, 
-  {
-    title: "Soul Prod Music - Nightfall",
-    file: "assets/audio/soulprodmusic-nightfall-future-bass-music-228100.mp3"
-  }
-];
+let playlist = [];
 
   let currentTrack = 0;
   let audioPlayer = null;
   let musicMode = false;
+    let trackNumberBuffer = "";
 
     let calculatorMode = false;
     let calcInput = "";
@@ -66,8 +79,67 @@ const playlist = [
     let timerRunning = false;
     let laps = [];
 
-  function showMenu() {
+    let passwordMode = false;
+    let currentPassword = "";
+    let passwordLength = 16;
 
+    let activeTimeouts = [];
+
+    let stopSequence = false;
+
+function schedule(fn, delay){
+  const id = setTimeout(fn, delay);
+  activeTimeouts.push(id);
+  return id;
+}
+
+function resetSimulation(){
+
+  renderState.loadingActive = false;
+
+  if(renderState.animationFrame){
+    cancelAnimationFrame(renderState.animationFrame);
+    renderState.animationFrame = null;
+  }
+
+  clearInterval(liveInterval);
+  liveInterval = null;
+
+  activeTimeouts.forEach(clearTimeout);
+  activeTimeouts = [];
+
+  setState(-90);
+
+}
+
+function getUIText(key){
+
+  if(uiMode === "terminal"){
+
+    const en = {
+      enter: "ENTER",
+      back: "REBOOT",
+      fullscreen: "FULLSCREEN"
+    };
+
+    return en[key];
+  }
+
+  if(window.UI_TEXT && window.currentCountry){
+    return window.UI_TEXT[window.currentCountry]?.[key];
+  }
+
+  return "";
+}
+
+  function showMenu() {
+    startTerminalStatusbar();
+    const clock = document.getElementById("terminalClock");
+if (clock) clock.style.display = "block";
+
+    const fsBtn = document.getElementById("fullscreenPageBtn");
+if(fsBtn) fsBtn.style.display = "none";
+applyUILanguage(getNetworkGroup(), UI_TEXT, "terminal");
   setState(STATES.MENU);  
 
     clearInterval(timerInterval);
@@ -98,28 +170,78 @@ const playlist = [
     terminalOutput.innerHTML = `
     <pre>
     NODE403 MAIN MENU
+    
+    NETWORK
+    1) Real-time server traffic (anonymised)
+    2) IP / ASN Lookup
+    3) 403 Simulation
 
-    1) Simulation
-    2) Live view real traffic
-    3) Music player
-    4) Calculator
-    5) Timer / Stopwatch
-    6) What is my IP?
-    7) Sudoku
-    8) Contact
+    TOOLS
+    4) Hash Generator
+    5) Calculator
+    6) Timer / Stopwatch
+    7) Music player
+    8) Sudoku
 
-    Press 1-8 to choose
+    CONTACT
+    9) Contact
+
+    Press 1-9 to choose
     > █
     </pre>
 
-    <input id="mobileInput" type="text" inputmode="numeric"
-    style="position:absolute;opacity:0;height:1px;width:1px;">
+        <input id="mobileInput"
+    type="text"
+    inputmode="numeric"
+    autocomplete="off"
+    autocorrect="off"
+    autocapitalize="off"
+    spellcheck="false"
+    style="
+    position:absolute;
+    opacity:0;
+    height:1px;
+    width:1px;
+    left:-9999px;
+    ">
     `;
    
      const mobileInput = document.getElementById("mobileInput");
 
     if (mobileInput) {
+
       mobileInput.focus();
+
+      /* mobiel keyboard input */
+
+      mobileInput.addEventListener("input",(e)=>{
+
+        const value = e.target.value;
+
+        if(!value) return;
+
+        const char = value.slice(-1);
+
+        document.dispatchEvent(
+          new KeyboardEvent("keydown",{key:char})
+        );
+
+        e.target.value = "";
+
+      });
+
+      mobileInput.addEventListener("keydown",(e)=>{
+
+        if(e.key === "Enter"){
+
+          document.dispatchEvent(
+            new KeyboardEvent("keydown",{key:"enter"})
+          );
+
+        }
+
+      });
+
     }
 
     }
@@ -147,6 +269,67 @@ Press M to return
   startLiveFeed();
 }
 
+function calculateStats(rows){
+
+  const total = rows.length;
+
+  let bots = 0;
+  const countries = new Set();
+
+  rows.forEach(r => {
+
+    if(r.client?.bot) bots++;
+
+    if(r.geo?.country){
+      countries.add(r.geo.country);
+    }
+
+  });
+
+  const humans = total - bots;
+
+  let rpm = 0;
+
+  if(rows.length > 1){
+    const first = new Date(rows[0].time);
+    const last  = new Date(rows[rows.length-1].time);
+
+    const diffSeconds = (last - first) / 1000;
+
+    if(diffSeconds > 0){
+      rpm = Math.round((rows.length / diffSeconds) * 60);
+    }
+  }
+
+  return {
+    total,
+    bots,
+    humans,
+    countries: countries.size,
+    rpm
+  };
+
+}
+
+function anonymizeIP(ip){
+
+  if(!ip) return "-";
+
+  // IPv6
+  if(ip.includes(":")){
+    const parts = ip.split(":");
+    return parts[0] + ":xxxx:xxxx";
+  }
+
+  // IPv4
+  const parts = ip.split(".");
+  if(parts.length === 4){
+    return `${parts[0]}.xx.xx.xx`;
+  }
+
+  return ip;
+}
+
 function startLiveFeed() {
 
   clearInterval(liveInterval);
@@ -157,27 +340,41 @@ function startLiveFeed() {
 
       const res = await fetch("/api/live.php",{cache:"no-store"});
       const rows = await res.json();
+        const stats = calculateStats(rows);
 
       const terminalOutput = document.getElementById("terminalOutput");
       if(!terminalOutput) return;
 
       let out = "NODE403 LIVE NETWORK\n\n";
-      out += "TIME   COUNTRY         PATH\n";
-      out += "------------------------------------------\n";
+
+        out += `TRAFFIC STATS
+Requests:  ${stats.total}
+Humans:    ${stats.humans}   Bots:     ${stats.bots}
+Countries: ${stats.countries}
+RPM:       ${stats.rpm}
+
+`;
+
+      out += "TIME   COUNTRY        IP           METHOD  PATH                   BOT\n";
+      out += "--------------------------------------------------------------------------------\n";
 
       rows.slice(-10).forEach(r => {
 
         const date = new Date(r.time);
         const h = String(date.getHours()).padStart(2,"0");
         const m = String(date.getMinutes()).padStart(2,"0");
-
         const time = `${h}:${m}`;
 
         const country = r.geo?.country || "-";
+        const ip = anonymizeIP(r.ip?.address);
+        const method = r.request?.method || "-";
         const path = r.request?.path || "-";
-        const bot = r.client?.bot ? "bot" : "human";
 
-        out += `${time.padEnd(6)} ${country.padEnd(15)} ${path.padEnd(22)} ${bot}\n`;
+    
+        const botLevel = r.client?.bot || 0;
+        const bot = botLevel ? `BOT${botLevel}` : "HUMAN";
+
+        out += `${time.padEnd(6)} ${country.padEnd(14)} ${ip.padEnd(12)} ${method.padEnd(7)} ${path.padEnd(22)} ${bot}\n`;
 
       });
 
@@ -195,78 +392,340 @@ function startLiveFeed() {
 
 }
 
-function openMusicPlayer() {
+function shufflePlaylist(arr){
 
+  for(let i = arr.length - 1; i > 0; i--){
+
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+
+  }
+
+}
+
+async function loadPlaylist(){
+
+  try{
+
+    const res = await fetch("/api/playlist.php",{cache:"no-store"});
+    playlist = await res.json();
+
+    shufflePlaylist(playlist);
+
+    currentTrack = 0;
+
+  }catch(e){
+
+    console.error("Playlist load failed",e);
+
+  }
+if(!playlist.length){
+      const terminalOutput = document.getElementById("terminalOutput");
+    if(terminalOutput){
+      terminalOutput.innerHTML = "<pre>No music found</pre>";
+    }
+  return;
+}
+}
+
+async function openMusicPlayer(){
+    await loadPlaylist();
   const terminalOutput = document.getElementById("terminalOutput");
-  if (!terminalOutput) return;
+  if(!terminalOutput) return;
 
   musicMode = true;
 
-  terminalOutput.innerHTML = `
-<pre>
+terminalOutput.innerHTML = `
+
+<div id="musicLayout" style="
+display:flex;
+gap:10px;
+align-items:flex-start;
+width:85%;
+">
+
+<pre id="musicScreen" style="
+flex:1;
+min-width:320px;
+margin:0;
+white-space:pre;
+overflow:hidden;
+">
 NODE403 MUSIC PLAYER
 
-Now playing:
-${playlist[currentTrack].title}
+Loading...
 
 N = Next track
 B = Previous track
+SPACE = Play / Pause
+V = Mute
++ / - = Volume
 M = Menu
-
 </pre>
 
-<audio id="nodeMusic" controls autoplay style="width:100%"></audio>
+<pre id="musicPlaylist" style="
+flex:0 0 480px;
+margin:0;
+white-space:pre;
+height:300px;
+overflow-y:auto;
+overflow-x:hidden;
+">
+PLAYLIST
+</pre>
+
+</div>
+
+<audio id="nodeMusic" autoplay></audio>
 
 <div id="mobileMusicControls" style="
-margin-top:20px;
+margin-top:8px;
 display:flex;
 gap:10px;
 justify-content:center;
+flex-wrap:wrap;
 ">
+
 <button id="prevTrack">◀</button>
+<button id="playPause">⏯</button>
 <button id="nextTrack">▶</button>
+<button id="muteBtn">🔇</button>
 <button id="exitMusic">MENU</button>
+
 </div>
+
 `;
 
   audioPlayer = document.getElementById("nodeMusic");
-  if (audioPlayer) {
+
+    audioPlayer.volume = 0.8;
+
+  if(audioPlayer){
+
     audioPlayer.src = playlist[currentTrack].file;
+
+    audioPlayer.onended = () => {
+      nextTrack();
+    };
+
+    audioPlayer.ontimeupdate = () => {
+      renderMusicScreen();
+    };
+
   }
+
+    renderMusicScreen();
+    renderPlaylist();
 
   // mobiele knoppen
   const nextBtn = document.getElementById("nextTrack");
+    const playBtn = document.getElementById("playPause");
+const muteBtn = document.getElementById("muteBtn");
   const prevBtn = document.getElementById("prevTrack");
   const exitBtn = document.getElementById("exitMusic");
+    if(playBtn) playBtn.onclick = togglePlay;
+if(muteBtn) muteBtn.onclick = toggleMute;
 
   if (nextBtn) nextBtn.onclick = nextTrack;
   if (prevBtn) prevBtn.onclick = previousTrack;
   if (exitBtn) exitBtn.onclick = () => {
+
     if (audioPlayer) audioPlayer.pause();
+
     audioPlayer = null;
     musicMode = false;
+
     showMenu();
   };
+
 }
 
-function nextTrack() {
+function nextTrack(){
 
-  if (!audioPlayer) return;
+  if(!audioPlayer || !playlist.length) return;
 
   currentTrack++;
-  if (currentTrack >= playlist.length) currentTrack = 0;
+  if(currentTrack >= playlist.length) currentTrack = 0;
 
-  openMusicPlayer();
+  audioPlayer.src = playlist[currentTrack].file;
+  audioPlayer.play();
+
+  renderMusicScreen();
+    renderPlaylist();
 }
 
-function previousTrack() {
+function previousTrack(){
 
-  if (!audioPlayer) return;
+  if(!audioPlayer || !playlist.length) return;
 
   currentTrack--;
-  if (currentTrack < 0) currentTrack = playlist.length - 1;
+  if(currentTrack < 0) currentTrack = playlist.length - 1;
 
-  openMusicPlayer();
+  audioPlayer.src = playlist[currentTrack].file;
+  audioPlayer.play();
+
+  renderMusicScreen();
+    renderPlaylist();
+}
+
+function togglePlay(){
+
+  if(!audioPlayer) return;
+
+  if(audioPlayer.paused){
+    audioPlayer.play();
+  }else{
+    audioPlayer.pause();
+  }
+
+}
+
+function toggleMute(){
+
+  if(!audioPlayer) return;
+
+  audioPlayer.muted = !audioPlayer.muted;
+
+}
+
+    function renderPlaylist(){
+
+      const list = document.getElementById("musicPlaylist");
+      if(!list) return;
+
+      let out = "PLAYLIST\n\n";
+
+      playlist.forEach((t,i)=>{
+
+        if(i === currentTrack){
+          out += `> ${i+1}. ${t.title}\n`;
+        }else{
+          out += `  ${i+1}. ${t.title}\n`;
+        }
+
+      });
+
+      list.textContent = out;
+    }
+
+function renderMusicScreen(){
+
+  const screen = document.getElementById("musicScreen");
+  if(!screen || !audioPlayer) return;
+
+  const duration = audioPlayer.duration || 0;
+  const current  = audioPlayer.currentTime || 0;
+
+  const percent = duration ? current / duration : 0;
+
+  const barLength = 20;
+  const filled = Math.floor(percent * barLength);
+
+  const bar =
+    "█".repeat(filled) +
+    "░".repeat(barLength - filled);
+
+    const vol = audioPlayer.volume || 0;
+    const volBlocks = 10;
+    const volFilled = Math.round(vol * volBlocks);
+
+    const volBar =
+    "█".repeat(volFilled) +
+    "░".repeat(volBlocks - volFilled);
+
+const volPercent = Math.round(vol * 100);
+
+  function fmt(t){
+    const m = Math.floor(t / 60);
+    const s = Math.floor(t % 60);
+    return `${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+  }
+
+  const time = `${fmt(current)} / ${fmt(duration)}`;
+
+screen.textContent = `NODE403 MUSIC PLAYER
+
+${playlist[currentTrack].title}
+
+${audioPlayer.paused ? "[PAUSED]" : "[PLAYING]"} ${audioPlayer.muted ? "[MUTED]" : ""}
+
+[${bar}] ${time}
+
+VOL [${volBar}] ${volPercent}%
+
+${trackNumberBuffer ? "SELECT: " + trackNumberBuffer : ""}
+
+N = Next track
+B = Previous track
+SPACE = Play / Pause
+V = Mute
++ / - = Volume
+M = Menu`;
+}
+
+function generatePassword(length = 16){
+
+  const chars =
+  "abcdefghijklmnopqrstuvwxyz" +
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+  "0123456789" +
+  "!@#$%^&*()-_=+[]{}";
+
+  const array = new Uint32Array(length);
+  crypto.getRandomValues(array);
+
+  let pass = "";
+
+  for(let i=0;i<length;i++){
+    pass += chars[array[i] % chars.length];
+  }
+
+  return pass;
+}
+
+function openPasswordGenerator(){
+
+  const terminalOutput = document.getElementById("terminalOutput");
+  if (!terminalOutput) return;
+
+  passwordMode = true;
+
+  currentPassword = generatePassword(passwordLength);
+
+  renderPassword();
+}
+
+function renderPassword(){
+
+  const terminalOutput = document.getElementById("terminalOutput");
+  if (!terminalOutput) return;
+
+  terminalOutput.innerHTML = `
+<pre>
+NODE403 PASSWORD GENERATOR
+
+Length: ${passwordLength}
+
+Generated password:
+
+${currentPassword}
+
+N = new password
++ = longer
+- = shorter
+C = copy
+M = menu
+
+</pre>`;
+}
+
+function copyPassword(){
+
+  if(!currentPassword) return;
+
+  navigator.clipboard.writeText(currentPassword)
+  .catch(()=>{});
 }
 
 function openCalculator() {
@@ -277,17 +736,41 @@ function openCalculator() {
   calculatorMode = true;
   calcInput = "";
 
-  terminalOutput.innerHTML = `
-<div style="max-width:320px;margin:auto;text-align:center">
+terminalOutput.innerHTML = `
+<div style="
+width:100%;
+min-height:calc(100vh - 180px);
+display:flex;
+align-items:flex-start;
+justify-content:center;
+padding-top:5px;
+">
+
+<div style="
+transform:scale(.7);
+transform-origin:center;
+width:100%;
+max-width:420px;
+">
+
+<div style="
+width:100%;
+max-width:420px;
+height:100%;
+display:flex;
+flex-direction:column;
+">
 
 <div id="calcDisplay" style="
 background:#000;
 color:#0f0;
-padding:15px;
+padding:16px;
 font-family:monospace;
-font-size:24px;
+font-size:28px;
 margin-bottom:10px;
 border:1px solid #333;
+text-align:right;
+overflow:hidden;
 ">
 0
 </div>
@@ -296,6 +779,7 @@ border:1px solid #333;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:8px;
+flex-grow:1;
 ">
 
 <button data-k="7">7</button>
@@ -321,6 +805,8 @@ gap:8px;
 <button id="calcClear" style="grid-column:span 2">C</button>
 <button id="calcMenu" style="grid-column:span 2">MENU</button>
 
+</div>
+</div>
 </div>
 </div>
 `;
@@ -553,9 +1039,46 @@ function startMenuKeyboard() {
   if (menuListenerActive) return;
   menuListenerActive = true;
 
-  document.addEventListener("keydown", async (e) => {
+document.addEventListener("keydown", async (e) => {
 
-    const key = e.key.toLowerCase();
+  let key = e.key;
+  const code = e.code;
+
+  /* NUMPAD FIX */
+
+  if (code && code.startsWith("Numpad")) {
+
+    const map = {
+      Numpad0: "0",
+      Numpad1: "1",
+      Numpad2: "2",
+      Numpad3: "3",
+      Numpad4: "4",
+      Numpad5: "5",
+      Numpad6: "6",
+      Numpad7: "7",
+      Numpad8: "8",
+      Numpad9: "9",
+      NumpadAdd: "+",
+      NumpadSubtract: "-",
+      NumpadMultiply: "*",
+      NumpadDivide: "/",
+      NumpadDecimal: ".",
+      NumpadEnter: "enter"
+    };
+
+    if (map[code]) {
+      key = map[code];
+    }
+
+  }
+
+  key = String(key).toLowerCase();
+
+
+    /* -------------------------
+       LIVE VIEW MODE
+    ------------------------- */
 
     if (liveMode) {
 
@@ -571,29 +1094,102 @@ function startMenuKeyboard() {
       return;
     }
 
-if (timerMode) {
 
-  if (key === "m") {
-    clearInterval(timerInterval);
-    timerInterval = null;
-    timerRunning = false;
-    timerMode = false;
-    showMenu();
-    return;
-  }
+    /* -------------------------
+       PASSWORD GENERATOR
+    ------------------------- */
 
-  if (e.code === "Space") {
+    if (passwordMode) {
 
-  e.preventDefault();
+      if (key === "m") {
+        passwordMode = false;
+        showMenu();
+        return;
+      }
 
-    if (!timerRunning) {
+      if (key === "n") {
+        currentPassword = generatePassword(passwordLength);
+        renderPassword();
+        return;
+      }
 
-      timerRunning = true;
-      startTime = Date.now() - elapsed;
+      if (key === "+") {
+        passwordLength = Math.min(64,passwordLength+1);
+        currentPassword = generatePassword(passwordLength);
+        renderPassword();
+        return;
+      }
 
-      timerInterval = setInterval(() => {
+      if (key === "-") {
+        passwordLength = Math.max(6,passwordLength-1);
+        currentPassword = generatePassword(passwordLength);
+        renderPassword();
+        return;
+      }
 
-        elapsed = Date.now() - startTime;
+      if (key === "c") {
+        copyPassword();
+        return;
+      }
+
+      return;
+    }
+
+
+    /* -------------------------
+       TIMER
+    ------------------------- */
+
+    if (timerMode) {
+
+      if (key === "m") {
+
+        clearInterval(timerInterval);
+        timerInterval = null;
+        timerRunning = false;
+        timerMode = false;
+
+        showMenu();
+        return;
+      }
+
+      if (code === "Space") {
+
+        e.preventDefault();
+
+        if (!timerRunning) {
+
+          timerRunning = true;
+          startTime = Date.now() - elapsed;
+
+          timerInterval = setInterval(() => {
+
+            elapsed = Date.now() - startTime;
+
+            const ms = Math.floor((elapsed % 1000) / 10);
+            const sec = Math.floor(elapsed / 1000) % 60;
+            const min = Math.floor(elapsed / 60000);
+
+            const m = String(min).padStart(2,"0");
+            const s = String(sec).padStart(2,"0");
+            const milli = String(ms).padStart(2,"0");
+
+            renderTimer(`${m}:${s}.${milli}`);
+
+          },10);
+
+        } else {
+
+          clearInterval(timerInterval);
+          timerInterval = null;
+          timerRunning = false;
+
+        }
+
+        return;
+      }
+
+      if (key === "l") {
 
         const ms = Math.floor((elapsed % 1000) / 10);
         const sec = Math.floor(elapsed / 1000) % 60;
@@ -603,110 +1199,39 @@ if (timerMode) {
         const s = String(sec).padStart(2,"0");
         const milli = String(ms).padStart(2,"0");
 
+        laps.push(`${m}:${s}.${milli}`);
+
         renderTimer(`${m}:${s}.${milli}`);
 
-      },10);
+        return;
+      }
 
-    } else {
+      if (key === "r") {
 
-      clearInterval(timerInterval);
-      timerInterval = null;
-      timerRunning = false;
+        clearInterval(timerInterval);
+        timerInterval = null;
 
+        elapsed = 0;
+        timerRunning = false;
+        laps = [];
+
+        renderTimer("00:00.00");
+
+        return;
+      }
+
+      return;
     }
 
-    return;
-  }
 
-  if (key === "l") {
-
-    const ms = Math.floor((elapsed % 1000) / 10);
-    const sec = Math.floor(elapsed / 1000) % 60;
-    const min = Math.floor(elapsed / 60000);
-
-    const m = String(min).padStart(2,"0");
-    const s = String(sec).padStart(2,"0");
-    const milli = String(ms).padStart(2,"0");
-
-    laps.push(`${m}:${s}.${milli}`);
-
-    renderTimer(`${m}:${s}.${milli}`);
-
-    return;
-  }
-
-  if (key === "r") {
-
-    clearInterval(timerInterval);
-    timerInterval = null;
-
-    elapsed = 0;
-    timerRunning = false;
-    laps = [];
-
-    renderTimer("00:00.00");
-
-    return;
-  }
-
-  return;
-}
-
-if (sudokuMode) {
-
-      if (["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) {
-    e.preventDefault();
-  }
-
-  if (key==="m"){
-    sudokuMode=false;
-    showMenu();
-    return;
-  }
-
-const terminalOutput = document.getElementById("terminalOutput");
-
-  if(key==="n"){
-    generateSudoku();
-    renderSudoku();
-    terminalOutput.onclick = (e) => {
-
-  const rect = terminalOutput.getBoundingClientRect();
-
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  const col = Math.floor(x / (rect.width / 9));
-  const row = Math.floor((y-40) / ((rect.height-80) / 9));
-
-  if(row>=0 && row<9 && col>=0 && col<9){
-    sudokuRow = row;
-    sudokuCol = col;
-    renderSudoku();
-  }
-
-};
-
-    return;
-  }
-
-  if(e.key==="ArrowUp") sudokuRow=Math.max(0,sudokuRow-1);
-  if(e.key==="ArrowDown") sudokuRow=Math.min(8,sudokuRow+1);
-  if(e.key==="ArrowLeft") sudokuCol=Math.max(0,sudokuCol-1);
-  if(e.key==="ArrowRight") sudokuCol=Math.min(8,sudokuCol+1);
-
-  if(/^[1-9]$/.test(key))
-    sudokuGrid[sudokuRow][sudokuCol]=Number(key);
-
-  if(key==="0")
-    sudokuGrid[sudokuRow][sudokuCol]=0;
-
-  renderSudoku();
-
-  return;
-}
+    /* -------------------------
+       CALCULATOR
+    ------------------------- */
 
 if (calculatorMode) {
+
+  e.stopPropagation();
+  e.preventDefault();
 
   if (key === "m") {
     calculatorMode = false;
@@ -714,51 +1239,66 @@ if (calculatorMode) {
     return;
   }
 
-if (key === "enter") {
+  if (key === "enter") {
 
-  let result = "error";
+    let result = "error";
 
-  try {
-    result = eval(calcInput);
-  } catch {}
+    try {
+      result = Function("'use strict'; return (" + calcInput + ")")();
+    } catch {}
 
-  const terminalOutput = document.getElementById("terminalOutput");
+    const display = document.getElementById("calcDisplay");
 
-  terminalOutput.innerHTML += `
-${calcInput} = ${result}
-> █
-`;
+    if(display){
+      display.textContent = result;
+    }
 
-  calcInput = "";
-  return;
-}
+    calcInput = result.toString();
+    return;
+  }
 
   if (/^[0-9+\-*/().]$/.test(key)) {
 
     calcInput += key;
 
-    const terminalOutput = document.getElementById("terminalOutput");
+    const display = document.getElementById("calcDisplay");
 
-    terminalOutput.innerHTML = `
-<pre>
-NODE403 CALCULATOR
-
-Type expression and press Enter
-
-${calcInput}
-
-Press M to return
-
-> █
-</pre>
-`;
+    if(display){
+      display.textContent = calcInput;
+    }
 
   }
 
   return;
 }
 
+    /* -------------------------
+       MUSIC PLAYER
+    ------------------------- */
+
     if (musicMode) {
+
+      if(/^[0-9]$/.test(key)){
+        trackNumberBuffer += key;
+        return;
+      }
+
+      if(key === "enter"){
+
+        const index = parseInt(trackNumberBuffer) - 1;
+
+        if(!isNaN(index) && playlist[index]){
+          currentTrack = index;
+          audioPlayer.src = playlist[currentTrack].file;
+          audioPlayer.play();
+
+          renderMusicScreen();
+          renderPlaylist();
+        }
+
+        trackNumberBuffer = "";
+        return;
+      }
 
       if (key === "n") {
         nextTrack();
@@ -770,10 +1310,33 @@ Press M to return
         return;
       }
 
+      if (code === "Space") {
+        e.preventDefault();
+        togglePlay();
+        return;
+      }
+
+      if (key === "v") {
+        toggleMute();
+        return;
+      }
+
+    if(key === "+"){
+      audioPlayer.volume = Math.min(1,audioPlayer.volume + 0.05);
+    }
+
+    if(key === "-"){
+      audioPlayer.volume = Math.max(0,audioPlayer.volume - 0.05);
+    }
+
       if (key === "m") {
+
         if (audioPlayer) audioPlayer.pause();
+
         audioPlayer = null;
         musicMode = false;
+        trackNumberBuffer = "";
+
         showMenu();
         return;
       }
@@ -781,46 +1344,115 @@ Press M to return
       return;
     }
 
-    if (key === "1") {
-      await startSimulationFromMenu();
-      return;
-    }
+/* -------------------------
+   SUDOKU
+------------------------- */
 
-    if (key === "2") {
+if (sudokuMode) {
+
+  if (key === "m") {
+    sudokuMode = false;
+    showMenu();
+    return;
+  }
+
+  if (code === "ArrowUp") {
+    sudokuRow = (sudokuRow + 8) % 9;
+    renderSudoku();
+    return;
+  }
+
+  if (code === "ArrowDown") {
+    sudokuRow = (sudokuRow + 1) % 9;
+    renderSudoku();
+    return;
+  }
+
+  if (code === "ArrowLeft") {
+    sudokuCol = (sudokuCol + 8) % 9;
+    renderSudoku();
+    return;
+  }
+
+  if (code === "ArrowRight") {
+    sudokuCol = (sudokuCol + 1) % 9;
+    renderSudoku();
+    return;
+  }
+
+  if (/^[1-9]$/.test(key)) {
+    sudokuGrid[sudokuRow][sudokuCol] = Number(key);
+    renderSudoku();
+    return;
+  }
+
+  if (key === "0") {
+    sudokuGrid[sudokuRow][sudokuCol] = 0;
+    renderSudoku();
+    return;
+  }
+
+  if (key === "n") {
+    generateSudoku();
+    sudokuRow = 0;
+    sudokuCol = 0;
+    renderSudoku();
+    return;
+  }
+
+  return;
+}
+
+    /* -------------------------
+       MAIN MENU
+    ------------------------- */
+
+    if (key === "1") {
       openLiveView();
       return;
     }
 
+    if (key === "2") {
+      openIPLookup();
+      return;
+    }
+
     if (key === "3") {
-      openMusicPlayer();
+      await startSimulationFromMenu();
       return;
     }
 
     if (key === "4") {
+      openPasswordGenerator();
+      return;
+    }
+
+    if (key === "5") {
       openCalculator();
       return;
     }
 
-if (key === "5") {
-  openTimer();
-  return;
-}
-
-if (key === "6") {
-  openIPLookup();
-  return;
-}
+    if (key === "6") {
+      openTimer();
+      return;
+    }
 
     if (key === "7") {
-      openSudoku();
+      openMusicPlayer();
       return;
     }
 
     if (key === "8") {
+      openSudoku();
+      return;
+    }
+
+    if (key === "9") {
 
       const terminalOutput = document.getElementById("terminalOutput");
 
       if (terminalOutput) {
+
         terminalOutput.innerHTML = `
 <pre>
 NODE403 CONTACT
@@ -829,6 +1461,7 @@ webmaster@node403.com
 
 Press M to return
 </pre>`;
+
       }
 
       return;
@@ -842,9 +1475,19 @@ Press M to return
 
 }
 
-  async function startSimulationFromMenu() {
+    async function startSimulationFromMenu() {
 
-    if (dom?.menuScreen) dom.menuScreen.style.display = "none";
+    stopSequence = false;
+
+    const clock = document.getElementById("terminalClock");
+    if (clock) clock.style.display = "none";
+
+    applyUILanguage(getNetworkGroup(), UI_TEXT, "simulation");
+
+    const fsBtn = document.getElementById("fullscreenPageBtn");
+    if(fsBtn) fsBtn.style.display = "block";
+
+    if (dom?.backBtn) dom.backBtn.style.display = "none";
 
     await ensureIdentitiesLoaded();
     await ensureUserGeneratorReady();
@@ -852,11 +1495,11 @@ Press M to return
     if (dom?.backBtn) dom.backBtn.style.display = "block";
 
     if (dom?.terminalElement) {
-      dom.terminalElement.classList.remove("open");
+    dom.terminalElement.classList.remove("open");
     }
-    
+
     await startExperience();
-  }
+    }
 
   function goToLiveView() {
     window.location.href = "live.php";
@@ -864,55 +1507,61 @@ Press M to return
 
 async function openIPLookup() {
 
-  const terminalOutput = document.getElementById("terminalOutput");
-  if (!terminalOutput) return;
+ const terminalOutput = document.getElementById("terminalOutput");
+ if (!terminalOutput) return;
 
-  terminalOutput.innerHTML = `
+ terminalOutput.innerHTML = `
 <pre>
-NODE403 IP LOOKUP
+NODE403 IP / ASN LOOKUP
 
-Resolving IP...
+Resolving network information...
 
 Press M to return
 </pre>
 `;
 
-  try {
+ try {
 
-    const res = await fetch("/api/ip.php",{cache:"no-store"});
-    const data = await res.json();
+   const res = await fetch("/api/ip.php",{cache:"no-store"});
+   const data = await res.json();
 
-    const ip = data.ip || "-";
-    const city = data.city || "";
-    const country = data.country || "";
+const ip = data.ip || "-";
+const city = data.city || "";
+const country = data.country || "";
+const asn = data.asn || "-";
+const network = data.org || "-";
 
-    terminalOutput.innerHTML = `
+terminalOutput.innerHTML = `
 <pre>
-NODE403 IP LOOKUP
+NODE403 IP / ASN LOOKUP
 
-Your IP:
+IP ADDRESS
 ${ip}
 
-${city || country ? `Location:
+LOCATION
 ${city}${city && country ? ", " : ""}${country}
 
-` : ""}Press M to return
-</pre>
-`;
-
-  } catch (err) {
-
-    terminalOutput.innerHTML = `
-<pre>
-NODE403 IP LOOKUP
-
-Error resolving IP
+NETWORK
+ASN: ${asn}
+ORG: ${network}
 
 Press M to return
 </pre>
 `;
 
-  }
+ } catch (err) {
+
+   terminalOutput.innerHTML = `
+<pre>
+NODE403 IP / ASN LOOKUP
+
+Lookup failed
+
+Press M to return
+</pre>
+`;
+
+ }
 }
 
   async function ensureIdentitiesLoaded() {
@@ -932,7 +1581,7 @@ Press M to return
     if (alreadyLoaded) {
       for (let i = 0; i <= 100; i += 10) {
         renderState.loadingProgress = i;
-        await new Promise(r => setTimeout(r, 30));
+        await new Promise(r => schedule(r, 30));
       }
       renderState.loadingActive = false;
       return;
@@ -970,14 +1619,19 @@ Press M to return
 
   function bind() {
 
-    bindUIEvents(dom, {
+    bindUIEvents(dom,{
 
-      onBack: async () => {
+onBack: async () => {
 
-      setState(STATES.MENU);
-      showMenu();
+ stopSequence = true;
 
-    },
+ activeTimeouts.forEach(clearTimeout);
+ activeTimeouts = [];
+
+ setState(STATES.MENU);
+ showMenu();
+
+},
       onEnter: async () => showMenu(),
 
       onMenuOption1: async () => await startSimulationFromMenu(),
@@ -988,7 +1642,7 @@ Press M to return
         onMenuOption6: async () => openIPLookup(),
         onMenuOption7: async () => openSudoku(),
         onMenuOption8: async () => showMenu()
-
+    
     });
   }
 

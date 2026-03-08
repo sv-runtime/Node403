@@ -29,12 +29,19 @@ $error = "";
 ?>
 <script> fetch("/api/log-visitor.php",{ method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ page: "/admin/login.php" }) }).catch(()=>{}); </script>
 <?php
+
 /* =========================
    BRUTE FORCE PROTECTION
 ========================= */
 
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
-$bfFile = __DIR__ . '/../logs/bruteforce-' . md5($ip) . '.json';
+$bfDir = __DIR__ . '/../../node403-config/logs';
+
+if (!is_dir($bfDir)) {
+    mkdir($bfDir, 0755, true);
+}
+
+$bfFile = $bfDir . '/bruteforce-' . md5($ip) . '.json';
 
 $maxAttempts = 5;
 $window = 300; // 5 minuten

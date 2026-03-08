@@ -25,6 +25,24 @@ export const PHASE = {
   start: 0
 };
 
+/* =========================
+   EXPERIENCE TIMER
+========================= */
+
+let EXPERIENCE_START = null;
+
+export function setExperienceStart(v){
+  EXPERIENCE_START = v;
+}
+
+export function getExperienceStart(){
+  return EXPERIENCE_START;
+}
+
+/* =========================
+   STATE CONTROL
+========================= */
+
 export function setState(state, ts) {
 
  if (TERMINAL_LOCK) return;

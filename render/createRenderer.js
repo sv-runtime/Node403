@@ -74,6 +74,10 @@ export function createRenderer(deps) {
       runtime > getLoopDuration() &&
       PHASE.current === STATES.MATRIX_RUN
     ) {
+
+      const backBtn = document.getElementById("backBtn");
+      if (backBtn) backBtn.style.display = "block";
+
       deps.resetExperience();
       setExperienceStart(performance.now());
     }
@@ -352,7 +356,12 @@ ctx.textBaseline = "alphabetic";
       glitchEngine.triggerTerminalBurst(timestamp);
 
       if (!deps.terminalStarted.value) {
+
         deps.terminalStarted.value = true;
+
+        const backBtn = document.getElementById("backBtn");
+        if (backBtn) backBtn.style.display = "none";
+
         startTerminalSequence();
       }
     }
@@ -460,9 +469,7 @@ ctx.textBaseline = "alphabetic";
 
         if (stacks[i].length > maxLengths[i]) stacks[i].pop();
 
-        const MAX_TRAIL = 12;
-
-        for (let t = 0; t < Math.min(stacks[i].length, MAX_TRAIL); t++) {
+            for (let t = 0; t < stacks[i].length; t++) {
           const trailY = y - t * trailSpacing;
           if (trailY < 0) continue;
 

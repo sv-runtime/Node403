@@ -185,9 +185,13 @@ history.replaceState(null, null, window.location.pathname + window.location.sear
   <span class="minimize"></span>
   <span class="maximize"></span>
 </div>
+        <div style="display:flex;justify-content:space-between;width:100%">
     <div class="terminal-title" id="terminalTitle"></div>
+
+    </div>
   </div>
   <div class="terminal-body" id="terminalBody">
+        <div id="terminalClock"></div>
   <div class="terminal-output" id="terminalOutput"></div>
 </div>
 
