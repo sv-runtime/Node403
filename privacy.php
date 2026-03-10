@@ -2,23 +2,11 @@
 <html lang="en">
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-KGB3F6B4FS', {
-  anonymize_ip: true
-});
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Privacy Policy — Node403</title>
-<link rel="canonical" href="https://node403.com/privacy.htm">
+<link rel="canonical" href="https://node403.com/privacy.php">
 
 <link rel="icon" type="image/x-icon" href="style/favicon.ico">
 
@@ -278,7 +266,6 @@ via email at <span id="emailLink"></span>.
 
 <p>
 Node403<br>
-Built by S. Veenstra
 </p>
 
 </div>

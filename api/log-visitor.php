@@ -1,8 +1,17 @@
 <?php
 declare(strict_types=1);
 
-ini_set('display_errors', '1');
-error_reporting(E_ALL);
+/* ================================
+   REQUEST VALIDATION
+================================ */
+
+if (
+ $_SERVER['REQUEST_METHOD'] !== 'POST' ||
+ !str_contains($_SERVER['CONTENT_TYPE'] ?? '', 'application/json')
+){
+ http_response_code(400);
+ exit;
+}
 
 date_default_timezone_set('Europe/Amsterdam');
 
@@ -251,9 +260,11 @@ $path = $_SERVER['REQUEST_URI'] ?? '';
 
 $input = json_decode(file_get_contents("php://input"), true);
 
-if (!empty($input['page'])) {
-    $path = $input['page'];
+if (empty($input['page'])) {
+ exit;
 }
+
+$path = $input['page'];
 $method    = $_SERVER['REQUEST_METHOD'] ?? '';
 $host      = $_SERVER['HTTP_HOST'] ?? '';
 
@@ -277,10 +288,15 @@ $geo2 = $ip !== 'unknown'
    INTERNAL NETWORK FILTER
 ================================ */
 
+$ignoreIps = [
+    "127.0.0.1",
+    "::1",
+    "86.82.205.209"
+];
+
 $ignoreLogging =
     str_starts_with($ip, "2a02:a45e") ||
-    $ip === "127.0.0.1" ||
-    $ip === "::1";
+    in_array($ip, $ignoreIps, true);
 
 
 /* ================================

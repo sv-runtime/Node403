@@ -210,7 +210,7 @@ if (PHASE.current === STATES.LOADING) {
   const barW = Math.floor(w * 0.2);   // was 0.6
   const barH = 5;                   // iets slanker
 
-  const x = Math.floor((w - barW) / 2.5);
+  const x = Math.floor((w - barW) / 2);
   const y = Math.floor((h - barH) / 2);
 
   ctx.fillStyle = "rgba(255,255,255,0.15)";

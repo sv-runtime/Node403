@@ -2,23 +2,12 @@
 
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-KGB3F6B4FS', {
-  anonymize_ip: true
-});
-</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Contact — Node403</title>
-<link rel="canonical" href="https://node403.com/contact.htm">
+<link rel="canonical" href="https://node403.com/contact.php">
 
 <link rel="icon" type="image/x-icon" href="style/favicon.ico">
 
@@ -119,12 +108,11 @@ Node403 Project Information
 </div>
 
 <div class="section">
-<h2>Project Owner</h2>
+<h2>Project</h2>
 
 <div class="terminal-box">
 
 <p>Project: Node403</p>
-<p>Creator: S. Veenstra</p>
 <p>Type: Experimental Web Project</p>
 
 </div>

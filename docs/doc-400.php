@@ -6,17 +6,7 @@ $description = "Technical documentation explaining the HTTP 400 Bad Request stat
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
-gtag('config', 'G-KGB3F6B4FS', {
-  anonymize_ip: true
-});
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,7 +15,7 @@ gtag('config', 'G-KGB3F6B4FS', {
 <meta name="description" content="<?php echo $description; ?>">
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://node403.com/docs/400.php">
+<link rel="canonical" href="https://node403.com/docs/doc-400.php">
 
 <meta property="og:title" content="<?php echo $title; ?>">
 <meta property="og:description" content="<?php echo $description; ?>">

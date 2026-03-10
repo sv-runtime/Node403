@@ -11,7 +11,6 @@ export function createStartTerminalSequence({
   terminalEngine
 }) {
   return async function startTerminalSequence() {
-
     if (!isIPResolved()) {
       await resolveVisitorIP();
     }
@@ -20,10 +19,6 @@ export function createStartTerminalSequence({
 
     if (terminalElement) {
       terminalElement.classList.add("open");
-
-      if (typeof gtag === "function") {
-        gtag("event", "terminal_opened");
-      }
     }
 
     const titleNode = document.getElementById("terminalTitle");

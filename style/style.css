@@ -372,6 +372,54 @@ body.is-fullscreen .fullscreen-page-btn {
 
 }
 
+#menuAudioConsole{
+ position:absolute;
+ bottom:4px;
+ left:50%;
+ transform:translateX(-50%);
+
+ font-family:monospace;
+ font-size:12px;
+
+ color:#00ff88;      
+ opacity:0.8;
+
+ display:flex;
+ align-items:center;
+ gap:10px;
+}
+
+#menuAudioConsole button{
+ background:none;
+ border:1px solid #00ff88;
+ color:#00ff88;
+ font-family:monospace;
+ font-size:11px;
+ padding:2px 6px;
+ cursor:pointer;
+ opacity:0.8;
+}
+
+#menuAudioConsole button:hover{
+ background:#00ff88;
+ color:#000;
+}
+
+#terminalClock {
+
+ position:absolute;
+ right:12px;
+ bottom:6px;
+
+ font-family: monospace;
+ font-size: 12px;
+
+ color: #00ff88;
+ opacity: 0.8;
+
+ pointer-events: none;
+}
+
 /* =========================================================
    9. TERMINAL LAYOUT
 ========================================================= */
@@ -440,6 +488,8 @@ body.is-fullscreen .fullscreen-page-btn {
 
   overflow-y: auto;
 
+  padding-bottom: 60px;   /* ruimte voor player + klok */
+
   font-size: var(--terminal-font);
   line-height: 1.55;
 
@@ -454,6 +504,26 @@ body.is-fullscreen .fullscreen-page-btn {
   margin: 0;
   white-space: pre-wrap;
   line-height: 1.4;
+}
+
+.terminal::after{
+
+ content:"";
+
+ position:absolute;
+
+ left:0;
+ right:0;
+ bottom:0;
+
+ height:30px;
+
+ background:transparent;
+ border:none;
+ backdrop-filter:none;
+
+ pointer-events:none;
+
 }
 
 /* Terminal colors */
@@ -475,21 +545,6 @@ body.is-fullscreen .fullscreen-page-btn {
 
   margin-left: 2px;
   transform: translateY(0.15em);
-}
-
-#terminalClock {
-
-  position: absolute;
-  right: 12px;
-  bottom: 8px;
-
-  font-family: monospace;
-  font-size: 12px;
-
-  color: #00ff88;
-  opacity: 0.8;
-
-  pointer-events: none;
 }
 
 #calcKeys button {

@@ -63,6 +63,103 @@ let playlist = [];
   let musicMode = false;
     let trackNumberBuffer = "";
 
+function ensureAudioPlayer(){
+ if(!audioPlayer){
+  audioPlayer = new Audio();
+  window.node403AudioPlayer = audioPlayer;
+  audioPlayer.volume = 0.8;
+
+  audioPlayer.onended = () => {
+   nextTrack();
+   renderMiniPlayer();
+   if(musicMode){
+    renderMusicScreen();
+    renderPlaylist();
+    renderMiniPlayer();
+   }
+  };
+
+  audioPlayer.ontimeupdate = () => {
+   renderMiniPlayer();
+   if(musicMode){
+    renderMusicScreen();
+   }
+  };
+ }
+}
+
+async function ensurePlaylistLoaded(){
+
+ if(playlist.length) return;
+
+ try{
+
+  const res = await fetch("/api/playlist.php",{cache:"no-store"});
+  playlist = await res.json();
+
+  shufflePlaylist(playlist);
+
+  currentTrack = Math.floor(Math.random() * playlist.length);
+
+ }catch(e){
+  console.error("Playlist load failed", e);
+ }
+
+ if(!playlist.length) return;
+
+ ensureAudioPlayer();
+
+ audioPlayer.src = playlist[currentTrack].file;
+
+}
+
+function renderMiniPlayer(){
+
+ const track = document.getElementById("miniTrack");
+ const playBtn = document.getElementById("miniPlayPause");
+
+ if(!track || !playlist.length) return;
+
+ const title = playlist[currentTrack]?.title || "-";
+
+ track.textContent = `track: ${title}`;
+
+ if(playBtn){
+  playBtn.textContent = audioPlayer && !audioPlayer.paused ? "PAUSE" : "PLAY";
+ }
+
+}
+
+async function toggleMiniPlayer(){
+ await ensurePlaylistLoaded();
+ ensureAudioPlayer();
+
+ if(!playlist.length) return;
+
+ if(!audioPlayer.src && playlist[currentTrack]){
+  audioPlayer.src = playlist[currentTrack].file;
+ }
+
+ if(audioPlayer.paused){
+  await audioPlayer.play();
+ }else{
+  audioPlayer.pause();
+ }
+
+ renderMiniPlayer();
+
+ if(musicMode){
+  renderMusicScreen();
+  renderPlaylist();
+ }
+}
+
+function stopMenuAudio(){
+ if(!audioPlayer) return;
+ audioPlayer.pause();
+ audioPlayer.currentTime = 0;
+}
+
     let calculatorMode = false;
     let calcInput = "";
 
@@ -72,20 +169,29 @@ let playlist = [];
     let sudokuRow = 0;
     let sudokuCol = 0;
 
-    let timerMode = false;
-    let timerInterval = null;
-    let startTime = 0;
-    let elapsed = 0;
-    let timerRunning = false;
-    let laps = [];
-
     let passwordMode = false;
     let currentPassword = "";
     let passwordLength = 16;
 
+    let uuidMode = false;
+    let uuidCount = "";
+    let generatedUUIDs = [];
+
+    let chatMode = false;
+    let chatUsernameMode = false;
+    let chatUsername = "";
+    let chatInput = "";
+    let chatMessages = [];
+    let chatUsers = [];
+    let chatPollInterval = null;
+    let chatMessageLimit = 12;
+    let chatToken = "";
+
     let activeTimeouts = [];
 
     let stopSequence = false;
+
+    let simulationActive = false;
 
 function schedule(fn, delay){
   const id = setTimeout(fn, delay);
@@ -132,27 +238,32 @@ function getUIText(key){
   return "";
 }
 
-  function showMenu() {
-    startTerminalStatusbar();
-    const clock = document.getElementById("terminalClock");
-if (clock) clock.style.display = "block";
+function showMenu() {
 
-    const fsBtn = document.getElementById("fullscreenPageBtn");
-if(fsBtn) fsBtn.style.display = "none";
+    startTerminalStatusbar();
+    simulationActive = false;
+
+    stopChatPolling();
+    chatMode = false;
+    chatUsernameMode = false;
+    chatInput = "";
+    chatMessages = [];
+    chatUsers = [];
+
+ const clock = document.getElementById("terminalClock");
+ if (clock) clock.style.display = "block";
+
+ const player = document.getElementById("menuAudioConsole");
+ if (player) player.style.display = "block";
+
+ const fsBtn = document.getElementById("fullscreenPageBtn");
+ if(fsBtn) fsBtn.style.display = "none";
+
 applyUILanguage(getNetworkGroup(), UI_TEXT, "terminal");
   setState(STATES.MENU);  
 
-    clearInterval(timerInterval);
-    timerInterval = null;
-    timerRunning = false;
-    timerMode = false;
-
-    if (audioPlayer) {
-      audioPlayer.pause();
-      audioPlayer = null;
-    }
-
     musicMode = false;
+    trackNumberBuffer = "";
 
   if (dom?.introScreen) dom.introScreen.style.display = "none";
   if (dom?.backBtn) dom.backBtn.style.display = "none";
@@ -168,86 +279,284 @@ applyUILanguage(getNetworkGroup(), UI_TEXT, "terminal");
 
     if (terminalOutput) {
     terminalOutput.innerHTML = `
-    <pre>
-    NODE403 MAIN MENU
-    
-    NETWORK
-    1) Real-time server traffic (anonymised)
-    2) IP / ASN Lookup
-    3) 403 Simulation
+     <pre>
+NODE403 MAIN MENU
+     
+NETWORK
+1) Real-time server traffic (anonymised)
+2) IP / ASN Lookup
 
-    TOOLS
-    4) Hash Generator
-    5) Calculator
-    6) Timer / Stopwatch
-    7) Music player
-    8) Sudoku
+TOOLS
+3) Hash Generator
+4) UUID Generator
+5) Calculator
+6) Music player
+7) Sudoku
 
-    CONTACT
-    9) Contact
+CONTACT
+8) Contact
+9) Public Chat
 
-    Press 1-9 to choose
-    > █
-    </pre>
+Press 0 to run the 403 Experience
 
-        <input id="mobileInput"
-    type="text"
-    inputmode="numeric"
-    autocomplete="off"
-    autocorrect="off"
-    autocapitalize="off"
-    spellcheck="false"
-    style="
-    position:absolute;
-    opacity:0;
-    height:1px;
-    width:1px;
-    left:-9999px;
-    ">
-    `;
+Press 0-9 to choose
+> █
+</pre>
+
+<div id="menuAudioConsole" style="
+margin-top:14px;
+border-top:1px solid rgba(255,255,255,0.08);
+padding-top:12px;
+"></div>
+
+<input id="mobileInput"
+type="text"
+inputmode="numeric"
+autocomplete="off"
+autocorrect="off"
+autocapitalize="off"
+spellcheck="false"
+style="
+position:absolute;
+opacity:0;
+height:1px;
+width:1px;
+left:-9999px;
+">`;
    
      const mobileInput = document.getElementById("mobileInput");
 
-    if (mobileInput) {
+if (mobileInput) {
 
-      mobileInput.focus();
+  mobileInput.focus();
 
-      /* mobiel keyboard input */
+  /* mobiel keyboard input */
 
-      mobileInput.addEventListener("input",(e)=>{
+  mobileInput.addEventListener("input",(e)=>{
 
-        const value = e.target.value;
+    const value = e.target.value;
 
-        if(!value) return;
+    if(!value) return;
 
-        const char = value.slice(-1);
+    const char = value.slice(-1);
 
-        document.dispatchEvent(
-          new KeyboardEvent("keydown",{key:char})
-        );
+    document.dispatchEvent(
+      new KeyboardEvent("keydown",{key:char})
+    );
 
-        e.target.value = "";
+    e.target.value = "";
 
-      });
+  });
 
-      mobileInput.addEventListener("keydown",(e)=>{
+  mobileInput.addEventListener("keydown",(e)=>{
 
-        if(e.key === "Enter"){
+    if(e.key === "Enter"){
 
-          document.dispatchEvent(
-            new KeyboardEvent("keydown",{key:"enter"})
-          );
-
-        }
-
-      });
+      document.dispatchEvent(
+        new KeyboardEvent("keydown",{key:"enter"})
+      );
 
     }
 
-    }
+  });
 
-    startMenuKeyboard();
+}
+
+ensurePlaylistLoaded().then(() => {
+
+ renderMiniPlayer();
+
+ const prevBtn = document.getElementById("miniPrevTrack");
+ const playBtn = document.getElementById("miniPlayPause");
+ const nextBtn = document.getElementById("miniNextTrack");
+
+ if(prevBtn){
+  prevBtn.onclick = () => {
+   previousTrack();
+   renderMiniPlayer();
+  };
+ }
+
+ if(playBtn){
+  playBtn.onclick = () => {
+   toggleMiniPlayer();
+  };
+ }
+
+ if(nextBtn){
+  nextBtn.onclick = () => {
+    nextTrack();
+    renderMiniPlayer();
+  };
+ }
+
+});
+
+startMenuKeyboard();   
+
+}  
+}
+
+function stopChatPolling(){
+  clearInterval(chatPollInterval);
+  chatPollInterval = null;
+}
+
+function renderChatScreen(){
+
+  const terminalOutput = document.getElementById("terminalOutput");
+  if(!terminalOutput) return;
+
+  if(chatUsernameMode){
+    terminalOutput.innerHTML = `<pre>
+NODE403 PUBLIC CHAT
+
+No permanent logging
+Messages expire after 24h or 250 messages
+Usernames are temporary and unique while online
+
+Enter username
+Allowed: a-z A-Z 0-9 _ -
+
+> ${chatUsername}█
+
+Press ESCAPE to return
+</pre>`;
+    return;
   }
+
+  let out = "NODE403 PUBLIC CHAT\n\n";
+  out += `CONNECTED AS: ${chatUsername || "-"}\n`;
+  out += `USERS ONLINE: ${chatUsers.length ? chatUsers.join(", ") : "-"}\n\n`;
+
+  const visible = chatMessages.slice(-chatMessageLimit);
+
+  visible.forEach(row => {
+    const time = row.time || "--:--:--";
+    const user = row.user || "unknown";
+    const msg  = row.msg || "";
+    out += `[${time}] ${user}: ${msg}\n`;
+  });
+
+  out += `\n> ${chatInput}█\n\n`;
+  out += "ENTER = send\n";
+  out += "ESC = menu";
+
+  terminalOutput.innerHTML = `<pre>${out}</pre>`;
+}
+
+async function fetchChatMessages(){
+  try{
+    const res = await fetch("/api/chat-read.php", { cache: "no-store" });
+    chatMessages = await res.json();
+  }catch(err){
+    console.error("chat read failed", err);
+  }
+}
+
+async function heartbeatChatPresence(){
+
+  if(!chatUsername) return;
+
+  try{
+
+    const res = await fetch("/api/chat-presence.php",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({
+        user: chatUsername,
+        token: chatToken
+      })
+    });
+
+    const text = await res.text();
+    const data = text ? JSON.parse(text) : {ok:false};
+
+    if(!data.ok){
+      return data;
+    }
+
+    chatToken = data.token || "";
+    chatUsers = data.users || [];
+
+    return data;
+
+  }catch(err){
+    console.error("chat presence failed", err);
+    return {ok:false};
+  }
+}
+
+async function sendChatMessage(){
+
+  const msg = chatInput.trim();
+  if(!msg || !chatUsername) return;
+
+  try{
+    await fetch("/api/chat-send.php",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user: chatUsername,
+        msg
+      })
+    });
+
+    chatInput = "";
+
+    await fetchChatMessages();
+    renderChatScreen();
+
+  }catch(err){
+    console.error("chat send failed", err);
+  }
+}
+
+function startChatPolling(){
+
+  stopChatPolling();
+
+  chatPollInterval = setInterval(async () => {
+    if(!chatMode) return;
+
+    const res = await heartbeatChatPresence();
+
+    if(!res || res.error === "username_taken"){
+
+      stopChatPolling();
+
+      chatUsername = "";
+      chatToken = "";
+      chatInput = "";
+
+      chatUsernameMode = true;
+
+      alert("Username already in use");
+
+      renderChatScreen();
+      return;
+    }
+    await fetchChatMessages();
+    renderChatScreen();
+  }, 1500);
+}
+
+async function openChat(){
+
+  chatMode = true;
+  chatUsernameMode = true;
+  chatUsername = "";
+  chatInput = "";
+  chatMessages = [];
+  chatUsers = [];
+
+  stopChatPolling();
+  renderChatScreen();
+}
 
 function openLiveView() {
 
@@ -262,11 +571,78 @@ NODE403 LIVE NETWORK
 
 Connecting to traffic feed...
 
-Press M to return
+Press ESCAPE to return
 </pre>
 `;
 
   startLiveFeed();
+}
+
+function generateUUIDList(count){
+
+ generatedUUIDs = [];
+
+ for(let i=0;i<count;i++){
+  generatedUUIDs.push(crypto.randomUUID());
+ }
+
+}
+
+function openUUIDGenerator(){
+
+ const terminalOutput = document.getElementById("terminalOutput");
+ if(!terminalOutput) return;
+
+ uuidMode = true;
+ uuidCount = "";
+
+ terminalOutput.innerHTML = `
+<pre>
+NODE403 UUID GENERATOR
+
+Enter number of UUIDs to generate
+
+Maximum: 100
+
+> ${uuidCount}█
+
+Press ESCAPE to return
+</pre>
+`;
+
+}
+
+function renderUUIDResult(){
+
+ const terminalOutput = document.getElementById("terminalOutput");
+ if(!terminalOutput) return;
+
+ let list = generatedUUIDs.join("\n");
+
+ terminalOutput.innerHTML = `
+<pre>
+NODE403 UUID GENERATOR
+
+Generated ${generatedUUIDs.length} UUIDs
+
+${list}
+
+N = new batch
+C = copy all
+ESC = menu
+</pre>
+`;
+
+}
+
+function copyUUIDs(){
+
+ if(!generatedUUIDs.length) return;
+
+ navigator.clipboard.writeText(
+  generatedUUIDs.join("\n")
+ ).catch(()=>{});
+
 }
 
 function calculateStats(rows){
@@ -347,9 +723,7 @@ function startLiveFeed() {
 
       let out = "NODE403 LIVE NETWORK\n\n";
 
-        out += `TRAFFIC STATS
-Requests:  ${stats.total}
-Humans:    ${stats.humans}   Bots:     ${stats.bots}
+        out += `Requests:  ${stats.total}   Humans:    ${stats.humans}   Bots:     ${stats.bots}
 Countries: ${stats.countries}
 RPM:       ${stats.rpm}
 
@@ -378,7 +752,7 @@ RPM:       ${stats.rpm}
 
       });
 
-      out += "\nPress M to return";
+      out += "\nPress ESCAPE to return";
 
       terminalOutput.innerHTML = `<pre>${out}</pre>`;
 
@@ -430,13 +804,15 @@ if(!playlist.length){
 }
 
 async function openMusicPlayer(){
-    await loadPlaylist();
-  const terminalOutput = document.getElementById("terminalOutput");
-  if(!terminalOutput) return;
 
-  musicMode = true;
+ await ensurePlaylistLoaded();
 
-terminalOutput.innerHTML = `
+ const terminalOutput = document.getElementById("terminalOutput");
+ if(!terminalOutput) return;
+
+ musicMode = true;
+
+ terminalOutput.innerHTML = `
 
 <div id="musicLayout" style="
 display:flex;
@@ -461,7 +837,7 @@ B = Previous track
 SPACE = Play / Pause
 V = Mute
 + / - = Volume
-M = Menu
+ESC = Menu
 </pre>
 
 <pre id="musicPlaylist" style="
@@ -476,8 +852,6 @@ PLAYLIST
 </pre>
 
 </div>
-
-<audio id="nodeMusic" autoplay></audio>
 
 <div id="mobileMusicControls" style="
 margin-top:8px;
@@ -494,51 +868,33 @@ flex-wrap:wrap;
 <button id="exitMusic">MENU</button>
 
 </div>
-
 `;
 
-  audioPlayer = document.getElementById("nodeMusic");
+ ensureAudioPlayer();
 
-    audioPlayer.volume = 0.8;
+ if(!audioPlayer.src && playlist[currentTrack]){
+  audioPlayer.src = playlist[currentTrack].file;
+ }
 
-  if(audioPlayer){
+ renderMusicScreen();
+ renderPlaylist();
+ renderMiniPlayer();
 
-    audioPlayer.src = playlist[currentTrack].file;
+ const nextBtn = document.getElementById("nextTrack");
+ const playBtn = document.getElementById("playPause");
+ const muteBtn = document.getElementById("muteBtn");
+ const prevBtn = document.getElementById("prevTrack");
+ const exitBtn = document.getElementById("exitMusic");
 
-    audioPlayer.onended = () => {
-      nextTrack();
-    };
+ if(playBtn) playBtn.onclick = togglePlay;
+ if(muteBtn) muteBtn.onclick = toggleMute;
+ if(nextBtn) nextBtn.onclick = nextTrack;
+ if(prevBtn) prevBtn.onclick = previousTrack;
 
-    audioPlayer.ontimeupdate = () => {
-      renderMusicScreen();
-    };
-
-  }
-
-    renderMusicScreen();
-    renderPlaylist();
-
-  // mobiele knoppen
-  const nextBtn = document.getElementById("nextTrack");
-    const playBtn = document.getElementById("playPause");
-const muteBtn = document.getElementById("muteBtn");
-  const prevBtn = document.getElementById("prevTrack");
-  const exitBtn = document.getElementById("exitMusic");
-    if(playBtn) playBtn.onclick = togglePlay;
-if(muteBtn) muteBtn.onclick = toggleMute;
-
-  if (nextBtn) nextBtn.onclick = nextTrack;
-  if (prevBtn) prevBtn.onclick = previousTrack;
-  if (exitBtn) exitBtn.onclick = () => {
-
-    if (audioPlayer) audioPlayer.pause();
-
-    audioPlayer = null;
-    musicMode = false;
-
-    showMenu();
-  };
-
+ if(exitBtn) exitBtn.onclick = () => {
+  musicMode = false;
+  showMenu();
+ };
 }
 
 function nextTrack(){
@@ -569,16 +925,24 @@ function previousTrack(){
     renderPlaylist();
 }
 
-function togglePlay(){
+async function togglePlay(){
 
-  if(!audioPlayer) return;
+ ensureAudioPlayer();
 
-  if(audioPlayer.paused){
-    audioPlayer.play();
-  }else{
-    audioPlayer.pause();
-  }
+ if(!audioPlayer) return;
 
+ if(audioPlayer.paused){
+  await audioPlayer.play();
+ }else{
+  audioPlayer.pause();
+ }
+
+ renderMiniPlayer();
+
+ if(musicMode){
+  renderMusicScreen();
+  renderPlaylist();
+ }
 }
 
 function toggleMute(){
@@ -661,7 +1025,7 @@ B = Previous track
 SPACE = Play / Pause
 V = Mute
 + / - = Volume
-M = Menu`;
+ESC = Menu`;
 }
 
 function generatePassword(length = 16){
@@ -715,7 +1079,7 @@ N = new password
 + = longer
 - = shorter
 C = copy
-M = menu
+ESC = menu
 
 </pre>`;
 }
@@ -845,32 +1209,6 @@ flex-grow:1;
 
 }
 
-function openTimer() {
-
-  const terminalOutput = document.getElementById("terminalOutput");
-  if (!terminalOutput) return;
-
-  timerMode = true;
-  elapsed = 0;
-  startTime = 0;
-  laps = [];
-  timerRunning = false;
-
-  terminalOutput.innerHTML = `
-<pre>
-NODE403 STOPWATCH
-
-00:00.00
-
-SPACE = start/stop
-L = lap
-R = reset
-M = menu
-
-</pre>
-`;
-}
-
 function openSudoku() {
 
   sudokuMode = true;
@@ -920,7 +1258,7 @@ function renderSudoku() {
     "1-9     number",
     "0       clear",
     "N       new puzzle",
-    "M       menu"
+    "ESC     menu"
   ];
 
   let out = "NODE403 SUDOKU\n\n";
@@ -936,29 +1274,6 @@ function renderSudoku() {
   }
 
   terminalOutput.innerHTML = `<pre>${out}</pre>`;
-}
-
-function renderTimer(time) {
-
-  const terminalOutput = document.getElementById("terminalOutput");
-
-  const lapText = laps.map((l,i)=>`Lap ${i+1}: ${l}`).join("\n");
-
-  terminalOutput.innerHTML = `
-<pre>
-NODE403 STOPWATCH
-
-${time}
-
-SPACE = start/stop
-L = lap
-R = reset
-M = menu
-
-${lapText}
-
-</pre>
-`;
 }
 
 function generateSudoku() {
@@ -1041,6 +1356,13 @@ function startMenuKeyboard() {
 
 document.addEventListener("keydown", async (e) => {
 
+  /* blokkeer ESC tijdens simulatie */
+
+  if (simulationActive && e.code === "Escape") {
+    e.preventDefault();
+    return;
+  }
+
   let key = e.key;
   const code = e.code;
 
@@ -1075,6 +1397,62 @@ document.addEventListener("keydown", async (e) => {
 
   key = String(key).toLowerCase();
 
+if(uuidMode){
+
+if(code === "Escape"){
+  uuidMode = false;
+  uuidCount = "";
+  generatedUUIDs = [];
+  showMenu();
+  return;
+}
+
+ if(!generatedUUIDs.length){
+
+  if(/^[0-9]$/.test(key)){
+   uuidCount += key;
+  }
+
+  if(key === "enter"){
+
+   const count = Math.min(100, parseInt(uuidCount) || 1);
+
+   generateUUIDList(count);
+   renderUUIDResult();
+   return;
+  }
+
+  const terminalOutput = document.getElementById("terminalOutput");
+
+  terminalOutput.innerHTML = `
+<pre>
+NODE403 UUID GENERATOR
+
+Enter number of UUIDs to generate
+
+> ${uuidCount}█
+
+Press ESCAPE to return
+</pre>
+`;
+
+  return;
+ }
+
+ if(key === "n"){
+  generatedUUIDs = [];
+  uuidCount = "";
+  openUUIDGenerator();
+  return;
+ }
+
+ if(key === "c"){
+  copyUUIDs();
+  return;
+ }
+
+ return;
+}
 
     /* -------------------------
        LIVE VIEW MODE
@@ -1082,7 +1460,7 @@ document.addEventListener("keydown", async (e) => {
 
     if (liveMode) {
 
-      if (key === "m") {
+      if (code === "Escape") {
 
         clearInterval(liveInterval);
         liveInterval = null;
@@ -1101,7 +1479,7 @@ document.addEventListener("keydown", async (e) => {
 
     if (passwordMode) {
 
-      if (key === "m") {
+      if (code === "Escape") {
         passwordMode = false;
         showMenu();
         return;
@@ -1137,94 +1515,6 @@ document.addEventListener("keydown", async (e) => {
 
 
     /* -------------------------
-       TIMER
-    ------------------------- */
-
-    if (timerMode) {
-
-      if (key === "m") {
-
-        clearInterval(timerInterval);
-        timerInterval = null;
-        timerRunning = false;
-        timerMode = false;
-
-        showMenu();
-        return;
-      }
-
-      if (code === "Space") {
-
-        e.preventDefault();
-
-        if (!timerRunning) {
-
-          timerRunning = true;
-          startTime = Date.now() - elapsed;
-
-          timerInterval = setInterval(() => {
-
-            elapsed = Date.now() - startTime;
-
-            const ms = Math.floor((elapsed % 1000) / 10);
-            const sec = Math.floor(elapsed / 1000) % 60;
-            const min = Math.floor(elapsed / 60000);
-
-            const m = String(min).padStart(2,"0");
-            const s = String(sec).padStart(2,"0");
-            const milli = String(ms).padStart(2,"0");
-
-            renderTimer(`${m}:${s}.${milli}`);
-
-          },10);
-
-        } else {
-
-          clearInterval(timerInterval);
-          timerInterval = null;
-          timerRunning = false;
-
-        }
-
-        return;
-      }
-
-      if (key === "l") {
-
-        const ms = Math.floor((elapsed % 1000) / 10);
-        const sec = Math.floor(elapsed / 1000) % 60;
-        const min = Math.floor(elapsed / 60000);
-
-        const m = String(min).padStart(2,"0");
-        const s = String(sec).padStart(2,"0");
-        const milli = String(ms).padStart(2,"0");
-
-        laps.push(`${m}:${s}.${milli}`);
-
-        renderTimer(`${m}:${s}.${milli}`);
-
-        return;
-      }
-
-      if (key === "r") {
-
-        clearInterval(timerInterval);
-        timerInterval = null;
-
-        elapsed = 0;
-        timerRunning = false;
-        laps = [];
-
-        renderTimer("00:00.00");
-
-        return;
-      }
-
-      return;
-    }
-
-
-    /* -------------------------
        CALCULATOR
     ------------------------- */
 
@@ -1233,7 +1523,7 @@ if (calculatorMode) {
   e.stopPropagation();
   e.preventDefault();
 
-  if (key === "m") {
+  if (code === "Escape") {
     calculatorMode = false;
     showMenu();
     return;
@@ -1290,10 +1580,11 @@ if (calculatorMode) {
         if(!isNaN(index) && playlist[index]){
           currentTrack = index;
           audioPlayer.src = playlist[currentTrack].file;
-          audioPlayer.play();
+            audioPlayer.play();
 
-          renderMusicScreen();
-          renderPlaylist();
+            renderMusicScreen();
+            renderPlaylist();
+            renderMiniPlayer();
         }
 
         trackNumberBuffer = "";
@@ -1329,17 +1620,12 @@ if (calculatorMode) {
       audioPlayer.volume = Math.max(0,audioPlayer.volume - 0.05);
     }
 
-      if (key === "m") {
-
-        if (audioPlayer) audioPlayer.pause();
-
-        audioPlayer = null;
-        musicMode = false;
-        trackNumberBuffer = "";
-
-        showMenu();
-        return;
-      }
+      if (code === "Escape") {
+      musicMode = false;
+      trackNumberBuffer = "";
+      showMenu();
+      return;
+    }
 
       return;
     }
@@ -1350,7 +1636,7 @@ if (calculatorMode) {
 
 if (sudokuMode) {
 
-  if (key === "m") {
+  if (code === "Escape") {
     sudokuMode = false;
     showMenu();
     return;
@@ -1403,10 +1689,94 @@ if (sudokuMode) {
   return;
 }
 
+if(chatMode){
+
+  e.stopPropagation();
+  e.preventDefault();
+
+  if(document.activeElement !== document.body){
+    document.body.focus();
+  }
+
+      if(code === "Escape"){
+      chatMode = false;
+      stopChatPolling();
+      showMenu();
+      return;
+    }
+
+  if(chatUsernameMode){
+
+    if(key === "backspace"){
+      chatUsername = chatUsername.slice(0,-1);
+      renderChatScreen();
+      return;
+    }
+
+if(key === "enter"){
+
+  const cleaned = chatUsername.trim();
+  if(!cleaned) return;
+
+  chatUsername = cleaned;
+
+  const res = await heartbeatChatPresence();
+
+if(!res || res.error === "username_taken"){
+
+  stopChatPolling();
+
+  chatUsername = "";
+  chatToken = "";
+  chatInput = "";
+
+  chatUsernameMode = true;
+
+  alert("Username already in use");
+
+  renderChatScreen();
+  return;
+}
+
+  chatUsernameMode = false;
+
+  await fetchChatMessages();
+  renderChatScreen();
+  startChatPolling();
+
+  return;
+}
+
+    if(/^[a-z0-9_-]$/i.test(key) && chatUsername.length < 20){
+      chatUsername += e.key;
+      renderChatScreen();
+    }
+
+    return;
+  }
+
+  if(key === "backspace"){
+    chatInput = chatInput.slice(0,-1);
+    renderChatScreen();
+    return;
+  }
+
+  if(key === "enter"){
+    await sendChatMessage();
+    return;
+  }
+
+  if(key.length === 1 && chatInput.length < 200){
+    chatInput += key;
+    renderChatScreen();
+  }
+
+  return;
+}
+
     /* -------------------------
        MAIN MENU
     ------------------------- */
-
     if (key === "1") {
       openLiveView();
       return;
@@ -1418,13 +1788,13 @@ if (sudokuMode) {
     }
 
     if (key === "3") {
-      await startSimulationFromMenu();
+      openPasswordGenerator();
       return;
     }
 
-    if (key === "4") {
-      openPasswordGenerator();
-      return;
+    if(key === "4"){
+     openUUIDGenerator();
+     return;
     }
 
     if (key === "5") {
@@ -1433,21 +1803,16 @@ if (sudokuMode) {
     }
 
     if (key === "6") {
-      openTimer();
-      return;
-    }
-
-    if (key === "7") {
       openMusicPlayer();
       return;
     }
 
-    if (key === "8") {
+    if (key === "7") {
       openSudoku();
       return;
     }
 
-    if (key === "9") {
+    if (key === "8") {
 
       const terminalOutput = document.getElementById("terminalOutput");
 
@@ -1459,7 +1824,7 @@ NODE403 CONTACT
 
 webmaster@node403.com
 
-Press M to return
+Press ESCAPE to return
 </pre>`;
 
       }
@@ -1467,7 +1832,17 @@ Press M to return
       return;
     }
 
-    if (key === "m") {
+    if (key === "9") {
+      openChat();
+      return;
+    }
+
+    if (key === "0") {
+      await startSimulationFromMenu();
+      return;
+    }
+
+    if (code === "Escape") {
       showMenu();
     }
 
@@ -1477,10 +1852,16 @@ Press M to return
 
     async function startSimulationFromMenu() {
 
-    stopSequence = false;
+      simulationActive = true;
+
+      stopSequence = false;
+      stopMenuAudio();
 
     const clock = document.getElementById("terminalClock");
     if (clock) clock.style.display = "none";
+    
+    const player = document.getElementById("menuAudioConsole");
+    if (player) player.style.display = "none";
 
     applyUILanguage(getNetworkGroup(), UI_TEXT, "simulation");
 
@@ -1516,14 +1897,15 @@ NODE403 IP / ASN LOOKUP
 
 Resolving network information...
 
-Press M to return
+Press ESCAPE to return
 </pre>
 `;
 
  try {
 
    const res = await fetch("/api/ip.php",{cache:"no-store"});
-   const data = await res.json();
+   const text = await res.text();
+    const data = text ? JSON.parse(text) : {ok:false};
 
 const ip = data.ip || "-";
 const city = data.city || "";
@@ -1545,7 +1927,7 @@ NETWORK
 ASN: ${asn}
 ORG: ${network}
 
-Press M to return
+Press ESCAPE to return
 </pre>
 `;
 
@@ -1557,7 +1939,7 @@ NODE403 IP / ASN LOOKUP
 
 Lookup failed
 
-Press M to return
+Press ESCAPE to return
 </pre>
 `;
 
@@ -1617,34 +1999,41 @@ Press M to return
     setGetRandomUserByGroupRef(gen.getRandomUserByGroup);
   }
 
-  function bind() {
+function bind() {
 
-    bindUIEvents(dom,{
+  bindUIEvents(dom,{
 
-onBack: async () => {
+    onBack: async () => {
 
- stopSequence = true;
+      stopSequence = true;
 
- activeTimeouts.forEach(clearTimeout);
- activeTimeouts = [];
+      activeTimeouts.forEach(clearTimeout);
+      activeTimeouts = [];
 
- setState(STATES.MENU);
- showMenu();
+      if(renderState.animationFrame){
+        cancelAnimationFrame(renderState.animationFrame);
+        renderState.animationFrame = null;
+      }
 
-},
-      onEnter: async () => showMenu(),
+      setState(STATES.MENU);
+      showMenu();
 
-      onMenuOption1: async () => await startSimulationFromMenu(),
-      onMenuOption2: async () => goToLiveView(),
-      onMenuOption3: async () => openMusicPlayer(),
-        onMenuOption4: async () => openCalculator(),
-        onMenuOption5: async () => openTimer(),
-        onMenuOption6: async () => openIPLookup(),
-        onMenuOption7: async () => openSudoku(),
-        onMenuOption8: async () => showMenu()
-    
-    });
-  }
+    },
 
-  return { bind };
+    onEnter: async () => showMenu(),
+
+    onMenuOption1: async () => await startSimulationFromMenu(),
+    onMenuOption2: async () => goToLiveView(),
+    onMenuOption3: async () => openMusicPlayer(),
+    onMenuOption4: async () => openCalculator(),
+    onMenuOption5: async () => openTimer(),
+    onMenuOption6: async () => openIPLookup(),
+    onMenuOption7: async () => openSudoku(),
+    onMenuOption8: async () => showMenu()
+
+  });
+}
+
+return { bind };
+
 }

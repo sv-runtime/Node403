@@ -7,17 +7,7 @@ $description = "Technical documentation explaining the HTTP 451 Unavailable For 
 
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
 
-gtag('config', 'G-KGB3F6B4FS', {
-  anonymize_ip: true
-});
-</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,7 +21,7 @@ gtag('config', 'G-KGB3F6B4FS', {
 <meta property="og:title" content="<?php echo $title; ?>">
 <meta property="og:description" content="<?php echo $description; ?>">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://node403.com/docs/451.php">
+<meta property="og:url" content="https://node403.com/docs/doc-451.php">
 
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 

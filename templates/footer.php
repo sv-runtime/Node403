@@ -9,16 +9,21 @@
 <span class="footer-separator">·</span>
 
 <a href="/admin/login.php">Admin</a>
-<span class="footer-separator">·</span>
-
-<a href="https://buymeacoffee.com/node403" target="_blank" rel="noopener">
-Support this project</a>
-
-<span class="footer-separator">·</span>
-
-<span class="footer-credit">Built by S. Veenstra</span>
 
 </div>
-
+<script>
+(function(){
+ document.querySelectorAll("footer a, .footer a").forEach(link => {
+  link.addEventListener("click", function(){
+   try{
+    if(window.node403AudioPlayer){
+     window.node403AudioPlayer.pause();
+     window.node403AudioPlayer.currentTime = 0;
+    }
+   }catch(e){}
+  });
+ });
+})();
+</script>
 </footer>
 

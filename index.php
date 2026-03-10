@@ -14,39 +14,24 @@ page: window.location.pathname
 }).catch(()=>{});
 </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-KGB3F6B4FS', {
-  anonymize_ip: true
-});
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Node403 — Interactive HTTP 403 Authorization Simulation</title>
+<title>Node403 — Access Control Simulation, Console Tools & Technical Documentation</title>
 
-<meta name="description" content="Node403 is an interactive terminal-style web simulation that visualizes HTTP 403 access denial, authorization policy evaluation and network security enforcement inside a stylized system console.">
+<meta name="description" content="Node403 is an experimental browser-based project featuring a simulated terminal interface with console tools, an access control simulation and technical documentation about HTTP authorization systems and infrastructure behavior.">
 
 <meta name="keywords" content="
-http 403,
-authorization simulation,
-security terminal,
-hacker console simulation,
-cyber security visualization,
-network monitoring simulation,
-developer terminal demo,
-matrix style terminal,
-security log console,
-web security visualization,
-terminal ambience,
-cyberpunk terminal screen,
-hacker ambience website
+access control simulation,
+simulated terminal interface,
+interactive console tools,
+authorization system visualization,
+system log simulation,
+terminal style web interface,
+developer console environment,
+network style terminal tools,
+cyber terminal interface,
+technical documentation http authorization
 ">
 
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -63,25 +48,25 @@ hacker ambience website
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Node403">
-<meta property="og:title" content="Node403 — Interactive HTTP 403 Security Simulation">
-<meta property="og:description" content="Interactive security terminal demonstrating access control enforcement, authorization policy evaluation and HTTP 403 denial responses.">
+<meta property="og:title" content="Node403 — Access Control Simulation & Console Tools">
+<meta property="og:description" content="Interactive simulated terminal environment featuring console tools, an access control simulation and technical documentation about HTTP authorization systems.">
 <meta property="og:url" content="https://node403.com/">
 
 <meta property="og:image" content="https://node403.com/style/node403.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Node403 interactive HTTP 403 security console simulation">
+<meta property="og:image:alt" content="Node403 simulated terminal console interface">
 
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter -->
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Node403 — Interactive HTTP 403 Security Simulation">
-<meta name="twitter:description" content="Interactive terminal simulation demonstrating HTTP 403 security enforcement and access control systems.">
+<meta name="twitter:title" content="Node403 — Access Control Simulation & Console Tools">
+<meta name="twitter:description" content="Simulated terminal interface with console tools, an access control simulation and technical documentation about HTTP authorization systems.">
 <meta name="twitter:image" content="https://node403.com/style/node403.png">
-<meta name="twitter:image:alt" content="Node403 HTTP 403 security terminal simulation">
+<meta name="twitter:image:alt" content="Node403 simulated terminal console interface">
 
 <!-- Extra SEO / indexing hints -->
 
@@ -106,14 +91,13 @@ hacker ambience website
  "operatingSystem": "Web",
  "image": "https://node403.com/style/node403.png",
  "inLanguage": "en",
- "description": "Interactive browser-based simulation of an authorization system demonstrating HTTP 403 access denial, security policy evaluation and terminal-style network monitoring.",
+ "description": "Node403 is an experimental browser-based project that combines a simulated terminal interface, console tools, an access control simulation and technical documentation explaining HTTP authorization systems.",
  "keywords": [
-  "HTTP 403",
-  "security simulation",
-  "terminal interface",
-  "network monitoring",
-  "cyber security visualization",
-  "developer demo"
+  "access control simulation",
+  "simulated terminal interface",
+  "console tools",
+  "system log simulation",
+  "authorization system visualization"
  ],
  "creator": {
    "@type": "Person",
@@ -131,8 +115,6 @@ hacker ambience website
 <link rel="icon" type="image/png" sizes="32x32" href="/style/node403.png">
 <link rel="apple-touch-icon" href="/style/node403.png">
 
-<!-- Performance (SEO ranking factor) -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -142,8 +124,10 @@ hacker ambience website
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="./style/style.css?v=1">
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4191744023231140"
 crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -152,7 +136,8 @@ if (window.location.hash) {
 history.replaceState(null, null, window.location.pathname + window.location.search);
 }
 </script>
-<h1 style="position:absolute;left:-9999px;">Node403 HTTP 403 Security Simulation</h1>
+
+<h1 style="position:absolute;left:-9999px;">Node403 Access Control Simulation and Terminal System</h1>
 
 <canvas id="matrix"></canvas>
 
@@ -174,8 +159,6 @@ history.replaceState(null, null, window.location.pathname + window.location.sear
 
 </div>
 
-
-
 <button class="back-button back-inline" id="backBtn"></button>
 
 <div class="terminal">
@@ -185,57 +168,112 @@ history.replaceState(null, null, window.location.pathname + window.location.sear
   <span class="minimize"></span>
   <span class="maximize"></span>
 </div>
-        <div style="display:flex;justify-content:space-between;width:100%">
-    <div class="terminal-title" id="terminalTitle"></div>
 
-    </div>
-  </div>
-  <div class="terminal-body" id="terminalBody">
-        <div id="terminalClock"></div>
-  <div class="terminal-output" id="terminalOutput"></div>
+<div style="display:flex;justify-content:space-between;width:100%">
+<div class="terminal-title" id="terminalTitle"></div>
 </div>
 
 </div>
 
+<div class="terminal-body" id="terminalBody">
+<div id="menuAudioConsole">
 
+<div id="miniPlayerRow" style="display:flex;align-items:center;gap:12px;">
+
+<pre id="miniTrack" style="margin:0;">track: -</pre>
+
+<button id="miniPrevTrack">PREV</button>
+<button id="miniPlayPause">PLAY</button>
+<button id="miniNextTrack">NEXT</button>
+
+</div>
+
+</div>
+<div id="terminalClock"></div>
+<div class="terminal-output" id="terminalOutput"></div>
+</div>
+
+</div>
 
 <section class="about-node403">
 
-<h2>HTTP 403 Authorization Simulation</h2>
+<h2>Node403</h2>
 
 <p>
-Node403 is an interactive browser-based security simulation that demonstrates how modern authorization systems deny requests using the HTTP 403 Forbidden response.
-The project visualizes access control enforcement inside a terminal-style interface that mimics internal security monitoring consoles.
+Node403 is an experimental browser-based project built around a simulated
+terminal environment. The site combines interactive console tools,
+a visual access control simulation and technical documentation
+about HTTP status codes and authorization systems used in modern web
+infrastructure.
 </p>
 
 <p>
-The simulation recreates typical diagnostic output generated by security gateways and authorization layers, including policy evaluation logs,
-request metadata and simulated access denial events.
+The interface is designed to resemble an internal system console where
+request traces, system messages and authorization results are displayed
+in a terminal-style environment.
 </p>
 
+<h3>Console Tools</h3>
+
 <p>
-Concepts demonstrated by the Node403 simulation include:
+The interactive console includes several small tools that can be
+accessed from the terminal menu. These utilities mimic the style
+of system administration consoles and developer debugging environments.
 </p>
 
 <ul>
-<li>HTTP 403 Forbidden access denial</li>
-<li>authorization policy evaluation</li>
-<li>role-based access control (RBAC)</li>
-<li>network request diagnostics</li>
-<li>terminal-based system monitoring</li>
-<li>security policy enforcement</li>
+<li>network-style traffic viewer</li>
+<li>IP lookup utilities</li>
+<li>console-based generators and small tools</li>
+<li>terminal-style interactive interface</li>
 </ul>
 
+<h3>Access Control Simulation</h3>
+
 <p>
-Node403 is an experimental web project designed to illustrate how authorization decisions and policy enforcement might appear inside a technical system console.
-The application does not implement real authentication or access control mechanisms and serves purely as a visual demonstration of security infrastructure behavior.
+Node403 also includes an interactive <strong>Access Control Simulation</strong>
+that visualizes how a system may process a request, evaluate
+authorization policies and ultimately deny access.
+</p>
+
+<p>
+The simulation generates terminal-style output representing
+system activity such as request processing, user context
+evaluation and policy decisions that lead to an access denial.
+</p>
+
+<h3>Technical Documentation</h3>
+
+<p>
+In addition to the interactive components, the project also
+provides documentation explaining HTTP status codes,
+authorization models and related infrastructure concepts.
+</p>
+
+<p>
+These pages describe how web servers and applications handle
+responses such as HTTP 403 Forbidden and how modern
+authorization systems enforce access control policies.
+</p>
+
+<p>
+The documentation can be found in the <strong>/docs</strong> section
+of the site.
+</p>
+
+<p>
+Node403 is an independent experimental project exploring
+the visual design of system consoles, simulated infrastructure
+interfaces and terminal-style web experiences.
 </p>
 
 </section>
+
+
 <?php include 'templates/footer-index.php'; ?>
+
 <script type="module" src="main.js"></script>
+
 </body>
 </html>
-
-
 

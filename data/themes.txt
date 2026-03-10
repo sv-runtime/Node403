@@ -169,10 +169,10 @@
       "error": "#D80621"
     },
     "za": {
-      "primary": "#007749",
-      "secondary": "#000000",
-      "tertiary": "#DE3831",
-      "accent": "#FFB612",
+      "primary": "#007749",  
+      "secondary": "#002395", 
+      "tertiary": "#DE3831",    
+      "accent": "#FFB612",    
       "error": "#DE3831"
     },
     "ng": {
@@ -426,6 +426,132 @@
   "tertiary": "#EE1C25",
   "accent": "#EE1C25",
   "error": "#0B4EA2"
+}, 
+"id": {
+  "primary": "#02529C",
+  "secondary": "#FFFFFF",
+  "tertiary": "#DC1E35",
+  "accent": "#DC1E35",
+  "error": "#DC1E35"
+},
+
+"sg": {
+  "primary": "#EF3340",
+  "secondary": "#FFFFFF",
+  "tertiary": "#EF3340",
+  "accent": "#FFFFFF",
+  "error": "#EF3340"
+},
+
+"is": {
+  "primary": "#003897",
+  "secondary": "#FFFFFF",
+  "tertiary": "#D72828",
+  "accent": "#003897",
+  "error": "#D72828"
+},
+
+"ae": {
+  "primary": "#FF0000",
+  "secondary": "#00732F",
+  "tertiary": "#FFFFFF",
+  "accent": "#000000",
+  "error": "#FF0000"
+},
+
+"cl": {
+  "primary": "#0039A6",
+  "secondary": "#FFFFFF",
+  "tertiary": "#D52B1E",
+  "accent": "#0039A6",
+  "error": "#D52B1E"
+},
+
+"my": {
+  "primary": "#CC0001",
+  "secondary": "#FFFFFF",
+  "tertiary": "#010066",
+  "accent": "#FFCC00",
+  "error": "#CC0001"
+}, 
+"vn": {
+  "primary": "#DA251D",
+  "secondary": "#FFFF00",
+  "tertiary": "#DA251D",
+  "accent": "#FFFF00",
+  "error": "#DA251D"
+},
+
+"tw": {
+  "primary": "#FE0000",
+  "secondary": "#FFFFFF",
+  "tertiary": "#000095",
+  "accent": "#000095",
+  "error": "#FE0000"
+},
+
+"bd": {
+  "primary": "#006A4E",
+  "secondary": "#F42A41",
+  "tertiary": "#006A4E",
+  "accent": "#F42A41",
+  "error": "#F42A41"
+},
+
+"ph": {
+  "primary": "#0038A8",
+  "secondary": "#CE1126",
+  "tertiary": "#FFFFFF",
+  "accent": "#FCD116",
+  "error": "#CE1126"
+},
+
+"ar": {
+  "primary": "#74ACDF",
+  "secondary": "#FFFFFF",
+  "tertiary": "#74ACDF",
+  "accent": "#F6B40E",
+  "error": "#74ACDF"
+},
+
+"pe": {
+  "primary": "#D91023",
+  "secondary": "#FFFFFF",
+  "tertiary": "#D91023",
+  "accent": "#FFFFFF",
+  "error": "#D91023"
+},
+
+"hr": {
+  "primary": "#FF0000",
+  "secondary": "#FFFFFF",
+  "tertiary": "#171796",
+  "accent": "#171796",
+  "error": "#FF0000"
+},
+
+"si": {
+  "primary": "#FFFFFF",
+  "secondary": "#005DA4",
+  "tertiary": "#ED1C24",
+  "accent": "#005DA4",
+  "error": "#ED1C24"
+},
+
+"qa": {
+  "primary": "#8A1538",
+  "secondary": "#FFFFFF",
+  "tertiary": "#8A1538",
+  "accent": "#FFFFFF",
+  "error": "#8A1538"
+},
+
+"kw": {
+  "primary": "#007A3D",
+  "secondary": "#FFFFFF",
+  "tertiary": "#CE1126",
+  "accent": "#000000",
+  "error": "#CE1126"
 }
 }
 }

@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KGB3F6B4FS"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-KGB3F6B4FS', {
-  anonymize_ip: true
-});
-</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +20,7 @@ gtag('config', 'G-KGB3F6B4FS', {
 <meta name="twitter:title" content="Node403 Architecture – HTTP 403 Security Simulation">
 <meta name="twitter:description" content="Architecture documentation of the Node403 interactive security simulation engine.">
 
-<link rel="canonical" href="https://node403.com/about.htm">
+<link rel="canonical" href="https://node403.com/about.php">
 
 <link rel="icon" type="image/x-icon" href="style/favicon.ico">
 
